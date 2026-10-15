@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import darkFullLogo from "@/logos/Full logo/black-devspark.png";
-import lightFullLogo from "@/logos/Full logo/white-devspark.png";
+import darkFullLogo from "@/logos/trimmed/black-devspark.png";
+import lightFullLogo from "@/logos/trimmed/white-devspark.png";
 
 import { cn } from "@/lib/utils";
 
@@ -11,9 +11,8 @@ type LogoProps = {
   /**
    * Renders on the dark footer band: the official white-variant full logo
    * (white icon chevron + "Dev", orange bolt + "Spark") sits directly on the
-   * dark background. Its 842×596 canvas includes the original transparent
-   * padding, which is left intact — only a display width is chosen so the
-   * visible ink matches the header logo's weight.
+   * dark background. Same trimmed asset geometry and display size as the
+   * header logo, so the lockup keeps identical proportions everywhere.
    */
   onDark?: boolean;
   /** Preload (header only — it is above the fold). */
@@ -21,15 +20,18 @@ type LogoProps = {
 };
 
 /**
- * The official DevSpark full lockup (icon + wordmark), imported directly
- * from the approved originals in `logos/` — no copies, crops or recolors.
+ * The official DevSpark full lockup (icon + wordmark).
  *
- * - Light backgrounds: `logos/Full logo/black-devspark.png`
- *   (842×596 canvas with original transparent padding, black Dev + orange Spark).
- * - Dark backgrounds (`onDark`): `logos/Full logo/white-devspark.png`
- *   (842×596 canvas with the original transparent padding, white Dev +
- *   orange Spark). Displayed at its natural aspect ratio; the padding is
- *   part of the asset and is never cropped or compensated with transforms.
+ * Displayed assets are ink-tight derivatives of the approved originals in
+ * `logos/Full logo/` (which remain untouched): a lossless crop to the exact
+ * alpha bounds — 616×137, i.e. the transparent 842×596 export padding
+ * removed, zero artwork pixels changed. Because the image box now equals
+ * the visible ink, the flex `items-center` alignment in the header centers
+ * the actual wordmark against the menu control at every breakpoint, with no
+ * negative-margin or canvas-height compensation.
+ *
+ * Display height matches the previously approved visible size:
+ * ~23.6px (mobile) / ~26.9px (desktop) of wordmark ink.
  */
 export function Logo({ className, onDark = false, priority = false }: LogoProps) {
   return (
@@ -46,19 +48,8 @@ export function Logo({ className, onDark = false, priority = false }: LogoProps)
         alt=""
         priority={priority}
         loading={priority ? "eager" : "lazy"}
-        sizes={onDark ? "(max-width: 768px) 145px, 165px" : "(max-width: 768px) 175px, 200px"}
-        className={
-          onDark
-            ? "h-auto w-[145px] md:w-[165px]"
-            : // The asset carries a padded 842×596 canvas (ink 616×137 at
-              // (107,219)). These canvas heights make the visible wordmark
-              // ~28px (mobile) / ~32px (desktop) tall; max-w-none defeats
-              // preflight's img max-width clamp and the negative horizontal
-              // margins cancel the canvas padding so the link's layout box
-              // equals the ink width and the ink starts flush with the
-              // container's content edge. Aspect ratio is never altered.
-              "h-[102.7px] w-auto max-w-none -mx-[19.5px] md:h-[116.9px] md:-mx-[22.2px]"
-        }
+        sizes="(max-width: 768px) 106px, 121px"
+        className="h-[23.6px] w-auto max-w-none md:h-[26.9px]"
       />
     </Link>
   );

@@ -15,7 +15,7 @@ import { revealDelay } from "@/lib/utils";
 export const metadata: Metadata = pageMetadata({
   title: "Generative AI Engineering - Level 01, Cohort 01",
   description:
-    "A live online Generative AI course for beginners, taught in Urdu: 8 weeks, 24 sessions, starting Monday, November 30, 2026. PKR 4,000 one-time fee - the first two sessions are free.",
+    "A live online Generative AI course on Google Meet, taught in Urdu: 8 weeks, 24 sessions, starting Monday, November 30, 2026. PKR 4,000 one-time fee - early-bird PKR 3,000 for the first 20 confirmed paid enrollments.",
   path: "/courses",
 });
 
@@ -188,7 +188,68 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 3 — Eight-week curriculum */}
+      {/* 3 — AI Skills for Every Profession */}
+      <Section id="professions">
+        <Container>
+          <CourseHeading
+            label="Why it matters"
+            title={program.professions.title}
+            description={program.professions.description}
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {program.professions.groups.map((group, index) => (
+              <div
+                key={group.title}
+                data-reveal
+                style={revealDelay(index * 60)}
+                className="rounded-card border border-hairline bg-surface p-7 transition-colors hover:border-accent"
+              >
+                <span className="label text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 font-heading text-[1.1rem] font-semibold">
+                  {group.title}
+                </h3>
+                <p className="mt-2 text-[0.975rem] leading-relaxed text-secondary">
+                  {group.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div data-reveal className="lg:col-span-5">
+              <h3 className="font-heading text-[1.15rem] font-semibold">
+                {program.professions.whyTitle}
+              </h3>
+              <p className="mt-3 text-[0.975rem] leading-relaxed text-secondary">
+                {program.professions.whyDescription}
+              </p>
+              <p className="mt-6 border-l-2 border-accent pl-4 text-body-sm leading-relaxed text-secondary">
+                {program.professions.note}
+              </p>
+            </div>
+            <div data-reveal style={revealDelay(120)} className="lg:col-span-7">
+              <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+                {program.professions.whyPoints.map((point) => (
+                  <li
+                    key={point}
+                    className="flex gap-3 text-[0.975rem] leading-relaxed text-secondary"
+                  >
+                    <CheckCircle
+                      aria-hidden
+                      size={18}
+                      className="mt-0.5 shrink-0 text-accent"
+                    />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 4 — Eight-week curriculum */}
       <Section id="curriculum" tone="surface">
         <Container>
           <CourseHeading
@@ -200,7 +261,7 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 4 — Teaching methodology and materials */}
+      {/* 5 — Teaching methodology and materials */}
       <Section>
         <Container>
           <CourseHeading
@@ -239,7 +300,7 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 5 — Assessment */}
+      {/* 6 — Assessment */}
       <Section id="assessment" tone="surface">
         <Container>
           <CourseHeading
@@ -282,13 +343,13 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 6 — Certificate and awards */}
+      {/* 7 — Certificate and awards */}
       <Section>
         <Container>
           <CourseHeading
             label="Recognition"
             title="Certificate and top-student awards"
-            description="Both are planned course benefits. The complete terms are published before paid enrollment opens."
+            description="The certificate is a confirmed course benefit; the top-three award terms are published before paid enrollment opens."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div
@@ -342,7 +403,7 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 7 — Registration CTA area */}
+      {/* 8 — Registration CTA area */}
       <Section id="register" tone="surface">
         <Container>
           <CourseHeading
@@ -352,12 +413,60 @@ export default function CoursesPage() {
           />
           <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-14">
             <div data-reveal className="lg:col-span-6">
-              <div className="rounded-card border border-hairline bg-background p-7 md:p-8">
-                <DemoButton variant="primary" className="w-full sm:w-auto" />
-                <DemoStatus />
-                <p className="mt-6 border-t border-hairline pt-5 text-body-sm leading-relaxed text-secondary">
-                  {program.registration.noPayment}
-                </p>
+              <div className="space-y-6">
+                <div className="rounded-card border border-hairline bg-background p-7 md:p-8">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <span className="label inline-flex whitespace-nowrap rounded-full bg-accent px-2.5 py-1 text-[0.65rem] text-on-accent">
+                      {program.pricing.badge}
+                    </span>
+                    <span className="label inline-flex whitespace-nowrap rounded-full bg-accent-soft px-2.5 py-1 text-[0.65rem] text-accent-ink">
+                      {program.pricing.discount}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-heading text-[1.15rem] font-semibold">
+                    {program.pricing.title}
+                  </h3>
+                  <div className="mt-4 flex flex-wrap items-end gap-x-8 gap-y-3">
+                    <div>
+                      <p className="label text-label text-secondary">
+                        {program.pricing.earlyBirdLabel}
+                      </p>
+                      <p className="mt-1 font-heading text-headline font-semibold text-text">
+                        {program.pricing.earlyBird}
+                      </p>
+                    </div>
+                    <div className="pb-1.5">
+                      <p className="label text-label text-secondary">
+                        {program.pricing.standardLabel}
+                      </p>
+                      <p className="mt-1 text-[1.05rem] text-secondary">
+                        <s>{program.pricing.standard}</s>
+                      </p>
+                    </div>
+                    <span className="label pb-2.5 whitespace-nowrap rounded-full border border-accent-soft px-3 py-1 text-[0.7rem] text-accent-ink">
+                      {program.pricing.saving}
+                    </span>
+                  </div>
+                  <p className="mt-4 text-body-sm text-secondary">
+                    {program.pricing.oneline}
+                  </p>
+                  <div className="mt-5 border-t border-hairline pt-5">
+                    <p className="text-[0.975rem] leading-relaxed text-text">
+                      {program.pricing.eligibility}
+                    </p>
+                    <p className="mt-2 text-body-sm leading-relaxed text-secondary">
+                      {program.pricing.note}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-card border border-hairline bg-background p-7 md:p-8">
+                  <DemoButton variant="primary" className="w-full sm:w-auto" />
+                  <DemoStatus />
+                  <p className="mt-6 border-t border-hairline pt-5 text-body-sm leading-relaxed text-secondary">
+                    {program.registration.noPayment}
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -393,7 +502,7 @@ export default function CoursesPage() {
         </Container>
       </Section>
 
-      {/* 8 — Course FAQs */}
+      {/* 9 — Course FAQs */}
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
@@ -444,7 +553,7 @@ export default function CoursesPage() {
               <h2 className="text-title">Still deciding?</h2>
               <p className="mt-2 text-[0.975rem] leading-relaxed text-secondary">
                 The Help Center covers enrollment, the free demo classes and
-                everything that is still to be confirmed.
+                every confirmed course detail.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

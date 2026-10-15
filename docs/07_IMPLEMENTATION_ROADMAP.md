@@ -39,4 +39,11 @@ Connect GitHub to Vercel, configure domain when selected, verify HTTPS/routes/me
 **Acceptance:** live site and core journeys work; limitations are reported.
 
 ## Later, not V1 commitments
-Products, expanded service pages/case studies, more cohorts, publishing workflow, certificate verification, CMS/analytics or advanced integrations.
+Products, expanded service pages/case studies, more cohorts, publishing workflow, CMS/analytics or advanced integrations.
+
+## Future LMS phase (planned, not started)
+- Payment-confirmed seat tracking (replaces the manual paid-students spreadsheet; early-bird eligibility counted by confirmed payment, never by Google Form responses).
+- Student workflows: access to Google Meet joining details, recordings, notes, assignments, grades and certificate status.
+- Instructor workflows: roster/payment status, submission review, 100-point grading, announcements, materials distribution.
+- Certificate completion tracking and issuance with unique credential IDs plus online QR verification.
+Each item needs its own design/implementation task with owner approval — no LMS scope is implied by the public website.

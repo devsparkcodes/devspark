@@ -52,9 +52,6 @@ export function SiteFooter() {
               {siteConfig.tagline} — a technology company solving real-world
               problems, with education as one of its verticals.
             </p>
-            <p className="label mt-6 text-label text-muted">
-              Some details are marked as pending until they are confirmed
-            </p>
           </div>
 
           <nav aria-label="Footer" className="lg:col-span-3">

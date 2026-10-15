@@ -32,11 +32,12 @@ Not included: custom backend/database, login/student dashboard, payment gateway,
 - Colors/fonts can be changed centrally.
 
 ## TBD
-Domain; verified current services; meeting platform and subscription; midterm/final project submission deadlines; certificate criteria and online verification; top-three award terms; paid-enrollment/payment process; founder photo asset. Do not invent these details.
+Domain; verified current services; midterm/final project submission deadlines; certificate minimum passing criteria and online verification (certificate provision itself is confirmed — the digital issuance workflow belongs to the future LMS); top-three award terms; website-side paid-enrollment/payment processing; founder photo asset. Do not invent these details.
 
 ## Resolved (implemented in code)
 - Google Form (registration of interest + free-demo participation): `https://forms.gle/xpjhjQgRXKfnbJds9` (`config/site.ts` links).
-- Course facts published: 8 weeks · 24 live sessions, Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, fee PKR 4,000 one-time, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu, full 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
+- Course facts published: 8 weeks · 24 live sessions, Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu, full 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
+- Certificate: DevSpark Certificate of Completion confirmed for students who meet the course requirements; digital issuance/verification (IDs, QR) planned with the future LMS.
 - Logo assets: header `logos/Full logo/black-devspark.png`, footer/dark `logos/Full logo/white-devspark.png`, favicon `app/icon.svg` (rendered via `components/ui/logo.tsx`).
 - Brand accent: `#F58220` (semantic tokens in `app/globals.css`; see `design-system/devspark/MASTER.md`).
 - Contact email `devspark.codes@gmail.com`; social LinkedIn/Instagram/GitHub `devsparkcodes` (`config/site.ts`). Facebook: not configured.

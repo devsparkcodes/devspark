@@ -57,11 +57,12 @@ export const program = {
     { term: "Duration", value: "8 weeks · 24 live sessions" },
     { term: "Schedule", value: "Monday, Wednesday and Friday" },
     { term: "Class time", value: "7:30 PM – 9:30 PM (Pakistan Standard Time, UTC+5)" },
-    { term: "Format", value: "Live online (meeting platform to be confirmed)" },
+    { term: "Format", value: "Live online — Google Meet" },
     { term: "Teaching language", value: "Urdu" },
     {
       term: "Fee",
-      value: "PKR 4,000 one-time payment for the complete 8-week course",
+      value:
+        "PKR 4,000 one-time payment for the complete 8-week course — introductory early-bird fee PKR 3,000 for the first 20 confirmed paid enrollments",
     },
     {
       term: "Free demo classes",
@@ -90,6 +91,52 @@ export const program = {
       "Basic computer and internet usage skills recommended.",
       "Access to a computer or laptop and stable internet recommended for hands-on project work.",
     ],
+  },
+  professions: {
+    label: "Who it is for",
+    title: "AI Skills for Every Profession",
+    description:
+      "Whether you're a student, working professional, business owner, educator, creator, or someone exploring a new skill, Generative AI can help you work smarter, solve problems, and turn ideas into practical solutions.",
+    groups: [
+      {
+        title: "Students and fresh learners",
+        body: "Research topics, understand study material, build presentations and move projects forward — while learning how to check what AI produces before trusting it.",
+      },
+      {
+        title: "Working professionals",
+        body: "Draft reports and communication, summarise long documents, cut through repetitive tasks and give everyday productivity a practical boost.",
+      },
+      {
+        title: "Business owners and entrepreneurs",
+        body: "Shape marketing ideas, streamline business workflows, improve customer communication and find real operational efficiency in day-to-day work.",
+      },
+      {
+        title: "Teachers and educators",
+        body: "Plan lessons, prepare educational resources and create stronger learning support for students — with verification habits built in from day one.",
+      },
+      {
+        title: "Freelancers and content creators",
+        body: "Plan content, shape creative workflows, prepare client deliverables and prototype ideas faster without giving up your own judgement.",
+      },
+      {
+        title: "Aspiring developers and technical learners",
+        body: "Use AI-assisted coding, debugging and documentation to start building practical applications — no prior programming experience required.",
+      },
+    ],
+    whyTitle: "Why learn Generative AI?",
+    whyDescription:
+      "Practical, beginner-level value you can apply from the first week — in study, at work and in your own projects.",
+    whyPoints: [
+      "Understand how modern AI tools work and where they genuinely help.",
+      "Improve day-to-day productivity with practical AI workflows.",
+      "Write better prompts and evaluate outputs instead of trusting them blindly.",
+      "Build useful digital solutions, documents, prototypes and projects.",
+      "Automate selected repetitive workflows you already do by hand.",
+      "Become more adaptable as technology keeps evolving.",
+      "Learn to use AI responsibly and verify outputs before acting on them.",
+      "Grow toward a clear learning pathway toward Level 02.",
+    ],
+    note: "This is Level 01 beginner training: it builds practical, verifiable skills and a completed project — not guaranteed employment, income or business results, and not advanced AI-engineer status after eight weeks.",
   },
   outcomes: [
     "Understand essential Generative AI and LLM concepts.",
@@ -248,7 +295,7 @@ export const program = {
       "No requirement to manually write programming code.",
     ],
     delivery:
-      "Classes are live online. The exact meeting platform and subscription have not been finalized yet, and details are confirmed with enrolled students before the cohort starts.",
+      "Classes are live online through Google Meet. Joining details will be shared with registered and confirmed students before their sessions.",
   },
   materials: {
     title: "Learning materials",
@@ -280,8 +327,8 @@ export const program = {
   },
   certificate: {
     title: "Certificate of completion",
-    status: "Planned — not issued yet",
-    body: "DevSpark plans to issue a course-completion certificate to eligible students. Verification with unique credential IDs and QR codes is planned for this website later — certificates cannot be verified online today.",
+    status: "Confirmed",
+    body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion. The digital issuance and verification workflow — unique credential IDs and QR codes — is being developed with the upcoming LMS, so certificates cannot be verified online at launch.",
     requirements: [
       "Complete and submit all six assignments.",
       "Complete and submit the midterm project.",
@@ -301,6 +348,20 @@ export const program = {
       "Qualify among the top three students under the verified 100-point assessment system.",
     ],
     note: "Tie-breaking, attendance exceptions, score review and refund terms will be published before paid enrollment opens. Students' photos or personal profiles are never published without explicit consent.",
+  },
+  pricing: {
+    badge: "Introductory offer",
+    title: "Early-bird pricing",
+    discount: "25% OFF",
+    standardLabel: "Standard fee",
+    standard: "PKR 4,000",
+    earlyBirdLabel: "Early-bird fee",
+    earlyBird: "PKR 3,000",
+    saving: "You save PKR 1,000",
+    oneline: "One-time payment for the complete eight-week course.",
+    eligibility:
+      "Early-bird pricing applies to the first 20 confirmed paid enrollments for Cohort 01.",
+    note: "Submitting the interest form does not reserve a seat or confirm payment. Payment and seat-confirmation instructions will be shared separately.",
   },
   registration: {
     label: "Registration",
@@ -329,7 +390,7 @@ export const program = {
     {
       step: "04",
       title: "Join Cohort 01",
-      body: "Confirmation, meeting platform and class details are shared with enrolled students before the cohort starts.",
+      body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before the cohort starts.",
     },
   ],
   faqs: [
@@ -346,7 +407,7 @@ export const program = {
     {
       question: "How much does the course cost?",
       answer:
-        "The full course fee is PKR 4,000 — a one-time payment for the complete 8-week course. It is not a monthly fee.",
+        "The standard course fee is PKR 4,000 — a one-time payment for the complete 8-week course, not a monthly fee. Cohort 01 also has an introductory early-bird fee of PKR 3,000 (25% off, PKR 1,000 saving) for the first 20 confirmed paid enrollments. The Google Form does not reserve the offer or confirm payment — payment and seat-confirmation instructions are shared separately.",
     },
     {
       question: "Are the first classes free?",
@@ -361,7 +422,7 @@ export const program = {
     {
       question: "How do I register or enroll?",
       answer:
-        "Registration runs through a Google Form — use the Register button on this page to open it. Submitting the form registers your interest and free-demo participation; it does not confirm paid enrollment, and the website does not collect payments.",
+        "Registration runs through a Google Form — use the Register button on this page to open it. Submitting the form registers your interest and free-demo participation; it does not confirm paid enrollment, and the website does not collect payments. Submitting the form does not reserve the early-bird offer — payment and seat-confirmation instructions are shared separately.",
     },
     {
       question: "Do I need to write code myself?",
@@ -371,12 +432,12 @@ export const program = {
     {
       question: "Is there a certificate?",
       answer:
-        "A course-completion certificate is planned for students who complete all six assignments, the midterm project and the final project. Certificate verification with unique IDs and QR codes is planned for this website later — it is not operational yet.",
+        "Yes. Students who successfully complete the course requirements — all six assignments, the midterm project and the final project — will receive a DevSpark Certificate of Completion. The digital verification workflow with unique IDs and QR codes is being developed with the upcoming LMS and is not available at launch.",
     },
     {
       question: "What platform will the classes use?",
       answer:
-        "Classes are live online. The exact meeting platform and subscription have not been finalized yet — enrolled students receive the details before the cohort starts.",
+        "Classes are live online through Google Meet. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
     },
   ],
 };
@@ -575,7 +636,7 @@ export const helpCenter = {
           slug: "understanding-site-status",
           title: "Understand the “to be confirmed” markers",
           summary:
-            "Some details on this site are deliberately marked as pending. Here is what those markers mean and where they appear.",
+            "A few details on this site are deliberately marked as pending or under development. Here is what those markers mean and where they appear.",
           keywords: [
             "pending",
             "confirmed",
@@ -587,15 +648,15 @@ export const helpCenter = {
           sections: [
             {
               heading: "Why details are marked",
-              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the meeting platform — is clearly marked as to be confirmed or pending instead of being invented.",
+              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the top-three award terms — is clearly marked as pending instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
             },
             {
               heading: "Where markers appear",
-              body: "You will see a pending item on the courses page (the meeting platform and subscription). When a detail becomes real, the marker is replaced with the actual information. The course dates, schedule, fee, free demo dates, curriculum, the assignment deadline, the Google Form registration link and the contact form are already published.",
+              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the standard fee and the Cohort 01 early-bird offer, the free demo dates, curriculum, the assignment deadline, the Google Form registration link and the contact form. Marked as pending or in development: top-three award terms, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
             },
             {
               heading: "What this means for you",
-              body: "You can rely on everything that is unmarked: it reflects the current state of the business. Treat a pending item as a promise to publish — not as a date, a price or a commitment.",
+              body: "You can rely on everything that is unmarked: it reflects the current state of the business. Treat a pending marker as a promise to publish — not as a date, a price or a commitment.",
             },
           ],
         },
@@ -818,7 +879,7 @@ export const helpCenter = {
             },
             {
               heading: "After the form",
-              body: "Confirmation, meeting platform and class details are shared with enrolled students before the cohort starts. The website does not collect payments, create student accounts or issue student IDs.",
+              body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before the cohort starts. Paid enrollment — including early-bird eligibility and payment instructions — is confirmed separately; the website does not collect payments, create student accounts or issue student IDs.",
             },
           ],
         },
@@ -839,7 +900,7 @@ export const helpCenter = {
           slug: "dates-price-syllabus",
           title: "Course dates, fee and curriculum",
           summary:
-            "Start date, schedule, fee and the eight-week curriculum are now published — only one item remains to be confirmed.",
+            "Start date, schedule, teaching platform, fee and the eight-week curriculum are now published on the courses page.",
           keywords: [
             "dates",
             "price",
@@ -851,15 +912,18 @@ export const helpCenter = {
             "duration",
             "when",
             "november",
+            "early",
+            "bird",
+            "discount",
           ],
           sections: [
             {
               heading: "What is confirmed",
-              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The full fee is PKR 4,000, a one-time payment for the complete course. The complete eight-week curriculum and the 100-point assessment system are published on the courses page.",
+              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Google Meet, Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The standard fee is PKR 4,000, a one-time payment for the complete course, with an introductory early-bird fee of PKR 3,000 for the first 20 confirmed paid enrollments. The complete eight-week curriculum and the 100-point assessment system are published on the courses page.",
             },
             {
-              heading: "What is still to be confirmed",
-              body: "One item remains marked as pending: the meeting platform and subscription. It appears on the courses page when it is decided — nothing is available through other channels in the meantime.",
+              heading: "What is shared separately",
+              body: "Google Meet joining details go directly to registered and confirmed students before their sessions — no public meeting link exists yet. Early-bird eligibility is confirmed with payment: submitting the interest form does not reserve a seat or the discount, and payment and seat-confirmation instructions are shared separately.",
             },
           ],
         },
@@ -867,7 +931,7 @@ export const helpCenter = {
           slug: "curriculum-and-assessment",
           title: "Curriculum, assessment and certificate",
           summary:
-            "Eight weeks of beginner-friendly topics, a 100-point assessment system, and a planned certificate for eligible students.",
+            "Eight weeks of beginner-friendly topics, a 100-point assessment system, and a confirmed certificate of completion for eligible students.",
           keywords: [
             "curriculum",
             "syllabus",
@@ -892,7 +956,7 @@ export const helpCenter = {
             },
             {
               heading: "Certificate and top-student awards",
-              body: "A course-completion certificate is planned for students who complete all six assignments, the midterm project and the final project. Verification with unique credential IDs and QR codes is planned for this website later — it is not operational yet. A planned top-three recognition program offers a full PKR 4,000 fee refund, plus LinkedIn recognition with the student's permission; its complete terms will be published before paid enrollment opens.",
+              body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion; the digital verification workflow (unique credential IDs and QR codes) is being developed with the upcoming LMS. A planned top-three recognition program offers a full PKR 4,000 fee refund, plus LinkedIn recognition with the student's permission; its complete terms will be published before paid enrollment opens.",
             },
           ],
         },
