@@ -27,7 +27,7 @@ Recommended order: Home, Solutions, Courses, About, FAQ, Contact, Guides (only w
 **Acceptance:** pages are consistent, CTAs work, no Products section, placeholders are not mistaken for facts.
 
 ## Phase 4 — Integrations and motion
-Connect supplied Google Form, configure contact handling after approval, add verified email/social links, add purposeful animation/3D with fallbacks.
+Google Form connected (`https://forms.gle/xpjhjQgRXKfnbJds9` — registration CTAs open it); configure contact handling after approval, add verified email/social links, add purposeful animation/3D with fallbacks.
 **Acceptance:** enrollment opens the real form; contact submissions are genuinely delivered or the form is not presented as operational.
 
 ## Phase 5 — QA

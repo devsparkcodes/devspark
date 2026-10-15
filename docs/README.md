@@ -2,7 +2,7 @@
 
 **Brand:** DevSpark  
 **Tagline:** Building AI Solutions  
-**Status:** Requirements baseline, pre-implementation.
+**Status:** V1 implemented (six routes + Help Center + contact API; Google Form registration connected). Remaining work is external setup (domain, Resend credentials) — see `docs/05` and the deployment checklist.
 
 ## Read in order
 1. `01_PROJECT_OVERVIEW.md`

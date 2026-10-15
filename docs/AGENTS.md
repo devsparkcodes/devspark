@@ -15,7 +15,7 @@ Read `README.md` and documents `01` through `08` before implementation. If docs 
 - Professional, modern, user-friendly.
 - Show Solutions and Courses; do not show a live Products section/product cards in V1.
 - No custom backend, database, login, payment gateway, student dashboard or LMS in V1.
-- Course enrollment uses a Google Form URL that is TBD until supplied.
+- Course enrollment uses the published Google Form URL centralized in `config/site.ts` (`https://forms.gle/xpjhjQgRXKfnbJds9`).
 - Colors/fonts are provisional and centrally configurable.
 - Founder photo may appear; no Founder page.
 - Premium visual quality and purposeful animation/possible 3D, without sacrificing performance/accessibility.

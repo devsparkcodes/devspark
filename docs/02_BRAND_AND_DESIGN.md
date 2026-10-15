@@ -9,20 +9,20 @@
 - Founder photo may appear, but no dedicated Founder page.
 - Design choices must remain easy to change.
 
-## Provisional palette — not final
-- Black `#111111`
-- Orange `#FF6500`
-- White `#FFFFFF`
-- Off-white `#F7F6F2`
+## Palette (implemented as semantic tokens in `app/globals.css`)
+- Black / primary `#111111`
+- **Brand accent (orange) `#F58220`** — the confirmed accent; used for rules, dots, icon chips and focus on dark. Always paired with dark text (`#111111`) on orange — white on orange fails contrast and is never used.
+- On-primary / off-white `#F7F6F2`
+- Background `#F7F6F2`; surface `#FFFFFF`
 - Main text `#171717`
 - Secondary text `#666666`
 - Muted text `#737373`
-- Border `#E5E5E5`
+- Border `#E5E5E5`; hairline `#ddd9d0`
 
-Keep colors in semantic design tokens such as `--color-primary`, `--color-accent`, `--color-background`, `--color-surface`, `--color-text`, `--color-muted`, `--color-border`, and `--color-focus`. Do not scatter hard-coded color values across components. Exact values may change after visual review.
+Colors are defined once as semantic design tokens (`--color-primary`, `--color-accent`, `--color-background`, `--color-surface`, `--color-text`, `--color-secondary`, `--color-muted`, `--color-border`, `--color-hairline`, `--color-focus`, etc.) in `app/globals.css`. Do not scatter hard-coded color values across components. The dark band (contact + footer) retunes text/secondary/muted/border/focus for the dark subtree.
 
-## Typography
-Manrope for headings and Inter for body/UI are only starting suggestions. Final fonts are TBD. Keep font configuration centralized; preserve the logo’s own typography.
+## Typography (implemented)
+Headings use **Manrope** and body/UI uses **Inter**, loaded self-hosted via `next/font` (`display: swap`). The scale is defined as tokens in `@theme` (`--text-display`, `--text-headline`, `--text-title`, `--text-lead`, `--text-label`, `--text-body-sm`). Keep font configuration centralized; preserve the logo’s own typography.
 
 ## Visual direction
 Premium, polished technology-company website: clear hierarchy, generous spacing, strong hero, purposeful orange accents, quality cards, consistent icons, refined motion and responsive layouts.

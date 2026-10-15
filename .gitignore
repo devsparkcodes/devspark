@@ -1,0 +1,50 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# env files
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel
+
+# editor
+.idea/
+.vscode/
+
+# local tooling caches (opencode)
+# NOTE: .opencode/skills/ holds useful project skills/instructions and is
+# intentionally NOT ignored. Its own .gitignore already excludes its
+# node_modules + package files; this is an extra root-level safety net.
+.opencode/node_modules/
+__pycache__/
+*.pyc
+
+# QA / debug outputs (temporary; not part of the app)
+repro.err
+repro.out
+L-*.png
+.eslintcache
