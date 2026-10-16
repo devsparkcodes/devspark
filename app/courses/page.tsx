@@ -339,6 +339,15 @@ export default function CoursesPage() {
             <p className="mt-2 text-body-sm text-secondary">
               {program.assessment.deadline}
             </p>
+            <p className="mt-2 text-body-sm text-secondary">
+              {program.assessment.late}
+            </p>
+            <p className="mt-2 text-body-sm text-secondary">
+              {program.assessment.projectsDeadline}
+            </p>
+            <p className="mt-2 text-body-sm text-secondary">
+              {program.assessment.review}
+            </p>
           </div>
         </Container>
       </Section>
@@ -349,7 +358,7 @@ export default function CoursesPage() {
           <CourseHeading
             label="Recognition"
             title="Certificate and top-student awards"
-            description="The certificate is a confirmed course benefit; the top-three award terms are published before paid enrollment opens."
+            description="The certificate criteria and the top-three award terms are confirmed and published below."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div
@@ -371,6 +380,9 @@ export default function CoursesPage() {
                 Eligibility requirements
               </p>
               <CheckList items={program.certificate.requirements} />
+              <p className="mt-5 border-t border-hairline pt-4 text-body-sm leading-relaxed text-secondary">
+                {program.certificate.note}
+              </p>
             </div>
             <div
               data-reveal
@@ -386,18 +398,23 @@ export default function CoursesPage() {
                 </span>
               </div>
               <p className="mt-3 text-[0.975rem] leading-relaxed text-secondary">
-                {program.awards.pending}
+                {program.awards.body}
               </p>
               <p className="mt-3 text-[0.975rem] leading-relaxed text-secondary">
-                {program.awards.body}
+                {program.awards.ranking}
               </p>
               <p className="label mt-5 text-label text-secondary">
                 Eligibility requirements
               </p>
               <CheckList items={program.awards.requirements} />
-              <p className="mt-5 border-t border-hairline pt-4 text-body-sm leading-relaxed text-secondary">
-                {program.awards.note}
-              </p>
+              <div className="mt-5 border-t border-hairline pt-4">
+                <p className="text-body-sm leading-relaxed text-secondary">
+                  {program.awards.rankingNote}
+                </p>
+                <p className="mt-3 text-body-sm leading-relaxed text-secondary">
+                  {program.awards.note}
+                </p>
+              </div>
             </div>
           </div>
         </Container>

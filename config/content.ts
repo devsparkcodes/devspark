@@ -51,14 +51,17 @@ export const program = {
   title: "Generative AI Engineering",
   subtitle: "Level 01 · Cohort 01",
   description:
-    "A beginner-friendly, project-oriented course in practical Generative AI — taught in Urdu. 8 weeks, 24 live online sessions, starting Monday, November 30, 2026, and the first two sessions are free to attend.",
+    "A beginner-friendly, project-oriented course in practical Generative AI — taught in Urdu with English technical terminology. 8 weeks, 24 live online sessions, starting Monday, November 30, 2026, and the first two sessions are free to attend.",
   facts: [
     { term: "Starts", value: "Monday, November 30, 2026" },
     { term: "Duration", value: "8 weeks · 24 live sessions" },
     { term: "Schedule", value: "Monday, Wednesday and Friday" },
     { term: "Class time", value: "7:30 PM – 9:30 PM (Pakistan Standard Time, UTC+5)" },
     { term: "Format", value: "Live online — Google Meet" },
-    { term: "Teaching language", value: "Urdu" },
+    {
+      term: "Teaching language",
+      value: "Urdu, with English technical terminology",
+    },
     {
       term: "Fee",
       value:
@@ -68,6 +71,18 @@ export const program = {
       term: "Free demo classes",
       value:
         "The first two sessions — Monday, November 30, 2026 and Wednesday, December 2, 2026",
+    },
+    {
+      term: "First paid class",
+      value: "Friday, December 4, 2026, 7:30 PM PKT — after the two free demos",
+    },
+    {
+      term: "Session breakdown",
+      value: "2 free demo sessions + 22 paid-course sessions = 24 live sessions",
+    },
+    {
+      term: "Final scheduled session",
+      value: "Friday, January 22, 2027, if the schedule runs uninterrupted",
     },
     { term: "Level & cohort", value: "Level 01 · Cohort 01" },
     {
@@ -324,30 +339,41 @@ export const program = {
       "Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7.",
     deadline:
       "Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT).",
+    late:
+      "No deadline extensions: a weekly assignment submitted after that deadline receives zero marks for that assignment.",
+    projectsDeadline:
+      "The midterm and final project submission deadlines are announced in advance through the official course schedule; the weekly no-extension rule does not apply to them.",
+    review:
+      "Score review: request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated; DevSpark communicates the review decision within 5 calendar days of a valid request.",
   },
   certificate: {
     title: "Certificate of completion",
     status: "Confirmed",
     body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion. The digital issuance and verification workflow — unique credential IDs and QR codes — is being developed with the upcoming LMS, so certificates cannot be verified online at launch.",
     requirements: [
+      "Attend at least 20 of the 24 live sessions — the two free demos included — 80% attendance.",
+      "Score at least 60 out of 100 on the 100-point assessment.",
       "Complete and submit all six assignments.",
       "Complete and submit the midterm project.",
       "Complete and submit the final project.",
-      "Meet submission validity and completion requirements.",
     ],
+    note: "Both minimums are required together: at least 80% attendance (counting both free demos in the 24 sessions) and at least 60 out of 100. Attendance problems are considered case by case, but a certificate is never guaranteed.",
   },
   awards: {
     title: "Top three student awards",
-    status: "Terms Pending",
-    pending: "Full terms will be published before paid enrollment opens.",
-    body: "DevSpark plans to recognize the top three eligible students: each winner receives a full refund of the PKR 4,000 course fee, plus recognition on DevSpark's LinkedIn profile — only with the student's explicit permission.",
+    status: "Confirmed",
+    body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — settled by verified bank transfer within 7 calendar days after the final verified winners are announced, plus recognition on DevSpark's LinkedIn profile only with the student's explicit permission.",
     requirements: [
-      "Attend all required live classes.",
-      "Complete and submit all six assignments.",
-      "Complete and submit both projects.",
-      "Qualify among the top three students under the verified 100-point assessment system.",
+      "Attend all 24 live sessions — both free demos and all 22 paid sessions (100% attendance).",
+      "Complete and submit all six assignments, the midterm project and the final project.",
+      "Score at least 60 out of 100 — the certificate's minimum score.",
+      "Place among the top three students under the 100-point assessment system.",
     ],
-    note: "Tie-breaking, attendance exceptions, score review and refund terms will be published before paid enrollment opens. Students' photos or personal profiles are never published without explicit consent.",
+    ranking:
+      "Ranking uses the overall score out of 100. Ties are resolved by the higher final-project score, then the higher midterm score, then the higher combined assignment score. If all remain equal the students share a joint rank under standard competition ranking (for example 1, 1, 3), and every eligible student occupying competition rank 1, 2 or 3 receives the award — which can mean more than three recipients.",
+    rankingNote:
+      "Winners are announced only after the score-review window has closed and all valid review requests have been resolved; the seven-day refund countdown begins at that final verified winners announcement.",
+    note: "A student who enrolls after the free demos can still complete the course, but cannot meet the 24/24 attendance these awards require. Students' photos or personal profiles are never published without explicit consent.",
   },
   pricing: {
     badge: "Introductory offer",
@@ -361,13 +387,13 @@ export const program = {
     oneline: "One-time payment for the complete eight-week course.",
     eligibility:
       "Early-bird pricing applies to the first 20 confirmed paid enrollments for Cohort 01.",
-    note: "Submitting the interest form does not reserve a seat or confirm payment. Payment and seat-confirmation instructions will be shared separately.",
+    note: "Submitting the interest form does not reserve a seat or confirm payment. Payment and seat-confirmation instructions will be shared separately — paid enrollment and each early-bird place are confirmed only after DevSpark verifies the payment was actually received; a payment screenshot alone is not proof.",
   },
   registration: {
     label: "Registration",
     title: "Registration is open",
     description:
-      "Register for our first two free demo classes and express your interest in the full course through one simple form. No payment required.",
+      "Register for our first two free demo classes and express your interest in the full course through one simple form. No payment required. Paid enrollment is available both before and after the demos.",
     noPayment:
       "Submitting the form registers your interest and free-demo participation — it does not confirm paid enrollment.",
   },
@@ -379,18 +405,18 @@ export const program = {
     },
     {
       step: "02",
-      title: "Attend the two free classes",
-      body: "The first two sessions — Monday, November 30 and Wednesday, December 2, 2026 — are free, so learners can experience the teaching before deciding.",
+      title: "Attend the two free demo classes",
+      body: "The first two sessions — Monday, November 30 and Wednesday, December 2, 2026 — are free for everyone who registers, so you can experience the teaching live.",
     },
     {
       step: "03",
-      title: "Decide whether to continue",
-      body: "If the course is right for you, continue with the enrollment steps shared with you at that point.",
+      title: "Enroll before or after the demos",
+      body: "Paid enrollment is available both before and after the free demos. If you pay before the demos, your enrollment is confirmed once DevSpark verifies the payment; many learners also attend the demos first and then decide. Payment and seat-confirmation instructions are shared separately after you register.",
     },
     {
       step: "04",
       title: "Join Cohort 01",
-      body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before the cohort starts.",
+      body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before their classes begin.",
     },
   ],
   faqs: [
@@ -402,7 +428,7 @@ export const program = {
     {
       question: "When does the course start, and how long does it run?",
       answer:
-        "Cohort 01 starts on Monday, November 30, 2026 and runs for 8 weeks: 24 live online sessions on Monday, Wednesday and Friday, from 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5).",
+        "Cohort 01 starts on Monday, November 30, 2026 and runs for 8 weeks: 24 live online sessions on Monday, Wednesday and Friday, from 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the first paid instructional class is Friday, December 4, 2026, and the final scheduled session is Friday, January 22, 2027 if the schedule runs uninterrupted.",
     },
     {
       question: "How much does the course cost?",
@@ -417,7 +443,7 @@ export const program = {
     {
       question: "Will the course be taught in Urdu or English?",
       answer:
-        "The course is taught in Urdu. If you would like to experience the class before deciding whether to continue, the first two sessions are free.",
+        "The course is taught in Urdu, with English technical terminology. If you would like to experience the class before deciding whether to continue, the first two sessions are free.",
     },
     {
       question: "How do I register or enroll?",
@@ -432,12 +458,27 @@ export const program = {
     {
       question: "Is there a certificate?",
       answer:
-        "Yes. Students who successfully complete the course requirements — all six assignments, the midterm project and the final project — will receive a DevSpark Certificate of Completion. The digital verification workflow with unique IDs and QR codes is being developed with the upcoming LMS and is not available at launch.",
+        "Yes. A DevSpark Certificate of Completion requires both at least 20 of the 24 live sessions attended (80% attendance, counting the two free demos) and an overall score of at least 60 out of 100, with all six assignments, the midterm and the final project submitted. The digital verification workflow with unique IDs and QR codes is being developed with the upcoming LMS and is not available at launch.",
+    },
+    {
+      question: "What happens if I submit an assignment late?",
+      answer:
+        "There are no deadline extensions. Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT), and a weekly assignment submitted after that deadline receives zero marks for that assignment. That rule applies to the six weekly assignments only; the midterm and final project deadlines are announced in advance through the official course schedule.",
+    },
+    {
+      question: "Can I enroll before or after the free demo classes?",
+      answer:
+        "Yes — paid enrollment is allowed both before and after the two free demo classes. You can pay and confirm enrollment before the demos (confirmed after DevSpark verifies the payment), or attend the free demos on November 30 and December 2 and then decide. One caveat: the Top Three Student Awards require attending all 24 sessions, including both free demos, so a student who enrolls after the demos cannot qualify for those awards.",
     },
     {
       question: "What platform will the classes use?",
       answer:
         "Classes are live online through Google Meet. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
+    },
+    {
+      question: "Can I cancel and get a refund?",
+      answer:
+        "Cancel by emailing devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid class — and you receive a full refund of the fee you actually paid; the request counts from when it is received in that inbox, in Pakistan Standard Time. After that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. Approved refunds are processed within 14 calendar days of approval. If DevSpark cancels the course, paid students receive a full refund of the fee actually paid within 14 calendar days of the cancellation notice, and replacement of the lead instructor lets an affected paid student request a 100% refund. Full terms are in the Help Center.",
     },
   ],
 };
@@ -648,11 +689,11 @@ export const helpCenter = {
           sections: [
             {
               heading: "Why details are marked",
-              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the top-three award terms — is clearly marked as pending instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
+              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the midterm and final project deadlines or the request window for instructor-replacement refunds — is clearly marked as pending instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
             },
             {
               heading: "Where markers appear",
-              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the standard fee and the Cohort 01 early-bird offer, the free demo dates, curriculum, the assignment deadline, the Google Form registration link and the contact form. Marked as pending or in development: top-three award terms, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
+              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the first paid class date (December 4, 2026), the standard fee and the Cohort 01 early-bird offer, the free demo dates, the 2 free + 22 paid session breakdown, curriculum, the assignment deadline and the late-submission rule, the 100-point assessment, the certificate criteria (80% attendance counting both demos, and 60/100), the top-three award terms including competition ranking, the 3-day score-review window and 5-day review decision, the cancellation and refund terms (student cancellation, course cancellation and lead-instructor replacement), the Google Form registration link and the contact form. Marked as pending or in development: the midterm and final project deadlines, approval turnaround times for reviews and refund requests, the request window for instructor-replacement refunds, the attendance-tracking method, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
             },
             {
               heading: "What this means for you",
@@ -875,11 +916,23 @@ export const helpCenter = {
             },
             {
               heading: "Before you enroll",
-              body: "The first two sessions are free — Monday, November 30, 2026 and Wednesday, December 2, 2026 — so learners can experience the teaching before deciding whether to continue.",
+              body: "The first two sessions are free — Monday, November 30, 2026 and Wednesday, December 2, 2026 — so learners can experience the teaching live. Paid enrollment is available both before and after these demos: pay early to confirm your seat before the course starts, or attend the demos first and then decide. A student who enrolls after the demos cannot meet the Top Three Awards' strict 24/24 attendance requirement.",
             },
             {
               heading: "After the form",
-              body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before the cohort starts. Paid enrollment — including early-bird eligibility and payment instructions — is confirmed separately; the website does not collect payments, create student accounts or issue student IDs.",
+              body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before their classes begin. Paid enrollment — including early-bird eligibility and payment instructions — is confirmed separately and only after DevSpark verifies that the payment was actually received; a payment screenshot alone is not proof. The website does not collect payments, create student accounts or issue student IDs.",
+            },
+            {
+              heading: "Cancellations and refunds",
+              body: "Student cancellation: email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid class — for a full refund of the fee actually paid. The effective time is when the request is received in that inbox, evaluated in Pakistan Standard Time; the request should identify the student and enrollment. The contact form, WhatsApp and the Google Form are not authorized cancellation channels, and no banking details should be sent through public forms. At or after that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. A valid approved refund is processed within 14 calendar days of approval; the approval turnaround itself is not yet specified.",
+            },
+            {
+              heading: "If DevSpark cancels the course",
+              body: "Every affected paid student receives a full refund of the fee actually paid within 14 calendar days of the official course cancellation notice. This is separate from the seven-day Top Three Award refund timeline.",
+            },
+            {
+              heading: "If the lead instructor is replaced",
+              body: "Replacement of the lead instructor is the defined significant course change for refunds: an affected paid student may request a 100% refund of the fee actually paid through devspark.codes@gmail.com, and a valid approved request is refunded within 14 calendar days of approval. The request window and approval turnaround are not yet specified. Ordinary schedule adjustments, tool changes and routine curriculum updates do not create this refund right, and nothing here limits any rights required by applicable law.",
             },
           ],
         },
@@ -919,11 +972,11 @@ export const helpCenter = {
           sections: [
             {
               heading: "What is confirmed",
-              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Google Meet, Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The standard fee is PKR 4,000, a one-time payment for the complete course, with an introductory early-bird fee of PKR 3,000 for the first 20 confirmed paid enrollments. The complete eight-week curriculum and the 100-point assessment system are published on the courses page.",
+              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Google Meet, Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the remaining 22 sessions are the paid course, with the first paid instructional class on Friday, December 4, 2026. The standard fee is PKR 4,000, a one-time payment for the complete course, with an introductory early-bird fee of PKR 3,000 for the first 20 confirmed paid enrollments. The complete eight-week curriculum and the 100-point assessment system are published on the courses page.",
             },
             {
               heading: "What is shared separately",
-              body: "Google Meet joining details go directly to registered and confirmed students before their sessions — no public meeting link exists yet. Early-bird eligibility is confirmed with payment: submitting the interest form does not reserve a seat or the discount, and payment and seat-confirmation instructions are shared separately.",
+              body: "Google Meet joining details go directly to registered and confirmed students before their sessions — no public meeting link exists yet. Early-bird eligibility is confirmed with a verified payment, counted only from payments DevSpark has confirmed as received: submitting the interest form does not reserve a seat or the discount, and payment and seat-confirmation instructions are shared separately.",
             },
           ],
         },
@@ -952,11 +1005,19 @@ export const helpCenter = {
             },
             {
               heading: "100-point assessment system",
-              body: "Six weekly assignments worth 10 points each (60), a midterm project in Week 4 (15) and a final project in Week 8 (25) add up to 100 points. Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7; each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT).",
+              body: "Six weekly assignments worth 10 points each (60), a midterm project in Week 4 (15) and a final project in Week 8 (25) add up to 100 points. Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7; each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT). There are no deadline extensions: a weekly assignment submitted after that deadline receives zero marks for that assignment. The midterm and final project deadlines are announced in advance through the official course schedule and are not covered by the weekly-assignment late rule.",
             },
             {
-              heading: "Certificate and top-student awards",
-              body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion; the digital verification workflow (unique credential IDs and QR codes) is being developed with the upcoming LMS. A planned top-three recognition program offers a full PKR 4,000 fee refund, plus LinkedIn recognition with the student's permission; its complete terms will be published before paid enrollment opens.",
+              heading: "Score review",
+              body: "You can request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated, through the contact page or by emailing devspark.codes@gmail.com. DevSpark communicates the review decision within 5 calendar days of a valid request. Top-student winners are announced only after the review window has closed and all valid review requests are resolved.",
+            },
+            {
+              heading: "Certificate of completion",
+              body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion: at least 20 of the 24 live sessions attended (80% attendance, counting both free demos) and at least 60 out of 100 overall, with all six assignments, the midterm and the final project submitted. Attendance problems are considered case by case, but a certificate is never guaranteed. The digital verification workflow (unique credential IDs and QR codes) is being developed with the upcoming LMS.",
+            },
+            {
+              heading: "Top three student awards",
+              body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, and at least 60 out of 100 overall; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance.",
             },
           ],
         },
