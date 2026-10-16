@@ -296,21 +296,22 @@ export const program = {
   methodology: {
     title: "How classes are taught",
     points: [
+      "Presentation-based lessons using structured slides that cover topics, concepts, examples and key takeaways.",
+      "Visual explanations with Excalidraw diagrams and workflows when additional illustrations are helpful.",
+      "Live practical demonstrations with relevant AI tools, prompting techniques and AI-assisted project workflows.",
+      "Interactive questions and class discussions.",
       "Beginner-friendly explanations.",
-      "Live practical demonstrations.",
-      "Visual explanations and diagrams using digital whiteboards such as Excalidraw.",
       "AI-assisted project development.",
       "Project planning and documentation.",
-      "Practical exercises and problem-solving.",
       "Output verification and testing.",
-      "Questions and discussion.",
     ],
     notes: [
-      "No mandatory slide presentations.",
+      "Students do not need to create or give slide presentations.",
       "No requirement to manually write programming code.",
+      "Downloadable slide or PDF files are not provided.",
     ],
     delivery:
-      "Classes are live online through Google Meet. Joining details will be shared with registered and confirmed students before their sessions.",
+      "Classes are delivered live on Google Meet using structured presentations, practical demonstrations, and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions.",
   },
   materials: {
     title: "Learning materials",
@@ -471,9 +472,9 @@ export const program = {
         "Yes — paid enrollment is allowed both before and after the two free demo classes. You can pay and confirm enrollment before the demos (confirmed after DevSpark verifies the payment), or attend the free demos on November 30 and December 2 and then decide. One caveat: the Top Three Student Awards require attending all 24 sessions, including both free demos, so a student who enrolls after the demos cannot qualify for those awards.",
     },
     {
-      question: "What platform will the classes use?",
+      question: "How are classes taught?",
       answer:
-        "Classes are live online through Google Meet. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
+        "Classes are live online through Google Meet, delivered primarily with structured presentations, practical demonstrations and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
     },
     {
       question: "Can I cancel and get a refund?",
