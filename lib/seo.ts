@@ -73,7 +73,20 @@ export function pageMetadata({
       siteName: siteConfig.name,
       type: "website",
       locale: "en_US",
+      images: [
+        {
+          url: absoluteUrl("/opengraph-image") ?? "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
-    twitter: { card: "summary", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [absoluteUrl("/opengraph-image") ?? "/opengraph-image"],
+    },
   };
 }
