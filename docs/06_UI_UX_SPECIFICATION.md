@@ -24,7 +24,7 @@ Build a premium, memorable technology-company website that encourages exploratio
 User is open to 3D. Explore one primary interactive/3D concept before adding effects everywhere. Choose a library only after assessing need. Keep initial content usable while effects load; respect reduced-motion preferences; avoid layout shifts; provide mobile fallbacks; optimize assets.
 
 ## Tokens
-Centralize colors, typography, spacing, radii, shadows, container widths and motion values. Palette and fonts are provisional.
+Centralize colors, typography, spacing, radii, shadows, container widths and motion values — implemented as semantic tokens in `app/globals.css` (see `02_BRAND_AND_DESIGN.md` and `design-system/devspark/MASTER.md`). Palette and fonts remain centrally changeable.
 
 ## UI UX Pro Max skill
 Official repository: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill

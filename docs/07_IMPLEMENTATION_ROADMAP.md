@@ -1,5 +1,7 @@
 # Implementation Roadmap
 
+**Status:** Phases 0–6 are completed and the site is live in production (https://devsparkcodes.vercel.app). This document records the build history plus the explicitly deferred future work (products, LMS). Do not treat completed phases as pending tasks.
+
 ## Rules
 Work in small phases. Inspect docs/repository before acting. State intended files and assumptions. Run checks after changes. Do not commit/push without authorization. Unknowns remain TBD.
 
@@ -23,7 +25,7 @@ Set up Next.js, TypeScript, Tailwind, layout, navigation, footer, buttons, typog
 **Acceptance:** typecheck, lint and build pass; shared components are responsive.
 
 ## Phase 3 — Pages
-Recommended order: Home, Solutions, Courses, About, FAQ, Contact, Guides (only when real content is ready).
+Recommended order: Home, Solutions, Courses, About, FAQ, Contact, Guides (only when real content is ready). *(Historical note: the standalone FAQ page was later merged into the Help Center at `/guides`; the `/faq` route now permanently redirects there.)*
 **Acceptance:** pages are consistent, CTAs work, no Products section, placeholders are not mistaken for facts.
 
 ## Phase 4 — Integrations and motion
@@ -35,7 +37,7 @@ Run lint/typecheck/build; test routes, links, forms, keyboard access, responsive
 **Acceptance:** no known critical bugs; user reviews the Vercel preview.
 
 ## Phase 6 — Launch
-Connect GitHub to Vercel, configure domain when selected, verify HTTPS/routes/metadata/integrations, document redeployment.
+Connect GitHub to Vercel, configure domain when selected, verify HTTPS/routes/metadata/integrations, document redeployment. *(Completed: GitHub → Vercel auto-deploy from `main` is live; a custom domain is still TBD.)*
 **Acceptance:** live site and core journeys work; limitations are reported.
 
 ## Later, not V1 commitments

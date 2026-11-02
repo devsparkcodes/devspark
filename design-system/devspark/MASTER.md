@@ -1,6 +1,6 @@
 # DevSpark — Design System Master
 
-**Status:** V1 implemented — six routes (Home, Solutions, Courses, About, Help Center at `/guides`, Contact) + `POST /api/contact`, routed navigation with active states. `/faq` is a permanent `308` redirect to `/guides`. Remaining work is external setup (domain, Resend credentials, Google Form URL).
+**Status:** V1 implemented and live — six routes (Home, Solutions, Courses, About, Help Center at `/guides`, Contact) + `POST /api/contact`, routed navigation with active states. `/faq` is a permanent `308` redirect to `/guides`. Remaining work is external setup: Resend credentials for real contact-form delivery and a possible custom domain (the Google Form URL is already connected in `config/site.ts`).
 **Generated with:** UI UX Pro Max skill (`--design-system --persist`), then corrected against `docs/02_BRAND_AND_DESIGN.md`.
 **Rule:** the project documentation remains the source of truth. Where this file and the docs disagree, the docs win and this file must be updated.
 

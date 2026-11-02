@@ -20,8 +20,9 @@ Installed versions (record in `package.json`): Next.js 16.4, React 19.3, Tailwin
 Actual structure:
 ```text
 app/
-  layout.tsx
+  layout.tsx            # root layout: fonts, metadata template, reveal boot
   page.tsx              # Home
+  globals.css           # semantic design tokens + base/reveal styles
   solutions/
   courses/
   about/
@@ -29,21 +30,26 @@ app/
   contact/
   api/contact/          # POST /api/contact route handler
   not-found.tsx         # branded 404
+  sitemap.ts            # generated sitemap (needs NEXT_PUBLIC_SITE_URL)
+  robots.ts             # generated robots.txt
   icon.svg              # favicon
 components/
-  layout/
-  sections/
-  ui/
+  layout/               # site header + footer
+  sections/             # page sections (hero, program, curriculum-grid, …)
+  ui/                   # shared primitives (button, disclosure, page-hero, …)
+  motion-reveal.tsx     # scroll-reveal controller (per-navigation effect)
 config/
-  site.ts
-  navigation.ts
-  content.ts
+  site.ts               # brand, contact links, Google Form URLs
+  navigation.ts         # primary navigation entries
+  content.ts            # all site copy, course facts, curriculum, FAQs
 lib/
   email.ts              # Resend payload + HTML/text email builder
+  seo.ts                # metadata helpers, canonical/OG URLs, siteUrl
+  utils.ts              # cn() class merger, reveal-delay helper
 logos/                  # official brand assets (kept byte-for-byte)
-public/
-design-system/
-docs/
+public/                 # static assets
+design-system/          # design-system reference (devspark/MASTER.md)
+docs/                   # project documentation
 ```
 (`/faq` is not a route; it is a permanent `308` redirect to `/guides` configured in `next.config.ts`.)
 
@@ -58,7 +64,10 @@ Response contract: `400` validation · `409` duplicate · `429` rate-limited · 
 Registration URL published: `https://forms.gle/xpjhjQgRXKfnbJds9`. Centralized in `config/site.ts` (`links.enrollmentFormUrl` and `links.demoFormUrl`, both set to the same form); enrollment controls render live links and the pending notes hide automatically, so no broken link can be published. The form itself covers registration of interest and free-demo participation — it does not confirm paid enrollment.
 
 ## Quality gates
-TypeScript checks, lint and production build pass; routes/CTAs work; no broken assets or console errors; mobile/tablet/desktop checked; keyboard/focus/contrast/reduced motion reviewed; performance and metadata checked; images/fonts/3D optimized.
+TypeScript checks, lint and production build pass; routes/CTAs work; no broken assets or console errors; mobile/tablet/desktop checked; keyboard/focus/contrast/reduced motion reviewed; performance and metadata checked; images/fonts/3D optimized. Standard pre-commit gate: `npm run typecheck && npm run lint && npm run build`.
+
+## Security headers
+`next.config.ts` applies a Content-Security-Policy and baseline headers to every route: `default-src 'self'`, self-hosted fonts/scripts/styles, `object-src 'none'`, `frame-ancestors 'none'` + `X-Frame-Options: DENY`, `nosniff`, strict-origin referrer policy and a restrictive permissions policy (camera, microphone, geolocation, payment disabled). `poweredByHeader` is off. HSTS is deliberately not set until the production domain and HTTPS deployment are confirmed (an unverified host must not pin browsers to HTTPS). `'unsafe-eval'` appears only in the development policy for the dev server's HMR runtime.
 
 ## Secrets and environment
 Server-side only, set in the deployment platform (e.g. Vercel → Settings → Environment Variables), never committed:
@@ -70,10 +79,10 @@ Server-side only, set in the deployment platform (e.g. Vercel → Settings → E
 `.env.example` documents these without secrets; `.env*` is gitignored (except `.env.example`). Never use a `NEXT_PUBLIC_` prefix for these. A Gmail address cannot be verified as a Resend sending domain — use Resend test mode or a domain you control.
 
 ## Deployment
-1. Build/test locally.
-2. Initialize Git and create GitHub repository.
-3. Connect repository to Vercel.
-4. Deploy preview and inspect.
-5. Add custom domain when chosen (TBD).
-6. Verify production links, metadata, responsive layout and integrations.
-Do not commit or push unless explicitly authorized.
+Current workflow (already established):
+1. Push to `main` on GitHub — the Vercel Git integration builds and auto-deploys to production (https://devsparkcodes.vercel.app). There is no `vercel.json`; behavior comes from `next.config.ts` and project settings.
+2. Configure environment variables in Vercel (Settings → Environment Variables) — names only, never committed; see Secrets above.
+3. Set `NEXT_PUBLIC_SITE_URL` to the production origin (no trailing slash) and redeploy so canonical URLs, Open Graph tags, sitemap and robots activate.
+4. Verify production links, metadata, responsive layout and integrations after each deploy.
+5. Add a custom domain when chosen (TBD) — re-check HSTS at that point (see Security headers).
+Do not force-push; do not commit or push unless explicitly authorized.

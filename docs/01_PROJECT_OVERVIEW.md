@@ -11,13 +11,35 @@ DevSpark is intended to grow into a technology company and product brand that so
 - No strict age range for learners.
 - A founder photo may appear, but there is no dedicated Founder page.
 
+## Audiences
+1. **Businesses and individuals** with a problem to solve — routed to Solutions and the contact form.
+2. **Learners** (students, professionals, complete beginners) interested in the Generative AI Engineering program — routed to Courses and the Google Form.
+3. **Returning visitors** looking for help, policies or guides — routed to the Help Center at `/guides`.
+
 ## Website goals
-1. Explain DevSpark’s identity and direction.
+1. Explain DevSpark's identity and direction.
 2. Help businesses contact DevSpark to discuss solutions.
 3. Present the current Generative AI Engineering program.
 4. Send learners to a Google Form for enrollment.
 5. Provide useful FAQs and guides/resources.
 6. Leave room for future services and products.
+
+## Current course offering
+**Generative AI Engineering — Level 01, Cohort 01**: an 8-week, 24-session beginner program delivered live on Google Meet in Urdu (with English technical terminology), starting Monday, November 30, 2026. The first two sessions are free demos; the standard fee is PKR 4,000 with a Cohort 01 early-bird fee of PKR 3,000 for the first 20 verified paid enrollments. The full curriculum, assessment (100 points), certificate criteria, awards and refund rules are published on `/courses` and documented authoritatively in `04_COURSE_AND_ENROLLMENT.md`. Session recordings are provided to enrolled students so missed lessons can be reviewed; watching a recording does not count as live attendance.
+
+## User journeys
+- **Business:** Home → Solutions → Discuss a Project → Contact form.
+- **Student:** Home or Courses → review facts, curriculum and policies → Register for Free Demo → published Google Form → (optional) paid enrollment verified off-site by the instructor.
+- **Resource visitor:** Home → Help (`/guides`) → read a confirmed guide → next relevant action (contact, courses, registration).
+
+## High-level technical architecture
+- Next.js App Router + TypeScript + Tailwind CSS; six static pages plus one dynamic endpoint (`POST /api/contact`).
+- All published copy and the curriculum live in `config/content.ts`; brand and links in `config/site.ts`; navigation in `config/navigation.ts`. Components read these files and never hardcode course facts.
+- The contact form validates, rate-limits and deduplicates submissions server-side, then forwards them to the Resend HTTP API; success is shown only after provider acceptance.
+- Design tokens (color, type scale, motion) are centralized in `app/globals.css`; see `design-system/devspark/MASTER.md`.
+- Deployment: GitHub → Vercel auto-deploy from `main`. No database, no authentication, no payment processing.
+
+Detailed technical documentation: `05_TECHNICAL_SPECIFICATION.md`.
 
 ## V1 scope
 Implemented: responsive public website with Home (`/`), Solutions (`/solutions`), Courses (`/courses`), About (`/about`), Contact (`/contact`) and the Help Center at `/guides` (four categories, twelve guides). The former `/faq` route permanently redirects (`308`) to `/guides`; header navigation labels it **Help** (there are no separate Guides and FAQ entries). Also included: contact form (`POST /api/contact` → Resend, mock-tested), email and social links, centralized design tokens, purposeful motion, SEO basics, and accessibility/performance checks. Registration runs through the published Google Form (`https://forms.gle/xpjhjQgRXKfnbJds9`) wired centrally in `config/site.ts`; the registration CTAs are live links and the pending notes hide automatically.
@@ -31,15 +53,35 @@ Not included: custom backend/database, login/student dashboard, payment gateway,
 - Site is polished, responsive, accessible, fast and maintainable.
 - Colors/fonts can be changed centrally.
 
-## TBD
-Domain; verified current services; midterm/final project submission deadlines (announced in advance through the official course schedule); certificate online verification (certificate provision and eligibility criteria are confirmed — 80% attendance of 24 sessions including both demos, and 60/100 — while the digital issuance workflow belongs to the future LMS); instructor-replacement refund request window and approval SLA; cancellation refund approval turnaround; attendance-tracking method for the free demos; website-side paid-enrollment/payment processing; founder photo asset. Confirmed and no longer TBD: first paid class date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy, standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window. Do not invent the remaining details.
+## Verified integrations
+- **Google Form** (registration of interest + free-demo participation): `https://forms.gle/xpjhjQgRXKfnbJds9` (`config/site.ts` links).
+- **Resend** for contact-form email delivery: wired in `app/api/contact/route.ts` + `lib/email.ts`; mock-tested, real delivery NOT yet verified (needs credentials + a verified sender — `05_TECHNICAL_SPECIFICATION.md`, `.env.example`).
+- **Vercel** hosting with the GitHub integration; production origin `https://devsparkcodes.vercel.app`.
+- **Contact email** `devspark.codes@gmail.com`; social LinkedIn/Instagram/GitHub `devsparkcodes` (`config/site.ts`). Facebook: not configured.
 
 ## Resolved (implemented in code)
-- Google Form (registration of interest + free-demo participation): `https://forms.gle/xpjhjQgRXKfnbJds9` (`config/site.ts` links).
-- Course facts published: 8 weeks · 24 live sessions (2 free demos + 22 paid sessions), Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, first paid class Friday, December 4, 2026, final scheduled session Friday, January 22, 2027 (if uninterrupted), teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu with English technical terminology, presentation-led teaching using structured slides with optional Excalidraw visuals, live practical demonstrations and interactive Q&A (slide/PDF files not promised), full 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
+- Course facts published on `/courses`: 8 weeks · 24 live sessions (2 free demos + 22 paid sessions), Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, first paid class Friday, December 4, 2026, final scheduled session Friday, January 22, 2027 (if uninterrupted), teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu with English technical terminology, presentation-led teaching using structured slides with optional Excalidraw visuals, live practical demonstrations, guided activities and interactive Q&A (downloadable slide or PDF files not promised; session recordings ARE provided to enrolled students), the full revised 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
 - Certificate: DevSpark Certificate of Completion confirmed for students who meet the course requirements; digital issuance/verification (IDs, QR) planned with the future LMS.
 - Logo assets: header `logos/Full logo/black-devspark.png`, footer/dark `logos/Full logo/white-devspark.png`, favicon `app/icon.svg` (rendered via `components/ui/logo.tsx`).
 - Brand accent: `#F58220` (semantic tokens in `app/globals.css`; see `design-system/devspark/MASTER.md`).
-- Contact email `devspark.codes@gmail.com`; social LinkedIn/Instagram/GitHub `devsparkcodes` (`config/site.ts`). Facebook: not configured.
-- Contact form: operational via `POST /api/contact` → Resend. Mock-tested; real email delivery NOT yet verified (needs credentials + verified sender — `docs/05`, `.env.example`).
 - Headings font Manrope, body/UI Inter (`next/font`).
+
+## TBD
+Do not invent the remaining details:
+- Domain name (site currently lives on the Vercel-assigned origin).
+- Verified current services for the Solutions page.
+- Midterm and final project submission deadlines (announced in advance through the official course schedule).
+- Certificate online verification (certificate provision and eligibility criteria are confirmed — 80% attendance of 24 sessions including both demos, and 60/100 — while the digital issuance workflow belongs to the future LMS).
+- Instructor-replacement refund request window and approval SLA.
+- Cancellation refund approval turnaround.
+- Attendance-tracking method for the free demos.
+- Website-side paid-enrollment/payment processing.
+- Founder photo asset.
+
+Confirmed and no longer TBD: first paid class date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy, standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window.
+
+## References
+- Course policies: `04_COURSE_AND_ENROLLMENT.md`
+- Technical architecture and secrets: `05_TECHNICAL_SPECIFICATION.md`
+- Requirements per page: `03_WEBSITE_REQUIREMENTS.md`
+- Setup, commands, deployment: [`../README.md`](../README.md)

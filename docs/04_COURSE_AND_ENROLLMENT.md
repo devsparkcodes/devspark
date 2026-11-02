@@ -9,11 +9,13 @@
 - Start: Monday, November 30, 2026.
 - First paid instructional class: Friday, December 4, 2026, 7:30 PM PKT.
 - Final scheduled session (if the schedule runs uninterrupted): Friday, January 22, 2027. Do not guarantee uninterrupted delivery.
+- Holiday sessions (confirmed): the classes scheduled on Friday, December 25, 2026 and Friday, January 1, 2027 proceed normally on the published schedule. They are not unresolved and must not be described as cancelled or moved.
 - Fee: standard PKR 4,000, one-time payment for the complete course. Cohort 01 introductory offer: early-bird PKR 3,000 (25% off — PKR 1,000 saving) for the first 20 confirmed paid enrollments. This is an introductory discount, not a change to the standard fee; submitting the interest form never reserves the offer.
 - Format: live online on Google Meet (confirmed). Meeting link and joining instructions are shared privately with registered and confirmed students before sessions — no public link is published.
 - Certificate: DevSpark Certificate of Completion confirmed for students who meet both minimums — at least 80% attendance (20 of the 24 live sessions, with the two free demo sessions included in the denominator) and at least 60 out of 100 on the 100-point assessment — and submit all six assignments, the midterm and the final project. Attendance problems are considered case by case, but a certificate is never guaranteed. Digital issuance and verification (credential IDs, QR codes) belong to the future LMS.
 - Teaching language: Urdu, with English technical terminology.
-- Teaching method (confirmed): presentation-led live classes using structured slides covering topics, concepts, examples and key takeaways. The instructor may additionally use Excalidraw for diagrams, workflows and illustrations when helpful — Excalidraw is optional support, not a requirement for students and not used in every session. Practical topics are explained through live demonstrations with relevant AI tools, prompting techniques and AI-assisted project workflows; students can ask questions and take part in discussions during live classes. Not promised: downloadable slide or PDF files, recorded sessions, or permanent access to presentation materials. Students are not required to create or give slide presentations, and no drawing tablet or specialized equipment is needed.
+- Teaching method (confirmed): presentation-led live classes using structured slides covering topics, concepts, examples and key takeaways. The instructor may additionally use Excalidraw for diagrams, workflows and illustrations when helpful — Excalidraw is optional support, not a requirement for students and not used in every session. Practical topics are explained through live demonstrations with relevant AI tools, prompting techniques and AI-assisted project workflows; students can ask questions and take part in discussions during live classes. Not promised: downloadable slide or PDF files, or permanent access to presentation materials. Students are not required to create or give slide presentations, and no drawing tablet or specialized equipment is needed.
+- Session recordings (confirmed): recordings of the live sessions are provided to enrolled students so a lesson can be reviewed or a missed class caught up on. This is a guaranteed inclusion for enrolled students only. Watching a recording does NOT count as live attendance — the certificate still requires attending at least 20 of the 24 live sessions. Do not invent a delivery platform, availability deadline, download option, permanent/lifetime access term or any access for people who are not enrolled; those details are confirmed directly with enrolled students and are not published.
 - Age restriction: none defined; no prior AI or programming experience required.
 - Enrollment: Google Form — `https://forms.gle/xpjhjQgRXKfnbJds9` (registration of interest + free-demo participation; submitting it does not confirm paid enrollment).
 - Free sessions: the first two sessions — Monday, November 30, 2026 and Wednesday, December 2, 2026 — are free so learners can experience the teaching live. Paid enrollment is allowed both before and after the demos; a student who enrolls after the demos cannot meet the Top Three Awards' strict 24/24 attendance requirement.
@@ -21,6 +23,22 @@
 - Assignment deadline (confirmed): each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT). This rule applies to the six weekly assignments only; midterm and final project deadlines are announced in advance through the official course schedule.
 
 Use the public-facing naming **Generative AI Engineering — Level 01, Cohort 01** unless the user later changes it.
+
+## Curriculum (revised Level 01)
+The approved progression, as implemented in `config/content.ts` → `program.weeks`:
+
+1. Artificial Intelligence & Machine Learning Foundations
+2. Deep Learning & Neural Networks
+3. Modern Generative AI
+4. Prompt & Context Engineering
+5. Embeddings, Semantic Search, RAG & Documents
+6. Software & Backend Foundations for AI Applications
+7. AI Agents, Agentic AI, Tools & MCP
+8. Final Project, Testing & Showcase
+
+`config/content.ts` is the single authoritative source for class-by-class detail (titles, dates, topics, practical activities, assessment strings). Do not maintain a second class-by-class copy in documentation; update the code, then validate with `npm run typecheck && npm run lint && npm run build`.
+
+Free demos (both inside Week 1): **Free Demo 01** — Monday, November 30, 2026, "AI from Zero to First Win" (introductory overview); **Free Demo 02** — Wednesday, December 2, 2026, **"Artificial Intelligence & Machine Learning | Part 1"**. Prompt Engineering is covered in **Week 04**, not in either free demo — never describe Free Demo 02 as a prompt-engineering session.
 
 ## Confirmed course policies
 - Late submissions (confirmed): no deadline extensions — a weekly assignment submitted after the Sunday 11:59 PM PKT deadline receives zero marks for that assignment. This rule applies to the six weekly assignments only; midterm and final project submission deadlines are announced in advance through the official course schedule and are not automatically covered by the weekly penalty.
@@ -33,7 +51,7 @@ Use the public-facing naming **Generative AI Engineering — Level 01, Cohort 01
 - Significant course change (confirmed): the owner-selected qualifying change is **replacement of the lead instructor**. An affected paid student may request a 100% refund of the fee actually paid via devspark.codes@gmail.com; a valid approved request is refunded within 14 calendar days of approval. The request window and approval/turnaround are not yet specified — do not invent them. Ordinary schedule changes, minor timetable adjustments, tool changes and routine curriculum updates do NOT create this refund right. Preserve any rights or remedies required by applicable law.
 
 ## Registration workflow
-1. Student opens the course page and selects **Register for Free Demo** (the single registration CTA).
+1. Student opens the course page and selects a register button — **Register Your Interest** or **Register for Free Demo** (both open the same published Google Form).
 2. Website opens the published Google Form.
 3. Student submits the form (interest/free-demo participation); registered students attend the two free sessions.
 4. Paid enrollment is allowed both before and after the free demos — a student may pay at any point, and DevSpark verifies each payment.
@@ -47,7 +65,7 @@ No custom payment automation or student accounts in V1. The Google Form never co
 ## Upcoming LMS (planned — not built)
 The LMS will replace the manual spreadsheet workflow with:
 - Payment-confirmed seat tracking (early-bird eligibility counted by confirmed payment, not form responses).
-- Student workflows: enrolled-student access to Google Meet joining details, session recordings, class notes, assignments, grades and certificate status.
+- Student workflows: enrolled-student access to Google Meet joining details, session recordings (already provided to enrolled students today — the LMS would centralize their delivery), class notes, assignments, grades and certificate status.
 - Instructor workflows: roster and payment status, assignment/project submission review, 100-point grading, announcements and materials distribution.
 - Certificate issuance and verification: completion rules, generated certificates with unique credential IDs and QR verification.
 Do not implement any of this during website work; the LMS is a separate phase.
@@ -62,4 +80,4 @@ Keep the Google Form URL in one central config location (`config/site.ts` — `l
 4. Detailed attendance-tracking method, especially for the two free demo sessions.
 5. Certificate online verification (the LMS workflow — eligibility criteria are confirmed; the required-submission list is consistent across approved docs: six assignments, midterm, final project).
 Also unresolved (owner decision, previously flagged): combined-assignment marks are mathematically redundant as the third tie-break after equal totals with equal final-project and midterm scores; the approved sequence is preserved unchanged.
-Class/materials distribution process and payment proof process refinements also remain open operational items.
+Distribution details for class notes/supporting resources (recordings themselves are confirmed as provided to enrolled students) and payment-proof process refinements also remain open operational items.
