@@ -12,6 +12,7 @@ const chips = [
   "8 weeks · 24 sessions",
   "Live online",
   "Two free demo classes",
+  "No programming experience required",
 ];
 
 type CtaProps = { variant?: "primary" | "outline"; className?: string };

@@ -4,7 +4,7 @@ export const hero = {
   eyebrow: siteConfig.tagline,
   title: "Intelligent systems for real-world problems.",
   lead:
-    "DevSpark builds AI-powered solutions, workflow automation and custom software — and teaches the engineers behind them through the Generative AI Engineering program.",
+    "DevSpark builds AI-powered solutions, workflow automation and custom software — and teaches the concepts behind them through the Generative AI Engineering program.",
   primaryCta: {
     label: "Discuss a Project",
     href: "/contact?topic=project#contact-form",
@@ -85,7 +85,7 @@ export const program = {
   title: "Generative AI Engineering",
   subtitle: "Level 01 · Cohort 01",
   description:
-    "A beginner-friendly, project-oriented course in practical Generative AI — taught in Urdu with English technical terminology. 8 weeks, 24 live online sessions, starting Monday, November 30, 2026, and the first two sessions are free to attend.",
+    "A beginner-friendly course in practical Generative AI: strong foundations in Machine Learning, neural networks and language models, then guided activities and practical projects that apply them. 8 weeks, 24 live online sessions in Urdu with English technical terminology, starting Monday, November 30, 2026 — the first two sessions are free.",
   facts: [
     { term: "Starts", value: "Monday, November 30, 2026" },
     { term: "Duration", value: "8 weeks · 24 live sessions" },
@@ -133,7 +133,7 @@ export const program = {
     "Free-demo registration is not available right now — please use the contact page if you have a question in the meantime.",
   audience: {
     title: "Who this course is for",
-    body: "This is a beginner-level course for absolute beginners, students, learners and anyone interested in practical AI applications. No prior AI or programming experience is assumed.",
+    body: "This is a beginner-level course for absolute beginners, students, learners and anyone who wants to understand how modern AI works and use it in practice. No prior AI or programming experience is assumed.",
     prerequisites: [
       "No prior AI knowledge required.",
       "No programming experience required.",
@@ -169,37 +169,34 @@ export const program = {
       },
       {
         title: "Aspiring developers and technical learners",
-        body: "Use AI-assisted coding, debugging and documentation to start building practical applications — no prior programming experience required.",
+        body: "Understand how software, APIs and AI models fit together, and how AI supports real applications — no prior programming experience required.",
       },
     ],
     whyTitle: "Why learn Generative AI?",
     whyDescription:
       "Practical, beginner-level value you can apply from the first week — in study, at work and in your own projects.",
     whyPoints: [
-      "Understand how modern AI tools work and where they genuinely help.",
+      "Understand how modern AI actually works and where it genuinely helps.",
       "Improve day-to-day productivity with practical AI workflows.",
       "Write better prompts and evaluate outputs instead of trusting them blindly.",
-      "Build useful digital solutions, documents, prototypes and projects.",
+      "Create useful documents, workflows and guided AI projects.",
       "Automate selected repetitive workflows you already do by hand.",
       "Become more adaptable as technology keeps evolving.",
       "Learn to use AI responsibly and verify outputs before acting on them.",
-      "Grow toward a clear learning pathway toward Level 02.",
+      "Build a foundation for more advanced AI learning.",
     ],
     note: "This is Level 01 beginner training: it builds practical, verifiable skills and a completed project — not guaranteed employment, income or business results, and not advanced AI-engineer status after eight weeks.",
   },
   outcomes: [
-    "Understand essential Generative AI and LLM concepts.",
-    "Use AI tools effectively and responsibly.",
-    "Write, evaluate and improve prompts.",
-    "Understand common AI limitations and hallucinations.",
-    "Identify real-world problems suitable for AI solutions.",
-    "Plan practical AI-assisted projects.",
-    "Create basic requirements and project documentation.",
-    "Use AI tools to generate and improve a simple prototype.",
-    "Understand the basic role of APIs, JSON and AI-generated code — without prior programming experience.",
-    "Test and improve AI-assisted project outputs.",
-    "Document, explain and demonstrate a practical beginner-level project.",
-    "Understand a clear learning pathway toward Level 02.",
+    "Explain the foundations of Artificial Intelligence and Machine Learning, including how data trains a model to make predictions.",
+    "Describe how neural networks are structured and how they learn, from neurons and layers to the training cycle.",
+    "Explain how modern Generative AI systems and Large Language Models process information and generate outputs.",
+    "Understand tokens, context windows, Transformers and model limitations at a beginner level.",
+    "Write, test, evaluate and improve prompts in English or Roman Urdu using practical techniques.",
+    "Explain embeddings, semantic search and RAG, and how document-based AI workflows use relevant information.",
+    "Understand how web applications work: frontend, backend, APIs, HTTP and data communication.",
+    "Explain AI agents, tool calling and agentic workflows, including how MCP connects models to tools.",
+    "Plan, demonstrate and evaluate a simple AI-assisted project, including basic testing and documentation.",
   ],
   outcomesNote:
     "An honest outcome list: the course builds real, practical skills and a documented project — it does not promise professional AI-engineer status, jobs or income after eight weeks.",
@@ -729,22 +726,21 @@ export const program = {
   methodology: {
     title: "How classes are taught",
     points: [
-      "Presentation-based lessons using structured slides that cover topics, concepts, examples and key takeaways.",
-      "Visual explanations with Excalidraw diagrams and workflows when additional illustrations are helpful.",
-      "Live practical demonstrations with relevant AI tools, prompting techniques and AI-assisted project workflows.",
-      "Interactive questions and class discussions.",
-      "Beginner-friendly explanations.",
-      "AI-assisted project development.",
-      "Project planning and documentation.",
-      "Output verification and testing.",
+      "Conceptual understanding: complex AI concepts explained in simple language while keeping the technical terms accurate.",
+      "Visual learning: diagrams, flowcharts, real-world examples and comparisons that show how systems work.",
+      "Interactive teaching: questions, discussion and knowledge checks that keep everyone involved.",
+      "Live demonstrations: how AI tools, models and applications behave in realistic situations.",
+      "Guided practice: manageable exercises, weekly assignments and structured projects that apply each concept.",
+      "Critical thinking: verifying AI outputs, recognising limitations and considering privacy before trusting a result.",
     ],
     notes: [
       "Students do not need to create or give slide presentations.",
       "No requirement to manually write programming code.",
       "Downloadable slide or PDF files are not provided.",
+      "Advanced technologies are explained conceptually — implementing them independently belongs to later learning stages.",
     ],
     delivery:
-      "Classes are delivered live on Google Meet using structured presentations, practical demonstrations, and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions.",
+      "Classes are delivered live on Google Meet using structured presentations, practical demonstrations, guided exercises and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions.",
   },
   materials: {
     title: "Learning materials",
@@ -754,7 +750,7 @@ export const program = {
       "Supporting resources",
       "Assignments and project guidance",
     ],
-    note: "These resources are planned for enrolled students. How they are shared will be confirmed before paid enrollment opens — no student portal exists yet.",
+    note: "Session recordings are provided to enrolled students — a student who misses a live class can review the recording and catch up on the covered material. How recordings and the other materials are shared is confirmed directly with enrolled students; there is no student portal yet.",
   },
   assessment: {
     title: "Assignments, projects and assessment",
@@ -887,7 +883,7 @@ export const program = {
     {
       question: "Do I need to write code myself?",
       answer:
-        "No. There is no requirement to manually write programming code. You will guide AI tools, plan projects, test outputs and document your work — understanding the role of APIs, JSON and AI-generated code at a beginner level.",
+        "No previous programming experience is required. Level 01 focuses on strong conceptual understanding: you will learn how software, backends, APIs and JSON work in basic terms, and classes may demonstrate short code examples or AI-assisted workflows to illustrate a concept. You are not expected to build a full application from scratch using traditional programming — guided activities, assignments and the projects are designed for beginners, while advanced coding and engineering belong to later learning stages.",
     },
     {
       question: "Is there a certificate?",
@@ -907,7 +903,12 @@ export const program = {
     {
       question: "How are classes taught?",
       answer:
-        "Classes are live online through Google Meet, delivered primarily with structured presentations, practical demonstrations and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
+        "Classes are live online through Google Meet, delivered primarily with structured presentations, practical demonstrations, guided activities and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
+    },
+    {
+      question: "What happens if I miss a live class?",
+      answer:
+        "Session recordings are provided to enrolled students, so a missed lesson can be reviewed and the covered material caught up on. Recordings do not replace live attendance: the certificate still requires attending at least 20 of the 24 live sessions.",
     },
     {
       question: "Can I cancel and get a refund?",
