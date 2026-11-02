@@ -38,7 +38,7 @@ Authoritative policy wording lives in `04_COURSE_AND_ENROLLMENT.md`; the page mu
 Tell DevSpark's company story; keep the company as the focus. Founder photo may appear as supporting content. No dedicated Founder page.
 
 ### Help Center (`/guides`)
-Implemented as a client-side Help Center: search across guide titles/summaries/keywords, single-select category filters, and React `Disclosure` accordions (`components/ui/disclosure.tsx`). It ships with four categories and twelve guides covering the website, getting help, solutions/projects, and courses/enrollment. Content answers only from confirmed information; nothing is filler.
+Implemented as a client-side Help Center: search across guide titles/summaries/keywords and section content, single-select category filters, and React `Disclosure` accordions (`components/ui/disclosure.tsx`). It ships with four categories and twelve guides covering the website, getting help, solutions/projects, and courses/enrollment. Content answers only from confirmed information; nothing is filler.
 
 ### FAQ
 There is no standalone FAQ page. The former `/faq` route permanently redirects to the Help Center at `/guides`. The homepage shows a small FAQ preview drawn from `config/content.ts` (`faq`).

@@ -1152,7 +1152,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "Search by keyword",
-              body: "Type into the Search help box to match guide titles, summaries and keywords as you type. Results update immediately.",
+              body: "Type into the Search help box to match guide titles, summaries, keywords and section content as you type. Results update immediately.",
             },
             {
               heading: "Filter by category",
@@ -1343,6 +1343,10 @@ export const helpCenter = {
             "apply",
             "form",
             "registration",
+            "refund",
+            "cancellation",
+            "money back",
+            "payment",
           ],
           sections: [
             {
@@ -1432,11 +1436,20 @@ export const helpCenter = {
             "projects",
             "midterm",
             "final",
+            "recordings",
+            "recorded",
+            "catch up",
+            "attendance",
+            "deadline",
           ],
           sections: [
             {
               heading: "Eight-week curriculum",
               body: "The course runs across eight weeks — from artificial intelligence and machine learning foundations, through deep learning, modern generative AI, prompt and context engineering, embeddings and RAG, software and API fundamentals, and agentic AI, to a guided final project. Every week lists its classes, detailed topics, a practical outcome and its assessment on the courses page.",
+            },
+            {
+              heading: "Session recordings",
+              body: "Session recordings are provided to enrolled students, so a missed lesson can be reviewed and the covered material caught up on. Recordings do not replace live attendance — the certificate still requires at least 20 of the 24 live sessions attended. Course details are published on the courses page.",
             },
             {
               heading: "100-point assessment system",
@@ -1455,6 +1468,7 @@ export const helpCenter = {
               body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, and at least 60 out of 100 overall; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance.",
             },
           ],
+          cta: { label: "Open the courses page", href: "/courses" },
         },
       ],
     },

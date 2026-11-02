@@ -52,9 +52,12 @@ const categoryIcons = {
 } as const;
 
 /**
- * Help Center browser: client-side search across guide titles, summaries
- * and keywords, plus single-select category filtering. Search and filter
- * combine; a reset clears both. Filterable items carry no `data-reveal`
+ * Help Center browser: client-side search across guide titles, summaries,
+ * keywords, section headings/content and category titles, plus
+ * single-select category filtering. Queries are whitespace-normalized and
+ * every whitespace-separated term must match (case-insensitive substring),
+ * so multi-word searches stay precise. Search and filter combine; a reset
+ * clears both. Filterable items carry no `data-reveal`
  * (they mount/unmount with filtering) — only static chrome above and
  * below this component uses scroll-reveal. Each category opens with a
  * neutral header band (icon tile + "Help category" eyebrow + a heading
@@ -65,7 +68,7 @@ export function HelpCenter({ categories }: HelpCenterProps) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = query.trim().toLowerCase().replace(/\s+/g, " ");
   const totalGuides = useMemo(
     () => categories.reduce((count, category) => count + category.guides.length, 0),
     [categories]
@@ -78,10 +81,21 @@ export function HelpCenter({ categories }: HelpCenterProps) {
         ...category,
         guides: category.guides.filter((guide) => {
           if (!normalizedQuery) return true;
-          const haystack = [guide.title, guide.summary, ...guide.keywords, category.title]
+          const haystack = [
+            guide.title,
+            guide.summary,
+            ...guide.keywords,
+            ...guide.sections.map(
+              (section) => `${section.heading} ${section.body}`
+            ),
+            category.title,
+          ]
             .join(" ")
-            .toLowerCase();
-          return haystack.includes(normalizedQuery);
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+          return normalizedQuery
+            .split(" ")
+            .every((token) => haystack.includes(token));
         }),
       }))
       .filter((category) => category.guides.length > 0);
@@ -119,7 +133,7 @@ export function HelpCenter({ categories }: HelpCenterProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search help — e.g. enrollment, contact, navigation"
-            className="input w-full pl-10 pr-10"
+            className="input w-full pl-10 pr-10 [&::-webkit-search-cancel-button]:hidden"
             autoComplete="off"
           />
           {query ? (
