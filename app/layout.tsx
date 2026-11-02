@@ -71,6 +71,18 @@ export default function RootLayout({
       className={`${manrope.variable} ${inter.variable}`}
     >
       <body>
+        <noscript>
+          <div className="border-b border-accent/30 bg-accent-soft px-4 py-3 text-center text-sm text-text">
+            JavaScript is disabled in your browser. Interactive curriculum details, Help Center search, and contact form submission require JavaScript. You can reach DevSpark directly at{" "}
+            <a
+              href="mailto:devspark.codes@gmail.com"
+              className="font-medium underline underline-offset-4"
+            >
+              devspark.codes@gmail.com
+            </a>
+            .
+          </div>
+        </noscript>
         <MotionReveal />
         <a
           href="#main"
