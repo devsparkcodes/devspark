@@ -45,6 +45,40 @@ export const solutions = {
   },
 };
 
+/** One scheduled class inside a curriculum week (`program.weeks`). */
+export type CurriculumClass = {
+  /** Class number across the 24-session course, e.g. "01". */
+  n: string;
+  /** Published session date in the Mon/Wed/Fri schedule, e.g. "Mon, Nov 30, 2026". */
+  date: string;
+  title: string;
+  /** Optional status chip — "Free demo", "First paid session". */
+  badge?: string;
+  /** Detailed topic list revealed when the class is expanded. */
+  topics: string[];
+  /** Optional practical activity shown under the class topics. */
+  practical?: string;
+};
+
+/** One of the eight curriculum weeks rendered by `CurriculumGrid`. */
+export type CurriculumWeek = {
+  /** Week number as a zero-padded string, e.g. "01". */
+  n: string;
+  title: string;
+  /** Short plain-English summary of what the week covers. */
+  summary: string;
+  /** Learning outcome — shown on the card face and in the panel. */
+  outcome: string;
+  /** Assessment chip, e.g. "Assignment 01 — 10 points". Milestone weeks
+   *  must start with "Midterm" or "Final" (the homepage timeline reads
+   *  that prefix to place its milestone callouts). */
+  assessment: string;
+  /** What the week's assignment or project involves. */
+  assessmentDetail?: string;
+  /** The three sessions of the week. */
+  classes: CurriculumClass[];
+};
+
 export const program = {
   index: "02",
   label: "Courses",
@@ -169,128 +203,527 @@ export const program = {
   ],
   outcomesNote:
     "An honest outcome list: the course builds real, practical skills and a documented project — it does not promise professional AI-engineer status, jobs or income after eight weeks.",
+  /**
+   * Revised Level 01 curriculum — the single structured source of truth
+   * for the eight-week outline. `/courses` (`CurriculumGrid`) and the
+   * homepage cohort timeline both read this array, so weeks, classes,
+   * topics and assessments are never duplicated inside components.
+   *
+   * Class dates follow the published Monday / Wednesday / Friday
+   * schedule from the first free demo (2026-11-30) through the
+   * published final session (Fri, 2027-01-22). The sessions that fall
+   * on Fri 2026-12-25 and Fri 2027-01-01 are public-holiday dates that
+   * remain on the schedule until explicitly directed otherwise.
+   */
   weeks: [
     {
       n: "01",
-      title: "Generative AI foundations",
-      topics: [
-        "Introduction to AI, Machine Learning and Generative AI.",
-        "What LLMs are and how they are used.",
-        "AI tools and real-world use cases.",
-        "Tokens, context and hallucinations at a beginner level.",
-        "Responsible usage and verification basics.",
-      ],
+      title: "Artificial Intelligence & Machine Learning Foundations",
+      summary:
+        "Where AI begins: what artificial intelligence and machine learning are, how models learn from data, and how their predictions are checked.",
       outcome:
-        "Students understand the fundamentals and can perform simple AI-assisted tasks.",
-      assessment: "Assignment 1 — 10 points",
+        "Students understand AI and ML fundamentals and can explain how data is used to train models and generate predictions.",
+      assessment: "Assignment 01 — 10 points",
+      assessmentDetail:
+        "Explain one real-world Machine Learning use case — the data involved, possible features and labels, the prediction it makes and its limitations.",
+      classes: [
+        {
+          n: "01",
+          date: "Mon, Nov 30, 2026",
+          badge: "Free demo",
+          title: "AI from Zero to First Win",
+          // Free demo. This introductory class and its presentation are
+          // already prepared — keep its scope introductory and do not
+          // expand it into an advanced technical lesson.
+          topics: [
+            "Introduction to Artificial Intelligence",
+            "AI in everyday life",
+            "AI, Machine Learning, Deep Learning, Generative AI, and Agentic AI — introductory overview",
+            "AI chatbots and simple practical examples",
+            "Introduction to prompts",
+            "Why AI-generated answers should be verified",
+            "Responsible AI usage",
+            "Beginner-friendly live demonstration",
+          ],
+        },
+        {
+          n: "02",
+          date: "Wed, Dec 2, 2026",
+          badge: "Free demo",
+          title: "Artificial Intelligence & Machine Learning | Part 1",
+          topics: [
+            "Artificial Intelligence vs traditional programming",
+            "What Machine Learning is",
+            "How machines learn from data",
+            "Data and datasets",
+            "Features and labels",
+            "Model training vs inference",
+            "Introduction to supervised learning",
+            "Introduction to unsupervised learning",
+            "Introduction to reinforcement learning",
+            "Everyday Machine Learning applications",
+          ],
+          practical:
+            "Visual demonstration of a simple spam-email classification problem.",
+        },
+        {
+          n: "03",
+          date: "Fri, Dec 4, 2026",
+          badge: "First paid session",
+          title: "Artificial Intelligence & Machine Learning | Part 2",
+          topics: [
+            "Complete Machine Learning lifecycle",
+            "Training, validation, and test datasets",
+            "Classification vs regression",
+            "Predictions and model evaluation",
+            "Accuracy, precision, and recall — introductory intuition",
+            "Underfitting and overfitting",
+            "Generalization",
+            "Data quality and bias",
+            "Responsible use of predictive AI",
+          ],
+          practical:
+            "Understanding why a trained model can make correct and incorrect predictions.",
+        },
+      ],
     },
     {
       n: "02",
-      title: "Prompt engineering and output quality",
-      topics: [
-        "Anatomy of an effective prompt.",
-        "Tasks, context, constraints and desired output formats.",
-        "Zero-shot and few-shot prompting.",
-        "Prompt refinement and testing.",
-        "Structured outputs and basic JSON awareness.",
-        "Building a reusable prompt library.",
-      ],
+      title: "Deep Learning & Neural Networks",
+      summary:
+        "How neural networks are structured and how they improve at a task through training — explained visually, with no maths or programming required.",
       outcome:
-        "Students can design useful prompts and evaluate the quality of AI outputs.",
-      assessment: "Assignment 2 — 10 points",
+        "Students understand the structure of neural networks and how training improves predictions.",
+      assessment: "Assignment 02 — 10 points",
+      assessmentDetail:
+        "Explain the neural network training cycle and compare selected neural network architectures with their applications.",
+      classes: [
+        {
+          n: "04",
+          date: "Mon, Dec 7, 2026",
+          title: "Deep Learning & Neural Network Fundamentals",
+          topics: [
+            "Machine Learning vs Deep Learning",
+            "Artificial neural networks",
+            "Artificial neurons",
+            "Inputs, weights, biases, and outputs",
+            "Activation functions — conceptual introduction",
+            "Input, hidden, and output layers",
+            "Feedforward Neural Networks (FNNs)",
+            "Real-world applications",
+          ],
+        },
+        {
+          n: "05",
+          date: "Wed, Dec 9, 2026",
+          title: "How Neural Networks Learn",
+          // Learned through detailed visual diagrams — no calculus and
+          // no programming are required.
+          topics: [
+            "Forward propagation",
+            "Predictions and loss",
+            "Loss functions — conceptual understanding",
+            "Gradients — simple intuition",
+            "Backpropagation",
+            "Weight updates and optimizers",
+            "Epochs and iterations",
+            "The neural network training cycle",
+          ],
+        },
+        {
+          n: "06",
+          date: "Fri, Dec 11, 2026",
+          title: "Neural Network Architectures & Computer Vision",
+          topics: [
+            "FNN overview",
+            "Convolutional Neural Networks (CNNs)",
+            "Recurrent Neural Networks (RNNs)",
+            "Introduction to Transformers",
+            "Pixels and images",
+            "Image classification",
+            "Object detection",
+            "Image segmentation",
+            "Computer Vision applications",
+          ],
+        },
+      ],
     },
     {
       n: "03",
-      title: "Project planning and documentation",
-      topics: [
-        "Identifying and defining a problem.",
-        "Understanding user requirements.",
-        "Defining project goals, scope and features.",
-        "Basic project lifecycle.",
-        "Simple workflow diagrams.",
-        "Project documentation: problem brief, PRD-lite, implementation plan, test checklist and README.",
-        "Breaking large projects into manageable tasks.",
-      ],
+      title: "Modern Generative AI",
+      summary:
+        "How modern language models read and produce language — from tokens and attention to text, image, audio and video generation.",
       outcome:
-        "Students create a practical project plan and supporting documents.",
-      assessment: "Assignment 3 — 10 points",
+        "Students understand how modern language models process information and generate outputs.",
+      assessment: "Assignment 03 — 10 points",
+      assessmentDetail:
+        "Explain an LLM's simplified response-generation process with a visual diagram, including examples of tokens, context and output limitations.",
+      classes: [
+        {
+          n: "07",
+          date: "Mon, Dec 14, 2026",
+          title: "NLP, Language Models & Generative AI",
+          topics: [
+            "Natural Language Processing (NLP)",
+            "NLP applications",
+            "Traditional NLP vs modern language models",
+            "What language models are",
+            "Large Language Models (LLMs)",
+            "Pretraining",
+            "Self-supervised learning — introductory concept",
+            "How language models generate text",
+            "Generative AI vs traditional predictive systems",
+          ],
+        },
+        {
+          n: "08",
+          date: "Wed, Dec 16, 2026",
+          title: "Inside LLMs: Tokens, Context & Transformers",
+          // Important core class — explained with a visual, step-by-step
+          // walkthrough of how an LLM turns an input into a response.
+          topics: [
+            "Tokens",
+            "Tokenization",
+            "Token IDs — conceptual introduction",
+            "Context",
+            "Context windows",
+            "Next-token prediction",
+            "Attention mechanism",
+            "Self-attention — visual intuition",
+            "Transformers",
+            "How an LLM processes an input and generates a response",
+            "Model limitations",
+          ],
+        },
+        {
+          n: "09",
+          date: "Fri, Dec 18, 2026",
+          title: "Multimodal AI & Modern Model Capabilities",
+          // Advanced model training and optimization stay outside the
+          // required Level 01 scope.
+          topics: [
+            "Text generation",
+            "Image generation",
+            "Audio generation",
+            "Video generation",
+            "Multimodal models",
+            "Reasoning models — conceptual introduction",
+            "Large vs Small Language Models",
+            "AI hallucinations",
+            "Reliability and model evaluation",
+            "Real-world Generative AI applications",
+          ],
+        },
+      ],
     },
     {
       n: "04",
-      title: "Guided AI solution building",
-      topics: [
-        "Translating project requirements into implementation tasks.",
-        "Using AI tools for project building.",
-        "Understanding AI-generated solutions.",
-        "Iterative development.",
-        "Identifying and fixing errors with AI assistance.",
-        "Demonstrating a simple working prototype.",
-      ],
+      title: "Prompt & Context Engineering",
+      summary:
+        "Writing clear instructions, adding the right examples and context, and judging whether the output is actually useful — in English or Roman Urdu.",
       outcome:
-        "Students complete and demonstrate a guided beginner-level AI-assisted solution.",
+        "Students can design, evaluate, and improve useful prompts in English or Roman Urdu.",
       assessment: "Midterm Project — 15 points",
+      assessmentDetail:
+        "Create and demonstrate a reusable, no-code, prompt-based AI workflow with documented instructions, example outputs, verification and improvements.",
+      classes: [
+        {
+          n: "10",
+          date: "Mon, Dec 21, 2026",
+          title: "Prompt Engineering Foundations",
+          topics: [
+            "What a prompt is",
+            "Why instructions influence AI responses",
+            "Task, context, constraints, and desired output",
+            "System vs user instructions — beginner understanding",
+            "Zero-shot prompting",
+            "Clear vs unclear prompts",
+            "Writing prompts in English and Roman Urdu",
+          ],
+        },
+        {
+          n: "11",
+          date: "Wed, Dec 23, 2026",
+          title: "Prompting Techniques & Output Quality",
+          topics: [
+            "Few-shot prompting",
+            "Providing examples",
+            "Prompt refinement",
+            "Iterative prompting",
+            "Prompt chaining",
+            "Structured output requests",
+            "JSON-format awareness",
+            "Reusable prompt templates",
+            "Testing output quality",
+          ],
+        },
+        {
+          n: "12",
+          date: "Fri, Dec 25, 2026",
+          title: "Context Engineering & Practical Workflows",
+          topics: [
+            "What context engineering means",
+            "Relevant vs irrelevant information",
+            "Supplying useful reference information",
+            "Managing context",
+            "Document-grounded prompting",
+            "Multimodal instructions",
+            "Designing reusable workflows",
+            "Evaluating output quality",
+            "Guided practical activity",
+          ],
+        },
+      ],
     },
     {
       n: "05",
-      title: "AI for documents and real-world work",
-      topics: [
-        "AI-assisted research and document analysis.",
-        "Summarization and extraction.",
-        "Professional writing and productivity workflows.",
-        "Tables, structured information and everyday business tasks.",
-        "Verifying sources and AI-generated content.",
-        "Privacy and safe handling of information.",
-      ],
+      title: "Embeddings, Semantic Search, RAG & Documents",
+      summary:
+        "How AI finds the right information — meaning-based search, retrieval from documents, and grounded answers that can be checked against sources.",
       outcome:
-        "Students design a useful AI-supported workflow for a real-world task.",
-      assessment: "Assignment 4 — 10 points",
+        "Students understand how AI applications use relevant external information to answer questions.",
+      assessment: "Assignment 04 — 10 points",
+      assessmentDetail:
+        "Design a sample document-based AI assistant workflow, including retrieval, output verification and known limitations.",
+      classes: [
+        {
+          n: "13",
+          date: "Mon, Dec 28, 2026",
+          title: "Vectors, Embeddings & Semantic Search",
+          topics: [
+            "Basic concept of vectors",
+            "What embeddings are",
+            "Embedding models",
+            "Semantic similarity",
+            "Keyword search vs semantic search",
+            "Similarity-based retrieval",
+            "Real-world applications",
+          ],
+        },
+        {
+          n: "14",
+          date: "Wed, Dec 30, 2026",
+          title: "Retrieval-Augmented Generation & Vector Databases",
+          // Vector databases are presented as one retrieval option — do
+          // not imply every RAG system must use one.
+          topics: [
+            "What RAG is",
+            "Why RAG is useful",
+            "RAG vs relying only on model training",
+            "Document chunking",
+            "Embeddings and retrieval",
+            "Vector databases",
+            "Retrieval pipelines",
+            "Supplying retrieved context to language models",
+            "Grounded answer generation",
+            "RAG limitations and verification",
+          ],
+        },
+        {
+          n: "15",
+          date: "Fri, Jan 1, 2027",
+          title: "AI for Documents & Research",
+          topics: [
+            "Document understanding",
+            "AI-assisted research",
+            "Summarization",
+            "Information extraction",
+            "Document question answering",
+            "Source references and verification",
+            "Reliable research workflows",
+            "Privacy and confidential documents",
+          ],
+        },
+      ],
     },
     {
       n: "06",
-      title: "AI-assisted prototyping and debugging",
-      topics: [
-        "Understanding basic application components.",
-        "What APIs and JSON are, conceptually.",
-        "Understanding the role of AI-generated code.",
-        "Giving clear implementation instructions to AI tools.",
-        "Testing features and validating expected behavior.",
-        "Debugging and making controlled improvements.",
-        "Maintaining basic project documentation.",
-      ],
+      title: "Software & Backend Foundations for AI Applications",
+      summary:
+        "How websites and apps work behind the scenes, and how an AI model is connected to a real product through APIs — described conceptually.",
       outcome:
-        "Students can guide and verify a simple AI-assisted prototype without prior coding experience.",
-      assessment: "Assignment 5 — 10 points",
+        "Students understand how modern software applications operate and how AI models connect to applications.",
+      assessment: "Assignment 05 — 10 points",
+      // No mandatory backend coding in Level 01 — this week is
+      // conceptual, not a coding requirement.
+      assessmentDetail:
+        "Explain an AI-powered application's architecture with a diagram and simple request-response examples.",
+      classes: [
+        {
+          n: "16",
+          date: "Mon, Jan 4, 2027",
+          title: "How Modern Applications Work",
+          topics: [
+            "Websites and web applications",
+            "Frontend",
+            "Backend",
+            "Databases",
+            "Clients and servers",
+            "Local vs hosted applications",
+            "Cloud hosting",
+            "Domains and deployment",
+            "Static vs dynamic applications",
+            "Software as a Service (SaaS)",
+            "AI-powered SaaS architecture",
+          ],
+        },
+        {
+          n: "17",
+          date: "Wed, Jan 6, 2027",
+          title: "APIs, HTTP & Data Communication",
+          topics: [
+            "APIs",
+            "API endpoints",
+            "URLs",
+            "HTTP vs HTTPS",
+            "Client requests and server responses",
+            "HTTP methods: GET, POST, PUT, PATCH, DELETE",
+            "CRUD operations",
+            "JSON structure",
+            "Common HTTP status codes",
+            "API keys",
+            "Authentication — conceptual introduction",
+          ],
+        },
+        {
+          n: "18",
+          date: "Fri, Jan 8, 2027",
+          title: "Connecting AI Models to Applications",
+          topics: [
+            "How frontend and backend communicate",
+            "How backend services connect to LLM APIs",
+            "AI API requests and responses",
+            "JSON payload examples",
+            "Data processing",
+            "API usage and cost",
+            "Latency",
+            "Rate limits",
+            "Error handling",
+            "Security basics",
+            "Simple AI application architecture",
+          ],
+        },
+      ],
     },
     {
       n: "07",
-      title: "AI assistants, workflows and final project planning",
-      topics: [
-        "Difference between chatbots, AI assistants and AI agents.",
-        "Simple automated workflows.",
-        "Knowledge-based assistants and introductory RAG concepts.",
-        "Limitations of AI-powered systems.",
-        "Designing a practical final project.",
-        "Preparing requirements, workflow and evaluation criteria.",
-      ],
+      title: "AI Agents, Agentic AI, Tools & MCP",
+      summary:
+        "What AI agents are, how they call tools and follow protocols such as MCP, and how to plan a simple agentic workflow step by step.",
       outcome:
-        "Students have a clearly planned final project and understand how basic AI workflows are organized.",
-      assessment: "Assignment 6 — 10 points",
+        "Students understand the basic architecture of AI agents and can design a simple agentic workflow.",
+      assessment: "Assignment 06 — 10 points",
+      assessmentDetail:
+        "Design a beginner-level agentic workflow covering goals, tools, actions, permissions and testing criteria.",
+      classes: [
+        {
+          n: "19",
+          date: "Mon, Jan 11, 2027",
+          title: "AI Agents & Agentic AI",
+          topics: [
+            "Chatbots vs AI assistants vs AI agents",
+            "Agentic AI",
+            "Goals and tasks",
+            "Planning",
+            "Actions and observations",
+            "Agent workflows",
+            "Autonomy and human supervision",
+            "Single-agent vs multi-agent overview",
+            "Reliability and limitations",
+          ],
+        },
+        {
+          n: "20",
+          date: "Wed, Jan 13, 2027",
+          title: "Tools, Plugins, Skills & MCP",
+          // "Plugin", "connector" and "skill" are platform-dependent
+          // terms — explain the variation rather than one fixed meaning.
+          topics: [
+            "AI tool calling",
+            "External tools and APIs",
+            "Plugins and connectors",
+            "Reusable AI skills",
+            "Model Context Protocol (MCP)",
+            "MCP clients and servers",
+            "MCP tools, resources, and prompts",
+            "Permissions and access control",
+            "Tool security and prompt injection — basic awareness",
+          ],
+        },
+        {
+          n: "21",
+          date: "Fri, Jan 15, 2027",
+          title: "Designing an Agentic Workflow",
+          topics: [
+            "Problem definition",
+            "Goal decomposition",
+            "Planning steps",
+            "Selecting tools",
+            "Executing actions",
+            "Checking intermediate results",
+            "Human-in-the-loop approvals",
+            "Handling failures",
+            "Workflow testing",
+            "Evaluation and improvement",
+            "Guided agentic workflow demonstration",
+          ],
+        },
+      ],
     },
     {
       n: "08",
-      title: "Final project, testing and showcase",
-      topics: [
-        "Final project implementation and refinement.",
-        "Reviewing requirements.",
-        "Testing project functionality.",
-        "Improving unreliable outputs.",
-        "Completing the README and project documentation.",
-        "Project demonstration and explanation.",
-        "Learning reflection and Level 02 roadmap.",
-      ],
+      title: "Final Project, Testing & Showcase",
+      summary:
+        "Building, testing, documenting and presenting a beginner-level AI-assisted solution — and reflecting on what to learn next.",
       outcome:
-        "Students can demonstrate a documented, tested beginner-level AI-assisted project.",
+        "Students demonstrate a documented, tested, beginner-level AI-assisted solution.",
       assessment: "Final Project — 25 points",
+      assessmentDetail:
+        "Present a documented, tested, beginner-level AI-assisted solution: the problem it solves, the workflow used, the test results and its limitations.",
+      classes: [
+        {
+          n: "22",
+          date: "Mon, Jan 18, 2027",
+          title: "Guided Final Project Development",
+          topics: [
+            "Implementing the selected project",
+            "Reviewing requirements",
+            "Building or connecting workflow components",
+            "Evaluating generated outputs",
+            "Troubleshooting",
+            "Guided improvements",
+          ],
+        },
+        {
+          n: "23",
+          date: "Wed, Jan 20, 2027",
+          title: "Testing, Documentation & Refinement",
+          topics: [
+            "Functional testing",
+            "Identifying incorrect outputs",
+            "Limitations and edge cases",
+            "Privacy checks",
+            "Quality improvements",
+            "Test checklists",
+            "README documentation",
+            "Demonstration preparation",
+          ],
+        },
+        {
+          n: "24",
+          date: "Fri, Jan 22, 2027",
+          title: "Final Project Showcase",
+          topics: [
+            "Student project demonstrations",
+            "Explaining the problem and solution",
+            "Showing practical workflows",
+            "Discussing limitations",
+            "Instructor feedback",
+            "Learning reflection",
+            "Possible Level 02 learning pathways",
+          ],
+        },
+      ],
     },
   ],
   methodology: {
@@ -1002,7 +1435,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "Eight-week curriculum",
-              body: "The course runs across eight weeks — from Generative AI foundations and prompt engineering, through project planning and guided building, to documents, prototyping, AI assistants and a final project. Every week lists its topics, a practical outcome and its assessment on the courses page.",
+              body: "The course runs across eight weeks — from artificial intelligence and machine learning foundations, through deep learning, modern generative AI, prompt and context engineering, embeddings and RAG, software and API fundamentals, and agentic AI, to a guided final project. Every week lists its classes, detailed topics, a practical outcome and its assessment on the courses page.",
             },
             {
               heading: "100-point assessment system",

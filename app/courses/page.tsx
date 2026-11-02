@@ -255,7 +255,7 @@ export default function CoursesPage() {
           <CourseHeading
             label="Curriculum"
             title="Eight-week course outline"
-            description="Each card lists its topics, a practical outcome and its assessment. Hover to preview a week, then click or tap to pin it open."
+            description="Each card summarises one week — click or tap to pin it open and see the week's three classes with their dates, detailed topics, practical activity and assessment. On desktop, hover to preview a week first."
           />
           <CurriculumGrid weeks={program.weeks} />
         </Container>

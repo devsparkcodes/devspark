@@ -12,15 +12,9 @@ import { MagicWand } from "@phosphor-icons/react/dist/ssr/MagicWand";
 import { Plus } from "@phosphor-icons/react/dist/ssr/Plus";
 import { Presentation } from "@phosphor-icons/react/dist/ssr/Presentation";
 
+import { Disclosure } from "@/components/ui/disclosure";
+import type { CurriculumWeek } from "@/config/content";
 import { cn, revealDelay } from "@/lib/utils";
-
-type Week = {
-  n: string;
-  title: string;
-  topics: string[];
-  outcome: string;
-  assessment: string;
-};
 
 /* One meaningful icon per week (Week 1 → Week 8). */
 const WEEK_ICONS = [
@@ -43,20 +37,30 @@ const WEEK_ICONS = [
  *     keyboard ( Enter / Space ) all disclose the week.
  *   - Desktop hover ( fine pointers only, CSS media-gated — the markup
  *     never changes so hydration stays deterministic ) slides a preview
- *     overlay over the face showing the week label, every topic and the
- *     week title. Clicking pins the card open, which keeps the preview
- *     away while the real panel shows the same content.
+ *     overlay over the face showing the week label, the short week
+ *     summary and the week title. Clicking pins the card open, which
+ *     keeps the preview away while the real panel shows the detail.
  *   - Coarse-pointer devices never see the hover preview; they get a
  *     "Tap to explore" hint instead ( `.card-tap-hint` ).
  *   - The panel animates through a `grid-template-rows` transition
  *     ( neutralised under `prefers-reduced-motion` ) and stays
- *     `aria-hidden` while closed. Multiple cards may be open at once.
+ *     `aria-hidden` + `inert` while closed, so its nested controls never
+ *     sit in the tab order of a collapsed card. Multiple cards may be
+ *     open at once.
+ *   - Inside the panel each of the week's three classes is its own
+ *     `Disclosure` row (the shared `components/ui/disclosure` component),
+ *     so the detailed topic lists stay collapsed until a class is
+ *     opened — a week never dumps 25–34 bullets on the visitor at once.
+ *
+ * Data: every string comes from `program.weeks` in `config/content.ts`
+ * (the single curriculum source of truth) — this component only renders
+ * it.
  *
  * Layout discipline: fixed header row ( icon · W-label · indicator ),
  * title, clamped outcome preview, then an `mt-auto` footer pinned to the
  * bottom of every card so assessment rows line up across each row.
  */
-export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
+export function CurriculumGrid({ weeks }: { weeks: CurriculumWeek[] }) {
   const [openIds, setOpenIds] = useState<string[]>([]);
 
   const toggle = (n: string) =>
@@ -71,6 +75,10 @@ export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
         const open = openIds.includes(week.n);
         const panelId = `week-${week.n}-panel`;
         const weekLabel = `W${week.n}`;
+        const topicCount = week.classes.reduce(
+          (total, cls) => total + cls.topics.length,
+          0
+        );
         return (
           <li
             key={week.n}
@@ -98,30 +106,22 @@ export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
 
               {/* Desktop hover preview — decorative duplicate, always in
                   the SSR markup, visible only via .card-chrome:hover on
-                  fine pointers while the card is not pinned open. */}
+                  fine pointers while the card is not pinned open. It
+                  shows the short week summary; the detailed per-class
+                  topics live in the pinned panel below the face. */}
               <div aria-hidden="true" className="card-preview">
                 <span className="flex shrink-0 items-baseline justify-between gap-3">
                   <span className="label text-[0.6rem] text-accent">
                     {weekLabel}
                   </span>
                   <span className="label text-[0.48rem] text-secondary">
-                    {week.topics.length} topics · pin open
+                    {week.classes.length} classes · {topicCount} topics ·
+                    pin open
                   </span>
                 </span>
-                <ul className="mt-3 shrink-0 space-y-0.25">
-                  {week.topics.map((topic) => (
-                    <li
-                      key={topic}
-                      className="flex gap-1.5 text-[0.66rem] leading-[1.25] text-secondary"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-1.5 size-1 shrink-0 rounded-full bg-accent"
-                      />
-                      <span>{topic}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-3 shrink-0 text-[0.7rem] leading-[1.45] text-secondary">
+                  {week.summary}
+                </p>
                 <span
                   aria-hidden="true"
                   className="mt-auto block h-px shrink-0 bg-hairline"
@@ -185,10 +185,14 @@ export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
                   over 360ms on the standard decelerating curve and closes
                   over 280ms on the in-out exit curve (no end-crawl, no
                   end-snap); the inner content arrives behind the row
-                  expansion and is gone before the close's final settle. */}
+                  expansion and is gone before the close's final settle.
+                  `inert` keeps the nested class disclosures out of the
+                  tab order and the accessibility tree while the card is
+                  collapsed (same rule as `components/ui/disclosure`). */}
               <div
                 id={panelId}
                 aria-hidden={!open}
+                inert={!open}
                 className={cn(
                   "grid px-5 transition-[grid-template-rows] md:px-6",
                   open
@@ -205,21 +209,74 @@ export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
                         : "delay-0 -translate-y-2 opacity-0 duration-[260ms] ease-exit"
                     )}
                   >
-                    <p className="label text-label text-secondary">Topics</p>
-                    <ul className="mt-3 space-y-2.5">
-                      {week.topics.map((topic) => (
+                    <p className="label text-label text-secondary">
+                      What this week covers
+                    </p>
+                    <p className="mt-2 text-[0.9rem] leading-relaxed text-text">
+                      {week.summary}
+                    </p>
+
+                    <p className="label mt-5 text-label text-secondary">
+                      Classes
+                    </p>
+                    <ol className="mt-1">
+                      {week.classes.map((cls) => (
                         <li
-                          key={topic}
-                          className="flex gap-3 text-[0.9rem] leading-relaxed text-secondary"
+                          key={cls.n}
+                          className="border-b border-hairline last:border-b-0"
                         >
-                          <span
-                            aria-hidden="true"
-                            className="mt-2 size-1 shrink-0 rounded-full bg-accent"
-                          />
-                          <span>{topic}</span>
+                          <Disclosure
+                            trigger={
+                              <span className="min-w-0">
+                                <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                                  <span className="label text-[0.6rem] text-accent">
+                                    Class {cls.n}
+                                  </span>
+                                  <span className="text-[0.72rem] text-secondary">
+                                    {cls.date}
+                                  </span>
+                                  {cls.badge ? (
+                                    <span className="label rounded-full bg-accent px-2 py-0.5 text-[0.6rem] text-on-accent">
+                                      {cls.badge}
+                                    </span>
+                                  ) : null}
+                                </span>
+                                <span className="mt-1.5 block text-[0.92rem] font-semibold leading-snug text-text">
+                                  {cls.title}
+                                </span>
+                              </span>
+                            }
+                            contentClassName="pt-3"
+                          >
+                            <ul className="space-y-2.5">
+                              {cls.topics.map((topic) => (
+                                <li
+                                  key={topic}
+                                  className="flex gap-3 text-[0.9rem] leading-relaxed text-secondary"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                    className="mt-2 size-1 shrink-0 rounded-full bg-accent"
+                                  />
+                                  <span>{topic}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            {cls.practical ? (
+                              <div className="mt-4 rounded-xl border border-accent/25 bg-accent/[0.07] p-3.5">
+                                <p className="label text-label text-secondary">
+                                  Practical learning
+                                </p>
+                                <p className="mt-1.5 text-[0.88rem] leading-relaxed text-text">
+                                  {cls.practical}
+                                </p>
+                              </div>
+                            ) : null}
+                          </Disclosure>
                         </li>
                       ))}
-                    </ul>
+                    </ol>
+
                     <div className="mt-5 rounded-xl border border-accent/25 bg-accent/[0.07] p-4">
                       <p className="label text-label text-secondary">
                         Practical outcome
@@ -228,6 +285,19 @@ export function CurriculumGrid({ weeks }: { weeks: Week[] }) {
                         {week.outcome}
                       </p>
                     </div>
+
+                    {week.assessmentDetail ? (
+                      <div className="mt-3 rounded-xl border border-hairline bg-surface p-4">
+                        <p className="label text-label text-secondary">
+                          {/^(Midterm|Final)/.test(week.assessment)
+                            ? "Project brief"
+                            : "Assignment brief"}
+                        </p>
+                        <p className="mt-2 text-[0.9rem] leading-relaxed text-secondary">
+                          {week.assessmentDetail}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
