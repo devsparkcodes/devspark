@@ -172,9 +172,9 @@ export const program = {
         body: "Understand how software, APIs and AI models fit together, and how AI supports real applications — no prior programming experience required.",
       },
     ],
-    whyTitle: "Why learn Generative AI?",
+    whyTitle: "Why Learn AI?",
     whyDescription:
-      "Practical, beginner-level value you can apply from the first week — in study, at work and in your own projects.",
+      "AI is changing how we learn, work, and solve everyday problems. Understanding how AI works helps you use these technologies with confidence, make better decisions, and explore new possibilities. With DevSpark, you'll build a foundation in AI concepts, practice with real examples, and learn how AI can support your studies, work, and future projects.",
     whyPoints: [
       "Understand how modern AI actually works and where it genuinely helps.",
       "Improve day-to-day productivity with practical AI workflows.",
