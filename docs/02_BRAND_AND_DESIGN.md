@@ -33,7 +33,7 @@ Avoid generic AI clichés, excessive gradients/glow/glassmorphism, overloaded se
 Explore one strong visual concept first. 3D is welcome where it adds value, but performance, readability, accessibility and mobile usability take priority. Respect `prefers-reduced-motion`, provide fallbacks, optimize assets and avoid blocking main content.
 
 ## Accessibility baseline
-Semantic HTML, keyboard navigation, visible focus, labelled forms, sufficient contrast, readable text, meaningful alt text and reduced-motion support.
+Semantic HTML, keyboard navigation, visible focus, labeled forms, sufficient contrast, readable text, meaningful alt text and reduced-motion support.
 
 ## Implementation reference
 `design-system/devspark/MASTER.md` records the implemented token values, component rules and motion system. Where it and this document disagree, this document wins and MASTER.md must be updated.

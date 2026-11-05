@@ -1,6 +1,6 @@
 # DevSpark — Design System Master
 
-**Status:** V1 implemented and live — six routes (Home, Solutions, Courses, About, Help Center at `/guides`, Contact) + `POST /api/contact`, routed navigation with active states. `/faq` is a permanent `308` redirect to `/guides`. Remaining work is external setup: Resend credentials for real contact-form delivery and a possible custom domain (the Google Form URL is already connected in `config/site.ts`).
+**Status:** V1 implemented and live — six routes (Home, Solutions, Courses, About, Help Center at `/guides`, Contact) + `POST /api/contact`, routed navigation with active states. `/faq` is a permanent `308` redirect to `/guides`. Remaining work is external setup: confirmed Resend configuration in production for contact-form delivery (credentials are set locally; four real emails were sent in October 2026 via the test-mode sender) and a possible custom domain (the Google Form URL is already connected in `config/site.ts`).
 **Generated with:** UI UX Pro Max skill (`--design-system --persist`), then corrected against `docs/02_BRAND_AND_DESIGN.md`.
 **Rule:** the project documentation remains the source of truth. Where this file and the docs disagree, the docs win and this file must be updated.
 
@@ -75,7 +75,7 @@ Check `design-system/devspark/pages/<page>.md` before building a page. If it exi
 - Semantic landmarks, one `h1`, sequential headings, skip link as first tab stop.
 - Focus: 2px `--color-focus` ring with 3px offset (orange on the dark band).
 - Body/supporting text ≥ 4.5:1; non-text UI ≥ 3:1.
-- `prefers-reduced-motion` honoured globally and per-effect; no scroll-jacking.
+- `prefers-reduced-motion` honored globally and per-effect; no scroll-jacking.
 - Touch targets ≥ 44px for icon controls; no horizontal scroll at 360/390/480/640/768/900/1024/1280/1440.
 - No emoji icons; no unlabeled SVGs; no dead links — TBD destinations render as clearly marked, non-interactive placeholders.
 

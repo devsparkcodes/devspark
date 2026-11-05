@@ -2,7 +2,7 @@
 
 **Brand:** DevSpark
 **Tagline:** Building AI Solutions
-**Status:** V1 live in production (https://devsparkcodes.vercel.app) — six pages + Help Center + contact API, Google Form registration connected, and the revised Generative AI Engineering — Level 01, Cohort 01 curriculum published. Remaining external setup: Resend credentials for real contact-form delivery and a possible custom domain — see `05_TECHNICAL_SPECIFICATION.md`.
+**Status:** V1 live in production (https://devsparkcodes.vercel.app) — six pages + Help Center + contact API, Google Form registration connected, and the revised Generative AI Engineering — Level 01, Cohort 01 curriculum published. Remaining external setup: confirmed Resend configuration in production for contact-form delivery (four real emails were sent in October 2026 via the test-mode sender) and a possible custom domain — see `05_TECHNICAL_SPECIFICATION.md`.
 
 Start at the repository root [`README.md`](../README.md) for setup, commands and deployment; this folder holds the detailed project documentation.
 

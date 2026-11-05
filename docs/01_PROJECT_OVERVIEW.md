@@ -28,8 +28,8 @@ DevSpark is intended to grow into a technology company and product brand that so
 **Generative AI Engineering — Level 01, Cohort 01**: an 8-week, 24-session beginner program delivered live on Google Meet in Urdu (with English technical terminology), starting Monday, November 30, 2026. The first two sessions are free demos; the standard fee is PKR 4,000 with a Cohort 01 early-bird fee of PKR 3,000 for the first 20 verified paid enrollments. The full curriculum, assessment (100 points), certificate criteria, awards and refund rules are published on `/courses` and documented authoritatively in `04_COURSE_AND_ENROLLMENT.md`. Session recordings are provided to enrolled students so missed lessons can be reviewed; watching a recording does not count as live attendance.
 
 ## User journeys
-- **Business:** Home → Solutions → Discuss a Project → Contact form.
-- **Student:** Home or Courses → review facts, curriculum and policies → Register for Free Demo → published Google Form → (optional) paid enrollment verified off-site by the instructor.
+- **Business:** Home → Solutions → Discuss a project → Contact form.
+- **Student:** Home or Courses → review facts, curriculum and policies → Register for a free demo → published Google Form → (optional) paid enrollment verified off-site by the instructor.
 - **Resource visitor:** Home → Help (`/guides`) → read a confirmed guide → next relevant action (contact, courses, registration).
 
 ## High-level technical architecture
@@ -55,12 +55,12 @@ Not included: custom backend/database, login/student dashboard, payment gateway,
 
 ## Verified integrations
 - **Google Form** (registration of interest + free-demo participation): `https://forms.gle/xpjhjQgRXKfnbJds9` (`config/site.ts` links).
-- **Resend** for contact-form email delivery: wired in `app/api/contact/route.ts` + `lib/email.ts`; mock-tested, real delivery NOT yet verified (needs credentials + a verified sender — `05_TECHNICAL_SPECIFICATION.md`, `.env.example`).
+- **Resend** for contact-form email delivery: wired in `app/api/contact/route.ts` + `lib/email.ts`; mock-tested, and four real contact-form emails were sent through Resend in October 2026 (test-mode sender, delivered to the account owner's inbox). Credentials are configured in local `.env.local`; production configuration is unconfirmed (`05_TECHNICAL_SPECIFICATION.md`, `.env.example`).
 - **Vercel** hosting with the GitHub integration; production origin `https://devsparkcodes.vercel.app`.
 - **Contact email** `devspark.codes@gmail.com`; social LinkedIn/Instagram/GitHub `devsparkcodes` (`config/site.ts`). Facebook: not configured.
 
 ## Resolved (implemented in code)
-- Course facts published on `/courses`: 8 weeks · 24 live sessions (2 free demos + 22 paid sessions), Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, first paid class Friday, December 4, 2026, final scheduled session Friday, January 22, 2027 (if uninterrupted), teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu with English technical terminology, presentation-led teaching using structured slides with optional Excalidraw visuals, live practical demonstrations, guided activities and interactive Q&A (downloadable slide or PDF files not promised; session recordings ARE provided to enrolled students), the full revised 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
+- Course facts published on `/courses`: 8 weeks · 24 live sessions (2 free demos + 22 paid sessions), Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, first paid session Friday, December 4, 2026, final scheduled session Friday, January 22, 2027 (if uninterrupted), teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu with English technical terminology, presentation-led teaching using structured slides with optional Excalidraw visuals, live practical demonstrations, guided activities and interactive Q&A (downloadable slide or PDF files not promised; session recordings ARE provided to enrolled students), the full revised 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
 - Certificate: DevSpark Certificate of Completion confirmed for students who meet the course requirements; digital issuance/verification (IDs, QR) planned with the future LMS.
 - Logo assets: header `logos/Full logo/black-devspark.png`, footer/dark `logos/Full logo/white-devspark.png`, favicon `app/icon.svg` (rendered via `components/ui/logo.tsx`).
 - Brand accent: `#F58220` (semantic tokens in `app/globals.css`; see `design-system/devspark/MASTER.md`).
@@ -78,7 +78,7 @@ Do not invent the remaining details:
 - Website-side paid-enrollment/payment processing.
 - Founder photo asset.
 
-Confirmed and no longer TBD: first paid class date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy, standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window.
+Confirmed and no longer TBD: first paid session date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy, standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window.
 
 ## References
 - Course policies: `04_COURSE_AND_ENROLLMENT.md`

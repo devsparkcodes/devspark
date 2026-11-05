@@ -1,6 +1,6 @@
 # OpenCode Model Selection (research snapshot: 9 October 2026)
 
-Model catalogues, names, availability and pricing change. Confirm exact model IDs in OpenCode using `/models` after connecting a provider. Do not hard-code an unverified model ID in the project.
+Model catalogs, names, availability and pricing change. Confirm exact model IDs in OpenCode using `/models` after connecting a provider. Do not hard-code an unverified model ID in the project.
 
 ## Task recommendations
 | Task | Recommendation |

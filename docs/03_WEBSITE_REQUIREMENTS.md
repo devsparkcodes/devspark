@@ -14,7 +14,7 @@
 - **Help seeker** — searches the Help Center for confirmed guidance.
 
 ## Navigation
-Logo → Home (`/`), then **Solutions · Courses · About · Help · Contact**, plus a "Discuss a Project" CTA. `Help` points to the Help Center at `/guides`; there are no separate Guides or FAQ navigation entries. The former `/faq` route permanently redirects (`308`) to `/guides` (configured in `next.config.ts`). Do not show Products or empty product cards in V1. Destinations are real routes (`config/navigation.ts`); the active route is exposed with `aria-current`.
+Logo → Home (`/`), then **Solutions · Courses · About · Help · Contact**, plus a "Discuss a project" CTA. `Help` points to the Help Center at `/guides`; there are no separate Guides or FAQ navigation entries. The former `/faq` route permanently redirects (`308`) to `/guides` (configured in `next.config.ts`). Do not show Products or empty product cards in V1. Destinations are real routes (`config/navigation.ts`); the active route is exposed with `aria-current`.
 
 ## Page requirements
 
@@ -22,7 +22,7 @@ Logo → Home (`/`), then **Solutions · Courses · About · Help · Contact**, 
 Establish DevSpark's company identity and route visitors to Solutions, Courses or Contact. Implemented sections in order: hero/tagline, Solutions preview, current learning program (facts, cohort timeline and curriculum summary), About/company statement with working principles, FAQ preview, contact CTA and footer. Hero copy is implemented and centralized in `config/content.ts` (`hero`) — revise it there, not in this document.
 
 ### Solutions (`/solutions`)
-Help businesses contact DevSpark to discuss a problem or requirement. The three areas shown — AI-powered solutions, workflow automation and custom software — are proposed categories, not proof that every service is currently available; availability is confirmed per project. Include a "Discuss a Project" CTA. No invented clients, case studies, metrics or guarantees.
+Help businesses contact DevSpark to discuss a problem or requirement. The three areas shown — AI-powered solutions, workflow automation and custom software — are proposed categories, not proof that every service is currently available; availability is confirmed per project. Include a "Discuss a project" CTA. No invented clients, case studies, metrics or guarantees.
 
 ### Courses (`/courses`)
 Show **Generative AI Engineering — Level 01, Cohort 01** with:
@@ -30,9 +30,9 @@ Show **Generative AI Engineering — Level 01, Cohort 01** with:
 - **Confirmed course facts** (start date, schedule, time, platform, language, fees, free demos, session breakdown) — the on-page "Course at a glance" table.
 - **The full 8-week / 24-class curriculum** with per-week disclosures (dates, topics, practical activities, assessments), rendered from `config/content.ts` → `program.weeks`.
 - **Audience, prerequisites and learning outcomes**, methodology and learning materials.
-- **Assessment, certificate, Top Three Awards and refund/cancellation policies**, exactly as published.
+- **Assessment, certificate, Top Three Student Awards and refund/cancellation policies**, exactly as published.
 
-Authoritative policy wording lives in `04_COURSE_AND_ENROLLMENT.md`; the page must stay consistent with it. Policy facts on the page include: standard fee PKR 4,000 one-time with Cohort 01 early-bird PKR 3,000 (25% off) for the first 20 verified paid enrollments (the interest form never reserves the offer); assignments released Fridays in Weeks 1, 2, 3, 5, 6 and 7, each due Sunday 11:59 PM PKT with no extensions; midterm project 15 points (Week 4), final project 25 points (Week 8), 100 points total; certificate requires 20/24 attendance (both demos counted) plus 60/100 with all submissions; the Top Three Awards require 24/24 attendance; cancellation, course-cancellation and lead-instructor-replacement refund rules per `04_COURSE_AND_ENROLLMENT.md`. Registration runs through the Google Form (`https://forms.gle/xpjhjQgRXKfnbJds9`); paid enrollment and early-bird places are confirmed only after DevSpark verifies payment — a screenshot alone is not proof.
+Authoritative policy wording lives in `04_COURSE_AND_ENROLLMENT.md`; the page must stay consistent with it. Policy facts on the page include: standard fee PKR 4,000 one-time with Cohort 01 early-bird PKR 3,000 (25% off) for the first 20 verified paid enrollments (the interest form never reserves the offer); assignments released Fridays in Weeks 1, 2, 3, 5, 6 and 7, each due Sunday 11:59 PM PKT with no extensions; midterm project 15 points (Week 4), final project 25 points (Week 8), 100 points total; certificate requires 20/24 attendance (both demos counted) plus 60/100 with all submissions; the Top Three Student Awards require 24/24 attendance; cancellation, course-cancellation and lead-instructor-replacement refund rules per `04_COURSE_AND_ENROLLMENT.md`. Registration runs through the Google Form (`https://forms.gle/xpjhjQgRXKfnbJds9`); paid enrollment and early-bird places are confirmed only after DevSpark verifies payment — a screenshot alone is not proof.
 
 ### About (`/about`)
 Tell DevSpark's company story; keep the company as the focus. Founder photo may appear as supporting content. No dedicated Founder page.
@@ -44,7 +44,7 @@ Implemented as a client-side Help Center: search across guide titles/summaries/k
 There is no standalone FAQ page. The former `/faq` route permanently redirects to the Help Center at `/guides`. The homepage shows a small FAQ preview drawn from `config/content.ts` (`faq`).
 
 ### Contact (`/contact`)
-Contact form posts to `POST /api/contact`, which validates input, rate-limits, deduplicates, and forwards accepted messages to Resend; email and social links provide alternatives. Success is only shown after the provider confirms acceptance (never faked), and an unconfigured deployment honestly returns a 503 notice. The form has passed mocked tests but real email delivery is not yet verified (see `05_TECHNICAL_SPECIFICATION.md` and `.env.example`).
+Contact form posts to `POST /api/contact`, which validates input, rate-limits, deduplicates, and forwards accepted messages to Resend; email and social links provide alternatives. Success is only shown after the provider confirms acceptance (never faked), and an unconfigured deployment honestly returns a 503 notice. The form has passed mocked tests, and four real contact-form emails were sent through Resend in October 2026 (test-mode sender); production configuration is unconfirmed (see `05_TECHNICAL_SPECIFICATION.md` and `.env.example`).
 
 ### 404
 Branded not-found page (`app/not-found.tsx`).
@@ -56,8 +56,8 @@ Branded not-found page (`app/not-found.tsx`).
 4. Paid enrollment, payment verification and Google Meet link distribution happen off-site (instructor + spreadsheet) — none of it is a website feature.
 
 ## Journeys
-- Business: Home → Solutions → Discuss a Project → Contact.
-- Student: Home/Courses → Program details → Register for Free Demo → Google Form.
+- Business: Home → Solutions → Discuss a project → Contact.
+- Student: Home/Courses → Program details → Register for a free demo → Google Form.
 - Resource visitor: Home → Guides → Read a real resource → next relevant action.
 
 ## Non-functional requirements
@@ -66,7 +66,7 @@ Branded not-found page (`app/not-found.tsx`).
 Intentional layouts for phone, tablet and desktop — not a compressed desktop page. The mobile menu closes on link click and Escape and exposes `aria-expanded`/`aria-controls`. No horizontal scrolling at tested widths (360–1440px).
 
 ### Accessibility
-Semantic HTML and landmarks, one `h1` per page, sequential headings, skip link as the first tab stop, visible focus rings (2px, 3px offset), labelled form controls, body text ≥ 4.5:1 contrast, meaningful alternative text, `prefers-reduced-motion` honoured globally and per effect, keyboard-operable menus/disclosures, touch targets ≥ 44px for icon controls. The orange accent never carries small text on light backgrounds; text on orange is always dark (`#111111`). Details: `02_BRAND_AND_DESIGN.md` and `design-system/devspark/MASTER.md`.
+Semantic HTML and landmarks, one `h1` per page, sequential headings, skip link as the first tab stop, visible focus rings (2px, 3px offset), labeled form controls, body text ≥ 4.5:1 contrast, meaningful alternative text, `prefers-reduced-motion` honored globally and per effect, keyboard-operable menus/disclosures, touch targets ≥ 44px for icon controls. The orange accent never carries small text on light backgrounds; text on orange is always dark (`#111111`). Details: `02_BRAND_AND_DESIGN.md` and `design-system/devspark/MASTER.md`.
 
 ### SEO
 Unique `title`/`description` per route via `lib/seo.ts` (`%s — DevSpark` title template), canonical and Open Graph/Twitter tags when `NEXT_PUBLIC_SITE_URL` is set, generated `sitemap.xml` and `robots.txt`. Every page shares a page-specific Open Graph screenshot from `public/og/` (`summary_large_image` card on all routes, homepage included) — static point-in-time captures, refreshed manually (see `05_TECHNICAL_SPECIFICATION.md`). While the variable is unset, absolute-URL metadata is omitted — the site never advertises `localhost` or an invented domain.
@@ -92,7 +92,7 @@ GitHub → Vercel Git integration; every push to `main` auto-deploys. Environmen
 
 ## Known constraints
 - No custom backend, database, login, payment gateway, student dashboard or LMS in V1.
-- Real contact-form delivery requires Resend credentials (not yet configured); the form is honest about this with a 503 notice.
+- Real contact-form delivery requires Resend credentials in the running environment. They are configured locally (`.env.local`) and four real contact-form emails were sent in October 2026 (test-mode sender); production configuration is unconfirmed. The form is honest about a missing configuration with a 503 notice.
 - No custom domain yet (HSTS deliberately not set until the domain and HTTPS deployment are confirmed — see `next.config.ts`).
 - No automated test suite; quality relies on typecheck, lint, build and manual QA.
 - Downloadable slide/PDF files are not promised to students; session recordings ARE provided to enrolled students (see `04_COURSE_AND_ENROLLMENT.md`).

@@ -31,7 +31,7 @@ All implemented and verified in the codebase:
 | Registration CTAs | Live links to the published Google Form (`https://forms.gle/xpjhjQgRXKfnbJds9`); pending notes hide automatically when the URL is set |
 | Contact form | Validated, rate-limited, duplicate-protected submissions forwarded to Resend; success is shown only after the provider accepts — a missing configuration returns an honest `503` notice, never a fake success |
 | Help Center | Searchable, filterable guides (four categories, twelve guides) with accordion disclosures |
-| Course policies | Published: fees, early-bird rules, 100-point assessment, attendance/certificate criteria, Top Three Awards, cancellation and refund terms |
+| Course policies | Published: fees, early-bird rules, 100-point assessment, attendance/certificate criteria, Top Three Student Awards, cancellation and refund terms |
 | SEO | Per-page metadata via `lib/seo.ts`, page-specific Open Graph screenshots in `public/og/`, `app/sitemap.ts`, `app/robots.ts` (activated when `NEXT_PUBLIC_SITE_URL` is set) |
 | Security | Content-Security-Policy and baseline security headers for every route (`next.config.ts`) |
 | Accessibility | Skip link, keyboard navigation, visible focus, ARIA on menus/disclosures, `prefers-reduced-motion` support, contrast-checked tokens |
@@ -143,7 +143,7 @@ Almost all editable copy lives in **`config/content.ts`**:
 
 - `hero`, `solutions`, `about`, `faq`, `contact` — homepage and page section copy
 - `program` — course facts, audience, outcomes, methodology, materials, assessment, certificate, awards, pricing, FAQs
-- `program.weeks` — **the authoritative curriculum**: eight weeks, 24 classes, dates, topics, practical activities and assessment strings
+- `program.weeks` — **the authoritative curriculum**: 8 weeks, 24 classes, dates, topics, practical activities and assessment strings
 - `helpCenter` — Help Center categories, guides and sections
 
 Site-wide links and brand strings live in `config/site.ts`; navigation entries in `config/navigation.ts`.
@@ -191,4 +191,4 @@ If documentation and implementation disagree, report the conflict — do not sil
 - **Colors look wrong or hard-coded:** use the semantic tokens in `app/globals.css` (`--color-accent`, `--color-text`, …) — never scatter raw hex values. White on the orange accent fails contrast; use dark text (`#111111`) on orange.
 - **Curriculum or course copy changed but a page did not update:** confirm the text lives in `config/content.ts`, not in a component.
 - **`/faq` should keep redirecting:** the redirect is defined in `next.config.ts`; do not recreate a `/faq` page.
-- **Unknowns** (unconfirmed dates, SLAs, features) stay clearly marked as pending in docs and on the site — never invent them.
+- **Unknowns** (unconfirmed dates, SLAs, features) stay clearly marked as unresolved in docs and are explained in the relevant section on the site — never invent them.

@@ -58,7 +58,7 @@ docs/                   # project documentation
 
 Response contract: `400` validation · `409` duplicate · `429` rate-limited · `503` not configured · `502` provider failure · `{ok:true}` on success. While the required environment variables are missing, submissions are honestly rejected with a 503 notice — success is never faked.
 
-**Testing status:** verified against a local mock Resend provider (validation, dedup, rate limiting, provider failure/timeout, unconfigured state). **Real email delivery has NOT been verified** — that requires a real `RESEND_API_KEY` and a verified sender (see Secrets).
+**Testing status:** verified against a local mock Resend provider (validation, dedup, rate limiting, provider failure/timeout, unconfigured state), plus **four real contact-form emails accepted and sent via Resend in October 2026** through the test-mode `resend.dev` sender (local `.env.local` holds a valid `RESEND_API_KEY`). **Delivery from the production deployment has NOT been verified** — production environment configuration is unconfirmed (see Secrets).
 
 ## Google Form
 Registration URL published: `https://forms.gle/xpjhjQgRXKfnbJds9`. Centralized in `config/site.ts` (`links.enrollmentFormUrl` and `links.demoFormUrl`, both set to the same form); enrollment controls render live links and the pending notes hide automatically, so no broken link can be published. The form itself covers registration of interest and free-demo participation — it does not confirm paid enrollment.
