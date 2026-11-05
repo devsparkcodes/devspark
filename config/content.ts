@@ -757,6 +757,7 @@ export const program = {
     description:
       "The course is assessed on a 100-point system built from weekly work and two projects.",
     total: "100 points",
+    formula: "6 × 10 + 15 + 25 = 100",
     items: [
       {
         label: "Six weekly assignments",
@@ -917,6 +918,120 @@ export const program = {
     },
   ],
 };
+
+const programFact = (term: string): string => {
+  const found = program.facts.find((f) => f.term === term);
+  if (!found) throw new Error(`programDisplay: missing fact "${term}"`);
+  return found.value;
+};
+
+const programMatch = (
+  re: RegExp,
+  text: string,
+  what: string
+): RegExpMatchArray => {
+  const m = text.match(re);
+  if (!m) throw new Error(`programDisplay: unexpected ${what} format`);
+  return m;
+};
+
+/**
+ * Compact course display strings derived from `program` — the single
+ * place components read these labels from, so no course fact is ever
+ * restated inside a UI file. Every value is computed from the published
+ * `facts` (and the curriculum weeks) above and fails the build with a
+ * clear message if a fact's format ever changes.
+ */
+export const programDisplay = (() => {
+  const starts = programFact("Starts");
+  const duration = programFact("Duration");
+  const schedule = programFact("Schedule");
+  const sessionTime = programFact("Session time");
+  const format = programFact("Format");
+  const freeDemo = programFact("Free demo sessions");
+
+  const [, weeks, sessions] = programMatch(
+    /^(\d+) weeks · (\d+) live sessions$/,
+    duration,
+    "Duration"
+  );
+  const [, clock, tzName, tzOffset] = programMatch(
+    /^(.+?) – [^(]+ \((.+), (.+)\)$/,
+    sessionTime,
+    "Session time"
+  );
+  const [, demoCount] = programMatch(
+    /The first (\w+) sessions/,
+    freeDemo,
+    "Free demo sessions"
+  );
+  const demoDatesPart = freeDemo.split(" — ")[1];
+  const demoDates = demoDatesPart ? demoDatesPart.split(" and ") : [];
+  if (demoDates.length !== 2) {
+    throw new Error("programDisplay: unexpected Free demo sessions dates");
+  }
+
+  const scheduleDays = schedule.split(/, | and /);
+  if (scheduleDays.length !== 3) {
+    throw new Error("programDisplay: unexpected Schedule format");
+  }
+
+  const noCodePrereq = program.audience.prerequisites.find((p) =>
+    p.startsWith("No programming experience")
+  );
+  if (!noCodePrereq) {
+    throw new Error("programDisplay: missing programming prerequisite");
+  }
+
+  const curriculumWeeks: CurriculumWeek[] = program.weeks;
+  const freeWeek = curriculumWeeks.find((w) =>
+    w.classes.some((c) => c.badge === "Free demo")
+  );
+  if (!freeWeek) {
+    throw new Error("programDisplay: missing free-demo curriculum week");
+  }
+
+  const startMs = Date.parse(program.startsAt);
+  if (Number.isNaN(startMs)) {
+    throw new Error("programDisplay: unparseable program.startsAt");
+  }
+  const startsShort = new Date(startMs).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "Asia/Karachi",
+  });
+
+  const [level, cohort] = program.subtitle.split(" · ");
+  if (!level || !cohort) {
+    throw new Error("programDisplay: unexpected program.subtitle format");
+  }
+
+  const demoCountLabel =
+    demoCount.charAt(0).toUpperCase() + demoCount.slice(1);
+
+  return {
+    level,
+    cohort,
+    courseHeading: `${program.title} — ${level}`,
+    starts,
+    startsShort,
+    startClock: `${clock} ${tzName} (${tzOffset})`,
+    sessionTime,
+    scheduleLine: `${duration} · ${schedule}`,
+    sessionsPerWeek: `${sessions} sessions · three per week`,
+    daysShort: scheduleDays.map((day) => day.slice(0, 3)).join(" · "),
+    freeWeekLegend: `Week ${parseInt(freeWeek.n, 10)} — first ${demoCount} sessions free`,
+    demoDates,
+    chips: [
+      `Starts ${startsShort}`,
+      `${weeks} weeks · ${sessions} sessions`,
+      format.split(" — ")[0],
+      `${demoCountLabel} free demo sessions`,
+      noCodePrereq.replace(/\.$/, ""),
+    ],
+  };
+})();
 
 export const about = {
   index: "03",

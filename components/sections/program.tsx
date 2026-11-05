@@ -3,17 +3,11 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CohortTimeline } from "@/components/sections/cohort-timeline";
-import { program } from "@/config/content";
+import { program, programDisplay } from "@/config/content";
 import { siteConfig } from "@/config/site";
 import { cn, revealDelay } from "@/lib/utils";
 
-const chips = [
-  "Starts Nov 30, 2026",
-  "8 weeks · 24 sessions",
-  "Live online",
-  "Two free demo sessions",
-  "No programming experience required",
-];
+const chips = programDisplay.chips;
 
 type CtaProps = { variant?: "primary" | "outline"; className?: string };
 

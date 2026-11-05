@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { HeroBlueprint } from "@/components/sections/hero-blueprint";
 import { HeroNetwork } from "@/components/sections/hero-network";
-import { hero } from "@/config/content";
+import { hero, solutions } from "@/config/content";
 import { revealDelay } from "@/lib/utils";
 
-const focusAreas = ["AI solutions", "Workflow automation", "Custom software"];
+const focusAreas = solutions.items.map((item) => item.title);
 
 export function Hero() {
   return (

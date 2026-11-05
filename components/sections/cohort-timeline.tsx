@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { program } from "@/config/content";
+import { program, programDisplay } from "@/config/content";
 import { cn } from "@/lib/utils";
 
 /**
@@ -107,22 +107,22 @@ export function CohortTimeline() {
         <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-7">
           <div className="min-w-0 basis-[300px] flex-1">
             <span className="label inline-flex rounded-full bg-accent px-2.5 py-1 text-[0.65rem] text-on-accent">
-              Cohort 01
+              {programDisplay.cohort}
             </span>
             <h3 className="mt-4 font-heading text-[1.35rem] font-semibold leading-[1.14] tracking-[-0.015em] text-text sm:text-[1.55rem] md:text-[1.7rem]">
-              Generative AI Engineering — Level 01
+              {programDisplay.courseHeading}
             </h3>
             <p className="mt-3 text-[0.94rem] leading-relaxed">
               <span className="font-medium text-text">
-                Starts {program.facts[0].value}
+                Starts {programDisplay.starts}
               </span>
               <span className="text-muted"> · </span>
               <span className="text-secondary">
-                7:30 PM Pakistan Standard Time (UTC+5)
+                {programDisplay.startClock}
               </span>
             </p>
             <p className="mt-1.5 text-body-sm leading-relaxed text-secondary">
-              8 weeks · 24 live sessions · Monday, Wednesday and Friday
+              {programDisplay.scheduleLine}
             </p>
           </div>
 
@@ -139,8 +139,8 @@ export function CohortTimeline() {
               role="timer"
               aria-label={
                 started
-                  ? "Cohort 01 has started — the countdown has reached zero"
-                  : "Countdown to the Cohort 01 start on Monday, November 30, 2026 at 7:30 PM Pakistan Standard Time (UTC+5), shown in days, hours, minutes and seconds"
+                  ? `${programDisplay.cohort} has started — the countdown has reached zero`
+                  : `Countdown to the ${programDisplay.cohort} start on ${programDisplay.starts} at ${programDisplay.startClock}, shown in days, hours, minutes and seconds`
               }
               className="relative mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-hairline bg-background"
             >
@@ -179,7 +179,7 @@ export function CohortTimeline() {
               Session timeline
             </p>
             <p className="hidden text-[0.7rem] text-secondary sm:block">
-              24 sessions · three per week
+              {programDisplay.sessionsPerWeek}
             </p>
           </div>
 
@@ -290,7 +290,7 @@ export function CohortTimeline() {
                 <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-hairline" />
                 <span className="relative size-2 rounded-full bg-accent" />
               </span>
-              Live sessions (Mon · Wed · Fri)
+              Live sessions ({programDisplay.daysShort})
             </span>
             <span className="flex items-center gap-2">
               <span
@@ -300,7 +300,7 @@ export function CohortTimeline() {
                 <span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-hairline" />
                 <span className="relative size-2 rounded-full border border-dashed border-accent/70 bg-surface" />
               </span>
-              Week 1 — first two sessions free
+              {programDisplay.freeWeekLegend}
             </span>
             <span className="flex items-center gap-2">
               <span

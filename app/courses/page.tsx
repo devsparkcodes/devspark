@@ -8,7 +8,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Section } from "@/components/ui/section";
 import { DemoButton, DemoStatus, ProgramFacts } from "@/components/sections/program";
 import { CurriculumGrid } from "@/components/sections/curriculum-grid";
-import { program } from "@/config/content";
+import { program, programDisplay } from "@/config/content";
 import { pageMetadata } from "@/lib/seo";
 import { revealDelay } from "@/lib/utils";
 
@@ -71,8 +71,8 @@ export default function CoursesPage() {
     <main id="main">
       <PageHero
         label={program.label}
-        title="Generative AI Engineering"
-        subtitle="Level 01 · Cohort 01"
+        title={program.title}
+        subtitle={program.subtitle}
         lead={program.description}
       >
         <Button href="#register" variant="primary" showArrow>
@@ -116,27 +116,23 @@ export default function CoursesPage() {
                 First two sessions free
               </h3>
               <ul className="mt-4 space-y-3">
-                <li className="flex gap-3 text-[0.975rem] leading-relaxed text-text">
-                  <CheckCircle
-                    aria-hidden
-                    size={18}
-                    className="mt-0.5 shrink-0 text-accent"
-                  />
-                  <span>Monday, November 30, 2026</span>
-                </li>
-                <li className="flex gap-3 text-[0.975rem] leading-relaxed text-text">
-                  <CheckCircle
-                    aria-hidden
-                    size={18}
-                    className="mt-0.5 shrink-0 text-accent"
-                  />
-                  <span>Wednesday, December 2, 2026</span>
-                </li>
+                {programDisplay.demoDates.map((date) => (
+                  <li
+                    key={date}
+                    className="flex gap-3 text-[0.975rem] leading-relaxed text-text"
+                  >
+                    <CheckCircle
+                      aria-hidden
+                      size={18}
+                      className="mt-0.5 shrink-0 text-accent"
+                    />
+                    <span>{date}</span>
+                  </li>
+                ))}
               </ul>
               <p className="mt-5 text-body-sm leading-relaxed text-secondary">
-                Both sessions run 7:30 PM – 9:30 PM (Pakistan Standard Time,
-                UTC+5). Free-demo registration is open — see the registration
-                section below.
+                Both sessions run {programDisplay.sessionTime}. Free-demo
+                registration is open — see the registration section below.
               </p>
             </div>
           </div>
@@ -329,7 +325,7 @@ export default function CoursesPage() {
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
               <p className="text-title">Total: {program.assessment.total}</p>
-              <p className="label text-accent">6 × 10 + 15 + 25 = 100</p>
+              <p className="label text-accent">{program.assessment.formula}</p>
             </div>
             <p className="mt-3 text-[0.975rem] leading-relaxed text-secondary">
               {program.assessment.published}
