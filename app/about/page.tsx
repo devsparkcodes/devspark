@@ -13,6 +13,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "DevSpark is a technology company solving real-world problems across AI solutions, automation and software development - with education as one of its verticals.",
   path: "/about",
+  image: "/og/about.png",
 });
 
 export default function AboutPage() {

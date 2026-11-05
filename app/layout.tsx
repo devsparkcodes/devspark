@@ -32,8 +32,12 @@ export const metadata: Metadata = {
   // Graph) appear only once NEXT_PUBLIC_SITE_URL is configured with the
   // real deployment origin — never for localhost and never for an
   // invented domain. Child pages add their own canonical/OG through
-  // `pageMetadata` in `lib/seo.ts`. HSTS intentionally stays unset in
-  // next.config.ts until the hostname and HTTPS behaviour are verified.
+  // `pageMetadata` in `lib/seo.ts`. The homepage (and 404, which
+  // inherits this layout) uses the real home screenshot from
+  // `public/og/home.png`; each subpage passes its own screenshot, so
+  // no route falls back to a shared generic image. HSTS intentionally
+  // stays unset in next.config.ts until the hostname and HTTPS
+  // behaviour are verified.
   ...(siteUrl
     ? {
         metadataBase: new URL(siteUrl),
@@ -45,11 +49,20 @@ export const metadata: Metadata = {
           siteName: siteConfig.name,
           type: "website",
           locale: "en_US",
+          images: [
+            {
+              url: `${siteUrl}/og/home.png`,
+              width: 1200,
+              height: 630,
+              alt: `${siteConfig.name} — ${siteConfig.tagline}`,
+            },
+          ],
         },
         twitter: {
           card: "summary_large_image",
           title: `${siteConfig.name} — ${siteConfig.tagline}`,
           description: siteConfig.description,
+          images: [`${siteUrl}/og/home.png`],
         },
       }
     : {}),

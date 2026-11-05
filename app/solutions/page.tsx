@@ -14,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Focus areas DevSpark works on with businesses - AI-powered solutions, workflow automation and custom software. Scope and availability are confirmed per project.",
   path: "/solutions",
+  image: "/og/solutions.png",
 });
 
 export default function SolutionsPage() {

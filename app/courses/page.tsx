@@ -17,6 +17,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Beginner-friendly Generative AI course in Urdu on Google Meet: AI and machine learning foundations, language models, RAG, APIs and agentic AI. 8 weeks, 24 sessions from November 30, 2026. PKR 4,000 one-time fee - early-bird PKR 3,000 for the first 20 confirmed paid enrollments.",
   path: "/courses",
+  image: "/og/courses.png",
 });
 
 /** Subpage section heading: eyebrow label + h2 + optional intro (no index). */

@@ -69,7 +69,7 @@ Intentional layouts for phone, tablet and desktop — not a compressed desktop p
 Semantic HTML and landmarks, one `h1` per page, sequential headings, skip link as the first tab stop, visible focus rings (2px, 3px offset), labelled form controls, body text ≥ 4.5:1 contrast, meaningful alternative text, `prefers-reduced-motion` honoured globally and per effect, keyboard-operable menus/disclosures, touch targets ≥ 44px for icon controls. The orange accent never carries small text on light backgrounds; text on orange is always dark (`#111111`). Details: `02_BRAND_AND_DESIGN.md` and `design-system/devspark/MASTER.md`.
 
 ### SEO
-Unique `title`/`description` per route via `lib/seo.ts` (`%s — DevSpark` title template), canonical and Open Graph/Twitter tags when `NEXT_PUBLIC_SITE_URL` is set, generated `sitemap.xml` and `robots.txt`. While the variable is unset, absolute-URL metadata is omitted — the site never advertises `localhost` or an invented domain.
+Unique `title`/`description` per route via `lib/seo.ts` (`%s — DevSpark` title template), canonical and Open Graph/Twitter tags when `NEXT_PUBLIC_SITE_URL` is set, generated `sitemap.xml` and `robots.txt`. Every page shares a page-specific Open Graph screenshot from `public/og/` (`summary_large_image` card on all routes, homepage included) — static point-in-time captures, refreshed manually (see `05_TECHNICAL_SPECIFICATION.md`). While the variable is unset, absolute-URL metadata is omitted — the site never advertises `localhost` or an invented domain.
 
 ### Performance
 Static prerendering for all pages, self-hosted fonts via `next/font` (`display: swap`), optimized logo assets, no heavy animation libraries (CSS + one IntersectionObserver reveal controller + a hand-rolled Canvas 2D hero background).

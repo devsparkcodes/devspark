@@ -13,6 +13,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Help using DevSpark: navigating the website, getting in touch, exploring solutions and requesting a project, and confirmed facts about courses and enrollment.",
   path: "/guides",
+  image: "/og/guides.png",
 });
 
 export default function GuidesPage() {

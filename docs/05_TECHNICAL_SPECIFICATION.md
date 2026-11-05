@@ -63,6 +63,18 @@ Response contract: `400` validation · `409` duplicate · `429` rate-limited · 
 ## Google Form
 Registration URL published: `https://forms.gle/xpjhjQgRXKfnbJds9`. Centralized in `config/site.ts` (`links.enrollmentFormUrl` and `links.demoFormUrl`, both set to the same form); enrollment controls render live links and the pending notes hide automatically, so no broken link can be published. The form itself covers registration of interest and free-demo participation — it does not confirm paid enrollment.
 
+## Open Graph screenshots
+Social previews use real page screenshots, not a generated graphic. Each route's metadata (`pageMetadata` in `lib/seo.ts`, plus the root layout for the homepage) points at its own file in `public/og/` (`home.png`, `courses.png`, `solutions.png`, `about.png`, `guides.png`, `contact.png` — all 1200×630 PNG). There is deliberately no shared generic image and no `app/opengraph-image.tsx`: Next.js file-based metadata and exported `openGraph.images` compete, so a single source of truth (the metadata export) is used instead.
+
+These PNGs are **static point-in-time captures** — they are not regenerated when a page changes or when a crawler requests them. To refresh after a significant visual change:
+
+1. Build and serve the latest code locally (`npm run build && npm run start`).
+2. With any Chromium-based browser tooling (e.g. Playwright), open each route at a **1200×630** viewport, wait for fonts/animations to settle (emulating `prefers-reduced-motion: reduce` avoids mid-reveal frames), and capture the viewport (no browser chrome) over `public/og/<route>.png`.
+3. Keep filenames aligned with routes; confirm each image is 1200×630 and visually shows the matching page's main heading.
+4. Run the standard quality gate and commit the updated PNGs with the change that motivated the refresh.
+
+No screenshot service, runtime capture, or extra dependency is used.
+
 ## Quality gates
 TypeScript checks, lint and production build pass; routes/CTAs work; no broken assets or console errors; mobile/tablet/desktop checked; keyboard/focus/contrast/reduced motion reviewed; performance and metadata checked; images/fonts/3D optimized. Standard pre-commit gate: `npm run typecheck && npm run lint && npm run build`.
 

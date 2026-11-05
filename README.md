@@ -32,7 +32,7 @@ All implemented and verified in the codebase:
 | Contact form | Validated, rate-limited, duplicate-protected submissions forwarded to Resend; success is shown only after the provider accepts — a missing configuration returns an honest `503` notice, never a fake success |
 | Help Center | Searchable, filterable guides (four categories, twelve guides) with accordion disclosures |
 | Course policies | Published: fees, early-bird rules, 100-point assessment, attendance/certificate criteria, Top Three Awards, cancellation and refund terms |
-| SEO | Per-page metadata via `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts` (activated when `NEXT_PUBLIC_SITE_URL` is set) |
+| SEO | Per-page metadata via `lib/seo.ts`, page-specific Open Graph screenshots in `public/og/`, `app/sitemap.ts`, `app/robots.ts` (activated when `NEXT_PUBLIC_SITE_URL` is set) |
 | Security | Content-Security-Policy and baseline security headers for every route (`next.config.ts`) |
 | Accessibility | Skip link, keyboard navigation, visible focus, ARIA on menus/disclosures, `prefers-reduced-motion` support, contrast-checked tokens |
 

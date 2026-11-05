@@ -48,20 +48,38 @@ type PageMetadataInput = {
   description: string;
   /** Root-relative route, e.g. "/courses". */
   path: string;
+  /**
+   * Root-relative page-specific Open Graph screenshot, e.g.
+   * "/og/courses.png". Static preview images live in `public/og/` and
+   * are captured manually (see docs/05_TECHNICAL_SPECIFICATION.md —
+   * they are point-in-time screenshots, not regenerated on share).
+   */
+  image: string;
+  /** Alt text for the OG image. Defaults to the page title. */
+  imageAlt?: string;
 };
 
 /**
  * Per-page metadata: unique title/description (always), plus canonical +
  * Open Graph + Twitter tags only when the deployed site URL is known.
  * 404 and other non-indexable routes should keep a plain metadata object.
+ *
+ * Every page passes its own `image` (`public/og/…`) so shared links show
+ * a real screenshot of that page. There is no shared generic image: the
+ * old root `app/opengraph-image.tsx` was removed because file-based
+ * metadata and exported `openGraph.images` competed unpredictably.
  */
 export function pageMetadata({
   title,
   description,
   path,
+  image,
+  imageAlt,
 }: PageMetadataInput): Metadata {
   const url = absoluteUrl(path);
   if (!url) return { title, description };
+  const imageUrl = absoluteUrl(image) ?? image;
+  const alt = imageAlt ?? title;
   return {
     title,
     description,
@@ -75,10 +93,10 @@ export function pageMetadata({
       locale: "en_US",
       images: [
         {
-          url: absoluteUrl("/opengraph-image") ?? "/opengraph-image",
+          url: imageUrl,
           width: 1200,
           height: 630,
-          alt: title,
+          alt,
         },
       ],
     },
@@ -86,7 +104,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/opengraph-image") ?? "/opengraph-image"],
+      images: [imageUrl],
     },
   };
 }

@@ -18,6 +18,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Contact DevSpark: questions and support, or a project inquiry for custom software, AI solutions and workflow automation.",
   path: "/contact",
+  image: "/og/contact.png",
 });
 
 type ContactPageProps = {
