@@ -224,9 +224,6 @@ export default function CoursesPage() {
               <p className="mt-3 text-[0.975rem] leading-relaxed text-secondary">
                 {program.professions.whyDescription}
               </p>
-              <p className="mt-6 border-l-2 border-accent pl-4 text-body-sm leading-relaxed text-secondary">
-                {program.professions.note}
-              </p>
             </div>
             <div data-reveal style={revealDelay(120)} className="lg:col-span-7">
               <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
@@ -529,6 +526,9 @@ export default function CoursesPage() {
                 title="Course questions and answers"
                 description="Only confirmed information is published here — anything still undecided stays clearly marked as pending."
               />
+              <p className="mt-6 border-l-2 border-accent pl-4 text-body-sm leading-relaxed text-secondary">
+                {program.professions.note}
+              </p>
             </div>
             <div className="lg:col-span-8">
               <ul className="border-t border-hairline">
