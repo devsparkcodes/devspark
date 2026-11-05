@@ -11,7 +11,7 @@ const chips = [
   "Starts Nov 30, 2026",
   "8 weeks · 24 sessions",
   "Live online",
-  "Two free demo classes",
+  "Two free demo sessions",
   "No programming experience required",
 ];
 

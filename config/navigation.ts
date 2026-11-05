@@ -17,6 +17,6 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const headerCta: NavItem = {
-  label: "Discuss a Project",
+  label: "Discuss a project",
   href: "/contact?topic=project#contact-form",
 };

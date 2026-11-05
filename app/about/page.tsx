@@ -27,14 +27,14 @@ export default function AboutPage() {
         lead={about.paragraphs[0]}
       >
         <Button href="/courses" variant="outline">
-          Explore the Program
+          Explore the program
         </Button>
         <Button
           href="/contact?topic=project#contact-form"
           variant="primary"
           showArrow
         >
-          Discuss a Project
+          Discuss a project
         </Button>
       </PageHero>
 

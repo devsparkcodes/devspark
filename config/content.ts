@@ -6,10 +6,10 @@ export const hero = {
   lead:
     "DevSpark builds AI-powered solutions, workflow automation and custom software — and teaches the concepts behind them through the Generative AI Engineering program.",
   primaryCta: {
-    label: "Discuss a Project",
+    label: "Discuss a project",
     href: "/contact?topic=project#contact-form",
   },
-  secondaryCta: { label: "Explore the Program", href: "/courses" },
+  secondaryCta: { label: "Explore the program", href: "/courses" },
 };
 
 export const solutions = {
@@ -40,7 +40,7 @@ export const solutions = {
     body: "These are proposed focus areas, not a claim that every service is currently open. Scope and availability are confirmed per project — anything not yet offered is presented as a future direction, never as a live service.",
   },
   cta: {
-    label: "Discuss a Project",
+    label: "Discuss a project",
     href: "/contact?topic=project#contact-form",
   },
 };
@@ -90,7 +90,7 @@ export const program = {
     { term: "Starts", value: "Monday, November 30, 2026" },
     { term: "Duration", value: "8 weeks · 24 live sessions" },
     { term: "Schedule", value: "Monday, Wednesday and Friday" },
-    { term: "Class time", value: "7:30 PM – 9:30 PM (Pakistan Standard Time, UTC+5)" },
+    { term: "Session time", value: "7:30 PM – 9:30 PM (Pakistan Standard Time, UTC+5)" },
     { term: "Format", value: "Live online — Google Meet" },
     {
       term: "Teaching language",
@@ -102,12 +102,12 @@ export const program = {
         "PKR 4,000 one-time payment for the complete 8-week course — introductory early-bird fee PKR 3,000 for the first 20 confirmed paid enrollments",
     },
     {
-      term: "Free demo classes",
+      term: "Free demo sessions",
       value:
         "The first two sessions — Monday, November 30, 2026 and Wednesday, December 2, 2026",
     },
     {
-      term: "First paid class",
+      term: "First paid session",
       value: "Friday, December 4, 2026, 7:30 PM PKT — after the two free demos",
     },
     {
@@ -125,10 +125,10 @@ export const program = {
     },
   ],
   startsAt: "2026-11-30T19:30:00+05:00",
-  enrollCta: "Register Your Interest",
+  enrollCta: "Register your interest",
   enrollStatus:
     "The registration link is not available right now — please use the contact page if you have a question in the meantime.",
-  demoCta: "Register for Free Demo",
+  demoCta: "Register for a free demo",
   demoStatus:
     "Free-demo registration is not available right now — please use the contact page if you have a question in the meantime.",
   audience: {
@@ -153,7 +153,7 @@ export const program = {
       },
       {
         title: "Working professionals",
-        body: "Draft reports and communication, summarise long documents, cut through repetitive tasks and give everyday productivity a practical boost.",
+        body: "Draft reports and communication, summarize long documents, cut through repetitive tasks and give everyday productivity a practical boost.",
       },
       {
         title: "Business owners and entrepreneurs",
@@ -165,7 +165,7 @@ export const program = {
       },
       {
         title: "Freelancers and content creators",
-        body: "Plan content, shape creative workflows, prepare client deliverables and prototype ideas faster without giving up your own judgement.",
+        body: "Plan content, shape creative workflows, prepare client deliverables and prototype ideas faster without giving up your own judgment.",
       },
       {
         title: "Aspiring developers and technical learners",
@@ -185,7 +185,7 @@ export const program = {
       "Learn to use AI responsibly and verify outputs before acting on them.",
       "Build a foundation for more advanced AI learning.",
     ],
-    note: "This is Level 01 beginner training: it builds practical, verifiable skills and a completed project — not guaranteed employment, income or business results, and not advanced AI-engineer status after eight weeks.",
+    note: "This is Level 01 beginner training: it builds practical, verifiable skills and a completed project — not guaranteed employment, income or business results, and not advanced AI-engineer status after 8 weeks.",
   },
   outcomes: [
     "Explain the foundations of Artificial Intelligence and Machine Learning, including how data trains a model to make predictions.",
@@ -199,7 +199,7 @@ export const program = {
     "Plan, demonstrate and evaluate a simple AI-assisted project, including basic testing and documentation.",
   ],
   outcomesNote:
-    "An honest outcome list: the course builds real, practical skills and a documented project — it does not promise professional AI-engineer status, jobs or income after eight weeks.",
+    "An honest outcome list: the course builds real, practical skills and a documented project — it does not promise professional AI-engineer status, jobs or income after 8 weeks.",
   /**
    * Revised Level 01 curriculum — the single structured source of truth
    * for the eight-week outline. `/courses` (`CurriculumGrid`) and the
@@ -724,14 +724,14 @@ export const program = {
     },
   ],
   methodology: {
-    title: "How classes are taught",
+    title: "How sessions are taught",
     points: [
       "Conceptual understanding: complex AI concepts explained in simple language while keeping the technical terms accurate.",
       "Visual learning: diagrams, flowcharts, real-world examples and comparisons that show how systems work.",
       "Interactive teaching: questions, discussion and knowledge checks that keep everyone involved.",
       "Live demonstrations: how AI tools, models and applications behave in realistic situations.",
       "Guided practice: manageable exercises, weekly assignments and structured projects that apply each concept.",
-      "Critical thinking: verifying AI outputs, recognising limitations and considering privacy before trusting a result.",
+      "Critical thinking: verifying AI outputs, recognizing limitations and considering privacy before trusting a result.",
     ],
     notes: [
       "Students do not need to create or give slide presentations.",
@@ -740,20 +740,20 @@ export const program = {
       "Advanced technologies are explained conceptually — implementing them independently belongs to later learning stages.",
     ],
     delivery:
-      "Classes are delivered live on Google Meet using structured presentations, practical demonstrations, guided exercises and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions.",
+      "Sessions are delivered live on Google Meet using structured presentations, practical demonstrations, guided exercises and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions.",
   },
   materials: {
     title: "Learning materials",
     items: [
       "Session recordings",
-      "Class notes",
+      "Session notes",
       "Supporting resources",
       "Assignments and project guidance",
     ],
-    note: "Session recordings are provided to enrolled students — a student who misses a live class can review the recording and catch up on the covered material. How recordings and the other materials are shared is confirmed directly with enrolled students; there is no student portal yet.",
+    note: "Session recordings are provided to enrolled students — a student who misses a live session can review the recording and catch up on the covered material. How recordings and the other materials are shared is confirmed directly with enrolled students; there is no student portal yet.",
   },
   assessment: {
-    title: "Assignments, projects and assessment",
+    title: "Assignments and projects",
     description:
       "The course is assessed on a 100-point system built from weekly work and two projects.",
     total: "100 points",
@@ -790,7 +790,7 @@ export const program = {
     note: "Both minimums are required together: at least 80% attendance (counting both free demos in the 24 sessions) and at least 60 out of 100. Attendance problems are considered case by case, but a certificate is never guaranteed.",
   },
   awards: {
-    title: "Top three student awards",
+    title: "Top Three Student Awards",
     status: "Confirmed",
     body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — settled by verified bank transfer within 7 calendar days after the final verified winners are announced, plus recognition on DevSpark's LinkedIn profile only with the student's explicit permission.",
     requirements: [
@@ -814,16 +814,16 @@ export const program = {
     earlyBirdLabel: "Early-bird fee",
     earlyBird: "PKR 3,000",
     saving: "You save PKR 1,000",
-    oneline: "One-time payment for the complete eight-week course.",
+    oneline: "One-time payment for the complete 8-week course.",
     eligibility:
       "Early-bird pricing applies to the first 20 confirmed paid enrollments for Cohort 01.",
     note: "Submitting the interest form does not reserve a seat or confirm payment. Payment and seat-confirmation instructions will be shared separately — paid enrollment and each early-bird place are confirmed only after DevSpark verifies the payment was actually received; a payment screenshot alone is not proof.",
   },
   registration: {
     label: "Registration",
-    title: "Registration is open",
+    title: "How registration works",
     description:
-      "Register for our first two free demo classes and express your interest in the full course through one simple form. No payment required. Paid enrollment is available both before and after the demos.",
+      "Register for our first two free demo sessions and express your interest in the full course through one simple form. No payment required. Paid enrollment is available both before and after the demos.",
     noPayment:
       "Submitting the form registers your interest and free-demo participation — it does not confirm paid enrollment.",
   },
@@ -835,7 +835,7 @@ export const program = {
     },
     {
       step: "02",
-      title: "Attend the two free demo classes",
+      title: "Attend the two free demo sessions",
       body: "The first two sessions — Monday, November 30 and Wednesday, December 2, 2026 — are free for everyone who registers, so you can experience the teaching live.",
     },
     {
@@ -846,7 +846,7 @@ export const program = {
     {
       step: "04",
       title: "Join Cohort 01",
-      body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before their classes begin.",
+      body: "Confirmation, Google Meet joining details and session instructions are shared with enrolled students before their sessions begin.",
     },
   ],
   faqs: [
@@ -858,7 +858,7 @@ export const program = {
     {
       question: "When does the course start, and how long does it run?",
       answer:
-        "Cohort 01 starts on Monday, November 30, 2026 and runs for 8 weeks: 24 live online sessions on Monday, Wednesday and Friday, from 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the first paid instructional class is Friday, December 4, 2026, and the final scheduled session is Friday, January 22, 2027 if the schedule runs uninterrupted.",
+        "Cohort 01 starts on Monday, November 30, 2026 and runs for 8 weeks: 24 live online sessions on Monday, Wednesday and Friday, from 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the first paid instructional session is Friday, December 4, 2026, and the final scheduled session is Friday, January 22, 2027 if the schedule runs uninterrupted.",
     },
     {
       question: "How much does the course cost?",
@@ -866,14 +866,14 @@ export const program = {
         "The standard course fee is PKR 4,000 — a one-time payment for the complete 8-week course, not a monthly fee. Cohort 01 also has an introductory early-bird fee of PKR 3,000 (25% off, PKR 1,000 saving) for the first 20 confirmed paid enrollments. The Google Form does not reserve the offer or confirm payment — payment and seat-confirmation instructions are shared separately.",
     },
     {
-      question: "Are the first classes free?",
+      question: "Are the first sessions free?",
       answer:
         "Yes. The first two sessions are free: Monday, November 30, 2026 and Wednesday, December 2, 2026, so learners can experience the teaching before deciding whether to continue.",
     },
     {
       question: "Will the course be taught in Urdu or English?",
       answer:
-        "The course is taught in Urdu, with English technical terminology. If you would like to experience the class before deciding whether to continue, the first two sessions are free.",
+        "The course is taught in Urdu, with English technical terminology. If you would like to experience a session before deciding whether to continue, the first two sessions are free.",
     },
     {
       question: "How do I register or enroll?",
@@ -883,7 +883,7 @@ export const program = {
     {
       question: "Do I need to write code myself?",
       answer:
-        "No previous programming experience is required. Level 01 focuses on strong conceptual understanding: you will learn how software, backends, APIs and JSON work in basic terms, and classes may demonstrate short code examples or AI-assisted workflows to illustrate a concept. You are not expected to build a full application from scratch using traditional programming — guided activities, assignments and the projects are designed for beginners, while advanced coding and engineering belong to later learning stages.",
+        "No previous programming experience is required. Level 01 focuses on strong conceptual understanding: you will learn how software, backends, APIs and JSON work in basic terms, and sessions may demonstrate short code examples or AI-assisted workflows to illustrate a concept. You are not expected to build a full application from scratch using traditional programming — guided activities, assignments and the projects are designed for beginners, while advanced coding and engineering belong to later learning stages.",
     },
     {
       question: "Is there a certificate?",
@@ -896,24 +896,24 @@ export const program = {
         "There are no deadline extensions. Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT), and a weekly assignment submitted after that deadline receives zero marks for that assignment. That rule applies to the six weekly assignments only; the midterm and final project deadlines are announced in advance through the official course schedule.",
     },
     {
-      question: "Can I enroll before or after the free demo classes?",
+      question: "Can I enroll before or after the free demo sessions?",
       answer:
-        "Yes — paid enrollment is allowed both before and after the two free demo classes. You can pay and confirm enrollment before the demos (confirmed after DevSpark verifies the payment), or attend the free demos on November 30 and December 2 and then decide. One caveat: the Top Three Student Awards require attending all 24 sessions, including both free demos, so a student who enrolls after the demos cannot qualify for those awards.",
+        "Yes — paid enrollment is allowed both before and after the two free demo sessions. You can pay and confirm enrollment before the demos (confirmed after DevSpark verifies the payment), or attend the free demos on November 30 and December 2 and then decide. One caveat: the Top Three Student Awards require attending all 24 sessions, including both free demos, so a student who enrolls after the demos cannot qualify for those awards.",
     },
     {
-      question: "How are classes taught?",
+      question: "How are sessions taught?",
       answer:
-        "Classes are live online through Google Meet, delivered primarily with structured presentations, practical demonstrations, guided activities and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
+        "Sessions are live online through Google Meet, delivered primarily with structured presentations, practical demonstrations, guided activities and interactive discussions. When helpful, the instructor also uses visual diagrams and workflows through Excalidraw to explain concepts more clearly. Joining details will be shared with registered and confirmed students before their sessions — there is no public meeting link.",
     },
     {
-      question: "What happens if I miss a live class?",
+      question: "What happens if I miss a live session?",
       answer:
         "Session recordings are provided to enrolled students, so a missed lesson can be reviewed and the covered material caught up on. Recordings do not replace live attendance: the certificate still requires attending at least 20 of the 24 live sessions.",
     },
     {
       question: "Can I cancel and get a refund?",
       answer:
-        "Cancel by emailing devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid class — and you receive a full refund of the fee you actually paid; the request counts from when it is received in that inbox, in Pakistan Standard Time. After that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. Approved refunds are processed within 14 calendar days of approval. If DevSpark cancels the course, paid students receive a full refund of the fee actually paid within 14 calendar days of the cancellation notice, and replacement of the lead instructor lets an affected paid student request a 100% refund. Full terms are in the Help Center.",
+        "Cancel by emailing devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session — and you receive a full refund of the fee you actually paid; the request counts from when it is received in that inbox, in Pakistan Standard Time. After that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. Approved refunds are processed within 14 calendar days of approval. If DevSpark cancels the course, paid students receive a full refund of the fee actually paid within 14 calendar days of the cancellation notice, and replacement of the lead instructor lets an affected paid student request a 100% refund. Full terms are in the Help Center.",
     },
   ],
 };
@@ -951,9 +951,9 @@ export const about = {
 export const faq = {
   index: "04",
   label: "FAQ",
-  title: "Q/A",
+  title: "Common questions",
   description:
-    "Only confirmed information is published here. Anything still undecided stays clearly marked as to be confirmed.",
+    "Only confirmed information is published here. Unresolved details are explained in the relevant section.",
   items: [
     {
       question: "Who can join the Generative AI Engineering program?",
@@ -966,7 +966,7 @@ export const faq = {
         "Registration and free-demo participation run through a Google Form — open it from the Register button on the courses page. The website does not collect payments or create student accounts.",
     },
     {
-      question: "Are the first classes free?",
+      question: "Are the first sessions free?",
       answer:
         "Yes — the first two sessions are free: Monday, November 30, 2026 and Wednesday, December 2, 2026, so learners can experience the teaching before deciding whether to continue.",
     },
@@ -991,14 +991,14 @@ export const contact = {
         slug: "support",
         title: "Questions and support",
         body: "For general questions, help using the website, or course and enrollment questions. Pick the matching category in the form below.",
-        cta: { label: "Contact Us", href: "#contact-form" },
+        cta: { label: "Write your message", href: "#contact-form" },
       },
       {
         slug: "project",
         title: "Project inquiries",
         body: "For businesses and clients seeking custom software, AI solutions or workflow automation — not for course enrollment or general support. This opens the form with the Project inquiry category selected.",
         cta: {
-          label: "Discuss a Project",
+          label: "Discuss a project",
           href: "/contact?topic=project#contact-form",
         },
       },
@@ -1015,7 +1015,7 @@ export const contact = {
   channels: {
     title: "Contact channels",
     badge: "Email available",
-    note: "Email DevSpark directly at the address below, reach out through a social profile, or send a message with the form — whichever is easiest. We reply to the email address you provide.",
+    note: "Email us directly at the address below, reach out through a social profile, or send a message with the form — whichever is easiest. We reply to the email address you provide.",
     items: [
       { label: "Email", status: "Available" },
       { label: "Contact form", status: "Available" },
@@ -1023,7 +1023,7 @@ export const contact = {
       { label: "GitHub (projects)", status: "Available" },
     ],
   },
-  secondaryCta: { label: "Explore the Program", href: "/courses" },
+  secondaryCta: { label: "Explore the program", href: "/courses" },
   form: {
     title: "Send a message",
     badge: "Email available",
@@ -1054,7 +1054,7 @@ export const contact = {
       invalid: "Please check this field.",
       category: "Please choose a category.",
       timeout:
-        "The request took too long and was cancelled. Your message is still here — please try again.",
+        "The request took too long and was canceled. Your message is still here — please try again.",
       network:
         "Something went wrong while sending. Your message is still here — please try again.",
     },
@@ -1110,29 +1110,29 @@ export const helpCenter = {
         },
         {
           slug: "understanding-site-status",
-          title: "Understand the “to be confirmed” markers",
+          title: "How unresolved details are handled",
           summary:
-            "A few details on this site are deliberately marked as pending or under development. Here is what those markers mean and where they appear.",
+            "Some details on this site are not finalized yet. Here is how those unresolved details are handled and where they are explained.",
           keywords: [
             "pending",
+            "unresolved",
+            "finalized",
             "confirmed",
-            "placeholders",
             "status",
-            "badge",
             "honest",
           ],
           sections: [
             {
-              heading: "Why details are marked",
-              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the midterm and final project deadlines or the request window for instructor-replacement refunds — is clearly marked as pending instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
+              heading: "Why some details are not finalized",
+              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the midterm and final project deadlines or the request window for instructor-replacement refunds — is explained in the relevant section instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
             },
             {
-              heading: "Where markers appear",
-              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the first paid class date (December 4, 2026), the standard fee and the Cohort 01 early-bird offer, the free demo dates, the 2 free + 22 paid session breakdown, curriculum, the assignment deadline and the late-submission rule, the 100-point assessment, the certificate criteria (80% attendance counting both demos, and 60/100), the top-three award terms including competition ranking, the 3-day score-review window and 5-day review decision, the cancellation and refund terms (student cancellation, course cancellation and lead-instructor replacement), the Google Form registration link and the contact form. Marked as pending or in development: the midterm and final project deadlines, approval turnaround times for reviews and refund requests, the request window for instructor-replacement refunds, the attendance-tracking method, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
+              heading: "Where unresolved details are explained",
+              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the first paid session date (December 4, 2026), the standard fee and the Cohort 01 early-bird offer, the free demo dates, the 2 free + 22 paid session breakdown, curriculum, the assignment deadline and the late-submission rule, the 100-point assessment, the certificate criteria (80% attendance counting both demos, and 60/100), the Top Three Student Awards terms including competition ranking, the 3-day score-review window and 5-day review decision, the cancellation and refund terms (student cancellation, course cancellation and lead-instructor replacement), the Google Form registration link and the contact form. Explained in the relevant section rather than finalized: the midterm and final project deadlines, approval turnaround times for reviews and refund requests, the request window for instructor-replacement refunds, the attendance-tracking method, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
             },
             {
               heading: "What this means for you",
-              body: "You can rely on everything that is unmarked: it reflects the current state of the business. Treat a pending marker as a promise to publish — not as a date, a price or a commitment.",
+              body: "You can rely on everything that is finalized: it reflects the current state of the business. Anything not finalized is explained in the relevant section — not stated as a date, a price or a commitment.",
             },
           ],
         },
@@ -1214,7 +1214,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "Open the contact page",
-              body: "Use the Contact Us button in the Help Center or the Contact link in the menu. Both open the same page.",
+              body: "Use the Contact us button in the Help Center or the Contact link in the menu. Both open the same page.",
             },
             {
               heading: "Choose a category and write your message",
@@ -1257,7 +1257,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "Open the Solutions page",
-              body: "Use the Solutions link in the menu, or the Explore Our Solutions button at the end of this Help Center, to see the three proposed focus areas: AI-powered solutions, workflow automation and custom software.",
+              body: "Use the Solutions link in the menu, or the Explore our solutions button at the end of this Help Center, to see the three proposed focus areas: AI-powered solutions, workflow automation and custom software.",
             },
             {
               heading: "How availability works",
@@ -1283,7 +1283,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "Start the inquiry",
-              body: "Use any Discuss a Project button on the site. It opens the contact page with the Project inquiry category already selected. That button is for potential clients seeking a solution — not for course enrollment or general support.",
+              body: "Use any Discuss a project button on the site. It opens the contact page with the Project inquiry category already selected. That button is for potential clients seeking a solution — not for course enrollment or general support.",
             },
             {
               heading: "What to include",
@@ -1326,7 +1326,7 @@ export const helpCenter = {
             },
             {
               heading: "Recommended setup",
-              body: "Basic computer and internet usage skills are recommended, along with access to a computer or laptop and a stable internet connection for the hands-on project work. The schedule, fee and full eight-week curriculum are published on the courses page.",
+              body: "Basic computer and internet usage skills are recommended, along with access to a computer or laptop and a stable internet connection for the hands-on project work. The schedule, fee and full 8-week curriculum are published on the courses page.",
             },
           ],
         },
@@ -1355,19 +1355,19 @@ export const helpCenter = {
             },
             {
               heading: "Before you enroll",
-              body: "The first two sessions are free — Monday, November 30, 2026 and Wednesday, December 2, 2026 — so learners can experience the teaching live. Paid enrollment is available both before and after these demos: pay early to confirm your seat before the course starts, or attend the demos first and then decide. A student who enrolls after the demos cannot meet the Top Three Awards' strict 24/24 attendance requirement.",
+              body: "The first two sessions are free — Monday, November 30, 2026 and Wednesday, December 2, 2026 — so learners can experience the teaching live. Paid enrollment is available both before and after these demos: pay early to confirm your seat before the course starts, or attend the demos first and then decide. A student who enrolls after the demos cannot meet the Top Three Student Awards' strict 24/24 attendance requirement.",
             },
             {
               heading: "After the form",
-              body: "Confirmation, Google Meet joining details and class instructions are shared with enrolled students before their classes begin. Paid enrollment — including early-bird eligibility and payment instructions — is confirmed separately and only after DevSpark verifies that the payment was actually received; a payment screenshot alone is not proof. The website does not collect payments, create student accounts or issue student IDs.",
+              body: "Confirmation, Google Meet joining details and session instructions are shared with enrolled students before their sessions begin. Paid enrollment — including early-bird eligibility and payment instructions — is confirmed separately and only after DevSpark verifies that the payment was actually received; a payment screenshot alone is not proof. The website does not collect payments, create student accounts or issue student IDs.",
             },
             {
               heading: "Cancellations and refunds",
-              body: "Student cancellation: email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid class — for a full refund of the fee actually paid. The effective time is when the request is received in that inbox, evaluated in Pakistan Standard Time; the request should identify the student and enrollment. The contact form, WhatsApp and the Google Form are not authorized cancellation channels, and no banking details should be sent through public forms. At or after that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. A valid approved refund is processed within 14 calendar days of approval; the approval turnaround itself is not yet specified.",
+              body: "Student cancellation: email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session — for a full refund of the fee actually paid. The effective time is when the request is received in that inbox, evaluated in Pakistan Standard Time; the request should identify the student and enrollment. The contact form, WhatsApp and the Google Form are not authorized cancellation channels, and no banking details should be sent through public forms. At or after that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. A valid approved refund is processed within 14 calendar days of approval; the approval turnaround itself is not yet specified.",
             },
             {
               heading: "If DevSpark cancels the course",
-              body: "Every affected paid student receives a full refund of the fee actually paid within 14 calendar days of the official course cancellation notice. This is separate from the seven-day Top Three Award refund timeline.",
+              body: "Every affected paid student receives a full refund of the fee actually paid within 14 calendar days of the official course cancellation notice. This is separate from the seven-day Top Three Student Awards refund timeline.",
             },
             {
               heading: "If the lead instructor is replaced",
@@ -1377,7 +1377,7 @@ export const helpCenter = {
         },
         {
           slug: "free-introductory-classes",
-          title: "Are the first classes free?",
+          title: "Are the first sessions free?",
           summary:
             "The first two sessions are free: Monday, November 30, 2026 and Wednesday, December 2, 2026.",
           keywords: ["free", "classes", "trial", "introductory", "demo", "price"],
@@ -1392,7 +1392,7 @@ export const helpCenter = {
           slug: "dates-price-syllabus",
           title: "Course dates, fee and curriculum",
           summary:
-            "Start date, schedule, teaching platform, fee and the eight-week curriculum are now published on the courses page.",
+            "Start date, schedule, teaching platform, fee and the 8-week curriculum are now published on the courses page.",
           keywords: [
             "dates",
             "price",
@@ -1411,7 +1411,7 @@ export const helpCenter = {
           sections: [
             {
               heading: "What is confirmed",
-              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Google Meet, Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the remaining 22 sessions are the paid course, with the first paid instructional class on Friday, December 4, 2026. The standard fee is PKR 4,000, a one-time payment for the complete course, with an introductory early-bird fee of PKR 3,000 for the first 20 confirmed paid enrollments. The complete eight-week curriculum and the 100-point assessment system are published on the courses page.",
+              body: "Cohort 01 starts Monday, November 30, 2026 and runs for 8 weeks — 24 live online sessions on Google Meet, Monday, Wednesday and Friday, 7:30 PM to 9:30 PM Pakistan Standard Time (UTC+5). The first two sessions — November 30 and December 2 — are free demos; the remaining 22 sessions are the paid course, with the first paid instructional session on Friday, December 4, 2026. The standard fee is PKR 4,000, a one-time payment for the complete course, with an introductory early-bird fee of PKR 3,000 for the first 20 confirmed paid enrollments. The complete 8-week curriculum and the 100-point assessment system are published on the courses page.",
             },
             {
               heading: "What is shared separately",
@@ -1423,7 +1423,7 @@ export const helpCenter = {
           slug: "curriculum-and-assessment",
           title: "Curriculum, assessment and certificate",
           summary:
-            "Eight weeks of beginner-friendly topics, a 100-point assessment system, and a confirmed certificate of completion for eligible students.",
+            "8 weeks of beginner-friendly topics, a 100-point assessment system, and a confirmed certificate of completion for eligible students.",
           keywords: [
             "curriculum",
             "syllabus",
@@ -1444,8 +1444,8 @@ export const helpCenter = {
           ],
           sections: [
             {
-              heading: "Eight-week curriculum",
-              body: "The course runs across eight weeks — from artificial intelligence and machine learning foundations, through deep learning, modern generative AI, prompt and context engineering, embeddings and RAG, software and API fundamentals, and agentic AI, to a guided final project. Every week lists its classes, detailed topics, a practical outcome and its assessment on the courses page.",
+              heading: "8-week curriculum",
+              body: "The course runs across 8 weeks — from artificial intelligence and machine learning foundations, through deep learning, modern generative AI, prompt and context engineering, embeddings and RAG, software and API fundamentals, and agentic AI, to a guided final project. Every week lists its classes, detailed topics, a practical outcome and its assessment on the courses page.",
             },
             {
               heading: "Session recordings",
@@ -1457,15 +1457,15 @@ export const helpCenter = {
             },
             {
               heading: "Score review",
-              body: "You can request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated, through the contact page or by emailing devspark.codes@gmail.com. DevSpark communicates the review decision within 5 calendar days of a valid request. Top-student winners are announced only after the review window has closed and all valid review requests are resolved.",
+              body: "You can request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated, through the contact page or by emailing devspark.codes@gmail.com. DevSpark communicates the review decision within 5 calendar days of a valid request. Top Three Student Awards winners are announced only after the review window has closed and all valid review requests are resolved.",
             },
             {
               heading: "Certificate of completion",
               body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion: at least 20 of the 24 live sessions attended (80% attendance, counting both free demos) and at least 60 out of 100 overall, with all six assignments, the midterm and the final project submitted. Attendance problems are considered case by case, but a certificate is never guaranteed. The digital verification workflow (unique credential IDs and QR codes) is being developed with the upcoming LMS.",
             },
             {
-              heading: "Top three student awards",
-              body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, and at least 60 out of 100 overall; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance.",
+              heading: "Top Three Student Awards",
+              body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's explicit permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, and at least 60 out of 100 overall; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance.",
             },
           ],
           cta: { label: "Open the courses page", href: "/courses" },
@@ -1473,7 +1473,7 @@ export const helpCenter = {
       ],
     },
   ],
-  contactCta: { label: "Contact Us", href: "/contact" },
-  solutionsCta: { label: "Explore Our Solutions", href: "/solutions" },
-  programCta: { label: "Explore the Program", href: "/courses" },
+  contactCta: { label: "Contact us", href: "/contact" },
+  solutionsCta: { label: "Explore our solutions", href: "/solutions" },
+  programCta: { label: "Explore the program", href: "/courses" },
 };

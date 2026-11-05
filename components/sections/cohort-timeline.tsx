@@ -186,12 +186,12 @@ export function CohortTimeline() {
           <div className="relative mt-3.5">
             <div
               role="region"
-              aria-label="Eight-week session chart — scroll sideways to see every week"
+              aria-label="8-week session chart — scroll sideways to see every week"
               tabIndex={0}
               className="overflow-x-auto pb-1"
             >
               <ol
-                aria-label="Eight-week cohort timeline, Week 1 to Week 8"
+                aria-label="8-week cohort timeline, Week 1 to Week 8"
                 className="flex min-w-[560px] overflow-hidden rounded-xl border border-hairline"
               >
                 {program.weeks.map((week, index) => {
@@ -277,7 +277,7 @@ export function CohortTimeline() {
             />
           </div>
           <p className="mt-1.5 text-[0.68rem] text-muted md:hidden">
-            Scroll sideways to see all eight weeks →
+            Scroll sideways to see all 8 weeks →
           </p>
 
           {/* Legend — same rail-and-dot language as the track above. */}

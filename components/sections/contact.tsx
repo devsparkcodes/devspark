@@ -25,7 +25,7 @@ export function Contact() {
           <ContactChecklist>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Button href="/contact" variant="accent" size="sm" showArrow>
-                Contact Us
+                Contact us
               </Button>
               <Button
                 href={contact.secondaryCta.href}

@@ -98,7 +98,7 @@ export default function CoursesPage() {
           <CourseHeading
             label="Key information"
             title="Course at a glance"
-            description="The core details below are confirmed for Cohort 01 — dates, schedule, time, fee and the free demo classes."
+            description="The core details below are confirmed for Cohort 01 — dates, schedule, time, fee and the free demo sessions."
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-12">
             <div data-reveal className="lg:col-span-7">
@@ -252,8 +252,8 @@ export default function CoursesPage() {
         <Container>
           <CourseHeading
             label="Curriculum"
-            title="Eight-week course outline"
-            description="Each card summarises one week — click or tap to pin it open and see the week's three classes with their dates, detailed topics, practical activity and assessment. On desktop, hover to preview a week first."
+            title="8-week course outline"
+            description="Each card summarizes one week — click or tap to pin it open and see the week's three classes with their dates, detailed topics, practical activity and assessment. On desktop, hover to preview a week first."
           />
           <CurriculumGrid weeks={program.weeks} />
         </Container>
@@ -264,7 +264,7 @@ export default function CoursesPage() {
         <Container>
           <CourseHeading
             label="Methodology"
-            title="How classes are taught"
+            title="How sessions are taught"
             description={program.methodology.delivery}
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
@@ -355,8 +355,8 @@ export default function CoursesPage() {
         <Container>
           <CourseHeading
             label="Recognition"
-            title="Certificate and top-student awards"
-            description="The certificate criteria and the top-three award terms are confirmed and published below."
+            title="Certificate and Top Three Student Awards"
+            description="The certificate criteria and the Top Three Student Awards terms are confirmed and published below."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div
@@ -525,7 +525,7 @@ export default function CoursesPage() {
               <CourseHeading
                 label="FAQ"
                 title="Course questions and answers"
-                description="Only confirmed information is published here — anything still undecided stays clearly marked as pending."
+                description="Only confirmed information is published here — any unresolved details are explained in the relevant section."
               />
               <p className="mt-6 border-l-2 border-accent pl-4 text-body-sm leading-relaxed text-secondary">
                 {program.professions.note}
@@ -570,7 +570,7 @@ export default function CoursesPage() {
             <div className="max-w-xl">
               <h2 className="text-title">Still deciding?</h2>
               <p className="mt-2 text-[0.975rem] leading-relaxed text-secondary">
-                The Help Center covers enrollment, the free demo classes and
+                The Help Center covers enrollment, the free demo sessions and
                 every confirmed course detail.
               </p>
             </div>
@@ -583,7 +583,7 @@ export default function CoursesPage() {
                 variant="primary"
                 showArrow
               >
-                Discuss a Project
+                Discuss a project
               </Button>
             </div>
           </div>
