@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Page not found",
   description:
     "The page you are looking for could not be found on the DevSpark website.",
+  // The root layout publishes `alternates.canonical: "/"`; a 404 must not
+  // claim the homepage as its canonical URL. `canonical: null` clears the
+  // inherited value, and the explicit robots entry (Next.js also noindexes
+  // 404 responses) keeps the page out of the index either way.
+  robots: { index: false, follow: false },
+  alternates: { canonical: null },
 };
 
 /**

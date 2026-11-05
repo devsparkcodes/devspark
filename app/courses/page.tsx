@@ -13,9 +13,9 @@ import { pageMetadata } from "@/lib/seo";
 import { revealDelay } from "@/lib/utils";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Generative AI Engineering - Level 01, Cohort 01",
+  title: "Generative AI Engineering — Level 01, Cohort 01",
   description:
-    "Beginner-friendly Generative AI course in Urdu on Google Meet: AI and machine learning foundations, language models, RAG, APIs and agentic AI. 8 weeks, 24 sessions from November 30, 2026. PKR 4,000 one-time fee - early-bird PKR 3,000 for the first 20 confirmed paid enrollments.",
+    "Beginner-friendly Generative AI course in Urdu on Google Meet: ML, language models, RAG and agentic AI. 8 weeks, 24 sessions from November 30, 2026. PKR 4,000.",
   path: "/courses",
   image: "/og/courses.png",
 });

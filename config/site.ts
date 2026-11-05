@@ -29,7 +29,7 @@ export const siteConfig: SiteConfig = {
   name: "DevSpark",
   tagline: "Building AI Solutions",
   description:
-    "DevSpark is a technology company building AI-powered solutions, workflow automation and custom software for real-world problems — and teaching the concepts behind them through the Generative AI Engineering program.",
+    "DevSpark builds AI-powered solutions, workflow automation and custom software — and teaches the concepts behind them in its Generative AI Engineering program.",
   links: {
     enrollmentFormUrl: "https://forms.gle/xpjhjQgRXKfnbJds9",
     demoFormUrl: "https://forms.gle/xpjhjQgRXKfnbJds9",
