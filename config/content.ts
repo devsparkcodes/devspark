@@ -103,7 +103,7 @@ export const policies = {
   certificateVerification: "Digital certificate verification is not currently available.",
   /** Student-initiated cancellation: official inbox, PKT deadline, 100% refund. */
   studentCancellation:
-    "To cancel, email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session. The request counts from when it is received in that inbox, evaluated in Pakistan Standard Time, and should identify the student and enrollment; the contact form, WhatsApp and the Google Form are not cancellation channels. A request received by the deadline receives a full refund of the fee actually paid, processed within 14 calendar days of approval. At or after the deadline, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements.",
+    "To cancel, email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session. The request counts from when it is received in that inbox, evaluated in Pakistan Standard Time, and should identify the student and enrollment; the contact form, WhatsApp and the Google Form are not cancellation channels, and no banking details should be sent through public forms. A request received by the deadline receives a full refund of the fee actually paid, processed within 14 calendar days of approval. At or after the deadline, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements.",
   /** DevSpark-initiated cancellation: 14 calendar days from the notice. */
   courseCancellation:
     "If DevSpark cancels the course, affected paid students receive a full refund of the fee actually paid within 14 calendar days of the official cancellation notice.",
@@ -1263,32 +1263,60 @@ export const helpCenter = {
           ],
         },
         {
-          slug: "understanding-site-status",
-          title: "How unresolved details are handled",
+          slug: "official-course-information",
+          title: "Where to find official course information",
           summary:
-            "Some details on this site are not finalized yet. Here is how those unresolved details are handled and where they are explained.",
+            "The schedule, deadlines, attendance rules, certificate criteria and refund instructions are all published — this guide points to where each one lives.",
           keywords: [
-            "pending",
-            "unresolved",
-            "finalized",
-            "confirmed",
-            "status",
-            "honest",
+            "schedule",
+            "deadline",
+            "course information",
+            "official",
+            "policy",
+            "policies",
+            "updates",
+            "attendance",
+            "certificate",
+            "refund",
+            "review",
           ],
           sections: [
             {
-              heading: "Why some details are not finalized",
-              body: "DevSpark only presents facts that are confirmed. Anything still undecided — such as the midterm and final project deadlines or the request window for instructor-replacement refunds — is explained in the relevant section instead of being invented, and features that exist in a later phase are named honestly rather than shown as live.",
+              heading: "Where the official schedule is published",
+              body: "The complete Cohort 01 schedule — all 24 class dates, the Monday, Wednesday and Friday 7:30 PM to 9:30 PM Pakistan Standard Time slot, the topics for each class and the assessment for each week — is published on the courses page, together with the course-at-a-glance facts: start date, fees, free demo dates and the session breakdown. That page is the single public source for the schedule.",
+              link: { label: "See the class-by-class schedule", href: "/courses#curriculum" },
             },
             {
-              heading: "Where unresolved details are explained",
-              body: "Confirmed and published: course dates, schedule, the Google Meet teaching platform, the first paid session date (December 4, 2026), the standard fee and the Cohort 01 early-bird offer, the free demo dates, the 2 free + 22 paid session breakdown, curriculum, the assignment deadline and the late-submission rule, the 100-point assessment, the certificate criteria (80% attendance counting both demos, and 60/100), the Top Three Student Awards terms including competition ranking, the 3-day score-review window and 5-day review decision, the cancellation and refund terms (student cancellation, course cancellation and lead-instructor replacement), the Google Form registration link and the contact form. Explained in the relevant section rather than finalized: the midterm and final project deadlines, approval turnaround times for reviews and refund requests, the request window for instructor-replacement refunds, the attendance-tracking method, the certificate's digital verification workflow, and paid-enrollment processing on the website.",
+              heading: "Which course policies are already confirmed",
+              body: "Fees and the early-bird offer, the 100-point assessment, certificate eligibility, the Top Three Student Awards, the score-review windows and the cancellation and refund rules are all settled and published — none of them is waiting on a decision. The courses page carries the full wording, and the guides in this Help Center summarize it in shorter form.",
             },
             {
-              heading: "What this means for you",
-              body: "You can rely on everything that is finalized: it reflects the current state of the business. Anything not finalized is explained in the relevant section — not stated as a date, a price or a commitment.",
+              heading: "Deadlines for assignments and projects",
+              body: `${policies.weeklyDeadline} ${policies.weeklyLateRule} ${policies.projectDeadlines}`,
+              link: { label: "Open the assessment section", href: "/courses#assessment" },
+            },
+            {
+              heading: "Attendance, certificate and awards",
+              body: `The certificate requires at least 20 of the 24 live sessions attended — both free demos count — plus at least 60 out of 100 overall and all six assignments, the midterm and the final project submitted. The Top Three Student Awards are stricter: they require all 24 sessions, every assignment and project submitted, fees settled and no verified academic-integrity violation, ranked by assessment score. Session recordings are provided to enrolled students for revision, but watching a recording does not count as live attendance. ${policies.certificateVerification}`,
+              link: { label: "Read the certificate and awards rules", href: "/courses#recognition" },
+            },
+            {
+              heading: "Requesting a score review",
+              body: `${policies.scoreReview} Send the request through the contact page with the Course & enrollment question category, or by emailing devspark.codes@gmail.com. Top Three Student Awards winners are announced only after the review window has closed and every valid review request has been resolved.`,
+              link: { label: "Open the contact page", href: "/contact" },
+            },
+            {
+              heading: "Cancellations and refunds",
+              body: `${policies.studentCancellation} ${policies.courseCancellation} A qualifying significant lead-instructor replacement gives an affected paid student the same full-refund right — the request may be sent to devspark.codes@gmail.com at any time while the course is ongoing, but not after the course officially ends, subject to applicable legal rights. Top Three Student Awards refunds follow their own timeline: 100% of the fee actually paid, within 7 calendar days after the final verified winners announcement.`,
+              link: { label: "Read the refund FAQs", href: "/courses#faq" },
+            },
+            {
+              heading: "Official channels for specific actions",
+              body: "Registration and free-demo sign-up: the Google Form linked from the courses page. Cancellation and refund requests: devspark.codes@gmail.com. Score-review requests: the contact page or devspark.codes@gmail.com. General questions: the contact page. Published schedules and policies: the courses page and this Help Center. Payment instructions are shared individually after registration — the website does not take payments.",
+              link: { label: "Open the contact page", href: "/contact" },
             },
           ],
+          cta: { label: "Open the courses page", href: "/courses" },
         },
         {
           slug: "using-help-center",
@@ -1517,15 +1545,15 @@ export const helpCenter = {
             },
             {
               heading: "Cancellations and refunds",
-              body: "Student cancellation: email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session — for a full refund of the fee actually paid. The effective time is when the request is received in that inbox, evaluated in Pakistan Standard Time; the request should identify the student and enrollment. The contact form, WhatsApp and the Google Form are not authorized cancellation channels, and no banking details should be sent through public forms. At or after that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. A valid approved refund is processed within 14 calendar days of approval; the approval turnaround itself is not yet specified.",
+              body: policies.studentCancellation,
             },
             {
               heading: "If DevSpark cancels the course",
-              body: "Every affected paid student receives a full refund of the fee actually paid within 14 calendar days of the official course cancellation notice. This is separate from the seven-day Top Three Student Awards refund timeline.",
+              body: `${policies.courseCancellation} This is separate from the seven-day Top Three Student Awards refund timeline.`,
             },
             {
               heading: "If the lead instructor is replaced",
-              body: "Replacement of the lead instructor is the defined significant course change for refunds: an affected paid student may request a 100% refund of the fee actually paid through devspark.codes@gmail.com, and a valid approved request is refunded within 14 calendar days of approval. The request window and approval turnaround are not yet specified. Ordinary schedule adjustments, tool changes and routine curriculum updates do not create this refund right, and nothing here limits any rights required by applicable law.",
+              body: policies.instructorReplacement,
             },
           ],
         },
@@ -1607,19 +1635,19 @@ export const helpCenter = {
             },
             {
               heading: "100-point assessment system",
-              body: "Six weekly assignments worth 10 points each (60), a midterm project in Week 4 (15) and a final project in Week 8 (25) add up to 100 points. Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7; each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT). There are no deadline extensions: a weekly assignment submitted after that deadline receives zero marks for that assignment. The midterm and final project deadlines are announced in advance through the official course schedule and are not covered by the weekly-assignment late rule.",
+              body: `Six weekly assignments worth 10 points each (60), a midterm project in Week 4 (15) and a final project in Week 8 (25) add up to 100 points. Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7. ${policies.weeklyDeadline} ${policies.weeklyLateRule} ${policies.projectDeadlines}`,
             },
             {
               heading: "Score review",
-              body: "You can request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated, through the contact page or by emailing devspark.codes@gmail.com. DevSpark communicates the review decision within 5 calendar days of a valid request. Top Three Student Awards winners are announced only after the review window has closed and all valid review requests are resolved.",
+              body: `${policies.scoreReview} Send the request through the contact page or by emailing devspark.codes@gmail.com. Top Three Student Awards winners are announced only after the review window has closed and all valid review requests are resolved.`,
             },
             {
               heading: "Certificate of completion",
-              body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion: at least 20 of the 24 live sessions attended (80% attendance, counting both free demos) and at least 60 out of 100 overall, with all six assignments, the midterm and the final project submitted. Attendance problems are considered case by case, but a certificate is never guaranteed. The digital verification workflow (unique credential IDs and QR codes) is being developed with the upcoming LMS.",
+              body: `Students who successfully complete the course requirements receive a DevSpark Certificate of Completion: at least 20 of the 24 live sessions attended (80% attendance, counting both free demos) and at least 60 out of 100 overall, with all six assignments, the midterm and the final project submitted, and submitted work that meaningfully meets the requirements. Attendance exceptions, if permitted, are considered case by case and never guarantee a certificate. ${policies.certificateVerification}`,
             },
             {
               heading: "Top Three Student Awards",
-              body: "The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's explicit permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, and at least 60 out of 100 overall; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance.",
+              body: `The top three eligible students each receive a 100% refund of the course fee they actually paid — PKR 3,000 or PKR 4,000, whichever applied — by verified bank transfer within 7 calendar days after the final verified winners are announced, plus LinkedIn recognition only with the student's explicit permission. Eligibility requires attending all 24 live sessions — both free demos and all 22 paid sessions — submitting all six assignments, the midterm and the final project, at least 60 out of 100 overall, fees settled and no verified academic-integrity violation; the certificate's case-by-case attendance exception does not apply to these awards. Ranking uses the overall score; ties go to the higher final project, then the higher midterm, then the higher combined assignments, with equal students sharing a joint rank under standard competition ranking (for example 1, 1, 3) — every eligible student at competition rank 1, 2 or 3 wins, so a complete tie can produce more than three recipients. A student who enrolls after the free demos can still complete the course but cannot meet the 24/24 award attendance, and watching a recording does not restore it.`,
             },
           ],
           cta: { label: "Open the courses page", href: "/courses" },

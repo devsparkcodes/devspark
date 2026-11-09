@@ -347,7 +347,7 @@ export default function CoursesPage() {
       </Section>
 
       {/* 7 — Certificate and awards */}
-      <Section>
+      <Section id="recognition">
         <Container>
           <CourseHeading
             label="Recognition"
@@ -514,7 +514,7 @@ export default function CoursesPage() {
       </Section>
 
       {/* 9 — Course FAQs */}
-      <Section>
+      <Section id="faq">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-4">

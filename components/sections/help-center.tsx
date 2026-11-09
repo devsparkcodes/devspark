@@ -15,6 +15,12 @@ import { cn } from "@/lib/utils";
 type GuideSection = {
   heading: string;
   body: string;
+  /**
+   * Optional internal link rendered under the section body — used when a
+   * section points at the authoritative policy section on another page
+   * (e.g. the courses page assessment or certificate blocks).
+   */
+  link?: { label: string; href: string };
 };
 
 export type HelpGuide = {
@@ -270,6 +276,16 @@ export function HelpCenter({ categories }: HelpCenterProps) {
                               <p className="mt-1.5 text-[0.975rem] leading-relaxed text-secondary">
                                 {section.body}
                               </p>
+                              {section.link ? (
+                                <p className="mt-2">
+                                  <Link
+                                    href={section.link.href}
+                                    className="link-underline cursor-pointer font-medium text-text"
+                                  >
+                                    {section.link.label}
+                                  </Link>
+                                </p>
+                              ) : null}
                             </div>
                           ))}
                           {guide.cta ? (
