@@ -191,4 +191,4 @@ If documentation and implementation disagree, report the conflict — do not sil
 - **Colors look wrong or hard-coded:** use the semantic tokens in `app/globals.css` (`--color-accent`, `--color-text`, …) — never scatter raw hex values. White on the orange accent fails contrast; use dark text (`#111111`) on orange.
 - **Curriculum or course copy changed but a page did not update:** confirm the text lives in `config/content.ts`, not in a component.
 - **`/faq` should keep redirecting:** the redirect is defined in `next.config.ts`; do not recreate a `/faq` page.
-- **Unknowns** (unconfirmed dates, SLAs, features) stay clearly marked as unresolved in docs and are explained in the relevant section on the site — never invent them.
+- **Unknowns** (unconfirmed dates, internal SLAs, future features) stay clearly marked in `docs/` — never invent them. The public site publishes only confirmed policies and states feature status honestly (for example, "Digital certificate verification is not currently available").

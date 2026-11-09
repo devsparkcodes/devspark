@@ -61,7 +61,7 @@ Not included: custom backend/database, login/student dashboard, payment gateway,
 
 ## Resolved (implemented in code)
 - Course facts published on `/courses`: 8 weeks · 24 live sessions (2 free demos + 22 paid sessions), Mon/Wed/Fri 7:30–9:30 PM Pakistan Standard Time, starts Monday, November 30, 2026, first paid session Friday, December 4, 2026, final scheduled session Friday, January 22, 2027 (if uninterrupted), teaching platform Google Meet (confirmed; joining details shared privately with confirmed students), fee PKR 4,000 one-time standard with Cohort 01 introductory early-bird PKR 3,000 (25% off) for the first 20 confirmed paid enrollments, first two sessions free (Nov 30 + Dec 2, 2026), teaching language Urdu with English technical terminology, presentation-led teaching using structured slides with optional Excalidraw visuals, live practical demonstrations, guided activities and interactive Q&A (downloadable slide or PDF files not promised; session recordings ARE provided to enrolled students), the full revised 8-week curriculum and 100-point assessment, assignment deadline (each of the six released Fridays, due Sunday 11:59 PM PKT).
-- Certificate: DevSpark Certificate of Completion confirmed for students who meet the course requirements; digital issuance/verification (IDs, QR) planned with the future LMS.
+- Certificate: DevSpark Certificate of Completion confirmed for students who meet the course requirements; digital certificate verification is not currently available — the eligibility rules are final, while the verification feature is on hold for a future phase.
 - Logo assets: header `logos/Full logo/black-devspark.png`, footer/dark `logos/Full logo/white-devspark.png`, favicon `app/icon.svg` (rendered via `components/ui/logo.tsx`).
 - Brand accent: `#F58220` (semantic tokens in `app/globals.css`; see `design-system/devspark/MASTER.md`).
 - Headings font Manrope, body/UI Inter (`next/font`).
@@ -70,15 +70,14 @@ Not included: custom backend/database, login/student dashboard, payment gateway,
 Do not invent the remaining details:
 - Domain name (site currently lives on the Vercel-assigned origin).
 - Verified current services for the Solutions page.
-- Midterm and final project submission deadlines (announced in advance through the official course schedule).
-- Certificate online verification (certificate provision and eligibility criteria are confirmed — 80% attendance of 24 sessions including both demos, and 60/100 — while the digital issuance workflow belongs to the future LMS).
-- Instructor-replacement refund request window and approval SLA.
-- Cancellation refund approval turnaround.
-- Attendance-tracking method for the free demos.
-- Website-side paid-enrollment/payment processing.
+- Exact midterm and final project submission dates (the policy is final — dates are announced in advance through the official course schedule).
+- Certificate online verification feature (eligibility criteria are final; the digital verification tool is on hold for a future phase).
+- Approval-decision turnaround for instructor-replacement and student-cancellation refund requests (the request windows and the 14-calendar-day processing after approval are confirmed).
+- Attendance-recording method (an internal operational process; the published 20-of-24 rule with both free demos counted is final).
+- Website-side paid-enrollment/payment processing (not a V1 feature and not claimed on the site).
 - Founder photo asset.
 
-Confirmed and no longer TBD: first paid session date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy, standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window.
+Confirmed and no longer TBD: first paid session date (Friday, December 4, 2026, 7:30 PM PKT), student cancellation procedure (email to devspark.codes@gmail.com, PKT receipt timestamp, 100% of the fee actually paid before the deadline, 14-day refund after approval), refunds if DevSpark cancels the course (14 days after the official notice), the lead-instructor-replacement refund policy including its request window (any time while the course is ongoing; not accepted after the course officially ends, subject to applicable legal rights), standard competition ranking for tied award scores (ranks 1–3 win; joint ranks can exceed three recipients), and the 5-calendar-day review decision window.
 
 ## References
 - Course policies: `04_COURSE_AND_ENROLLMENT.md`
