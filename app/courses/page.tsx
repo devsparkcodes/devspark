@@ -521,7 +521,7 @@ export default function CoursesPage() {
               <CourseHeading
                 label="FAQ"
                 title="Course questions and answers"
-                description="Only confirmed information is published here — any unresolved details are explained in the relevant section."
+                description="Only confirmed information is published here — every answer below reflects the approved course policies."
               />
               <p className="mt-6 border-l-2 border-accent pl-4 text-body-sm leading-relaxed text-secondary">
                 {program.professions.note}

@@ -1079,7 +1079,7 @@ export const about = {
   paragraphs: [
     "DevSpark is being built as a technology company and product brand that solves real-world problems — across AI solutions, automation, software development and, in time, DevSpark-owned products.",
     "Education is one vertical of that company, not its entire identity. The Generative AI Engineering program is where this vertical currently sits.",
-    "Anything not yet confirmed — services, products, dates, enrollment details — stays clearly marked on this site until it is real.",
+    "Anything not yet confirmed — services, products or features that do not exist yet — stays clearly marked on this site until it is real.",
   ],
   principles: [
     {
@@ -1107,7 +1107,7 @@ export const faq = {
   label: "FAQ",
   title: "Common questions",
   description:
-    "Only confirmed information is published here. Unresolved details are explained in the relevant section.",
+    "Only confirmed information is published here — the full course policies live on the courses page, and this Help Center points to each one.",
   items: [
     {
       question: "Who can join the Generative AI Engineering program?",
