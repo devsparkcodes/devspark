@@ -79,6 +79,44 @@ export type CurriculumWeek = {
   classes: CurriculumClass[];
 };
 
+/**
+ * Canonical approved policy sentences (source of truth for wording, not
+ * for the rules themselves — those live in `docs/04_COURSE_AND_ENROLLMENT.md`
+ * and only change with owner approval). Every public place that states one
+ * of these rules reads it from here, so a number, date or window can never
+ * drift between the courses page, the FAQs and the Help Center.
+ */
+export const policies = {
+  /** Applies to the six weekly assignments only. */
+  weeklyDeadline:
+    "Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT).",
+  /** The approved zero-mark rule — explicitly scoped to weekly assignments. */
+  weeklyLateRule:
+    "No deadline extensions: a weekly assignment submitted after that deadline receives zero marks for that assignment. This rule applies to the six weekly assignments only.",
+  /** Project-specific dates are announced; the policy itself is final. */
+  projectDeadlines:
+    "Midterm and final-project submission deadlines will be announced in advance through the official course schedule.",
+  /** Request within 3 calendar days; decision within 5 calendar days. */
+  scoreReview:
+    "Request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated; DevSpark communicates the review decision within 5 calendar days of a valid request.",
+  /** The verification feature is not live — eligibility rules are final. */
+  certificateVerification: "Digital certificate verification is not currently available.",
+  /** Student-initiated cancellation: official inbox, PKT deadline, 100% refund. */
+  studentCancellation:
+    "To cancel, email devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session. The request counts from when it is received in that inbox, evaluated in Pakistan Standard Time, and should identify the student and enrollment; the contact form, WhatsApp and the Google Form are not cancellation channels. A request received by the deadline receives a full refund of the fee actually paid, processed within 14 calendar days of approval. At or after the deadline, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements.",
+  /** DevSpark-initiated cancellation: 14 calendar days from the notice. */
+  courseCancellation:
+    "If DevSpark cancels the course, affected paid students receive a full refund of the fee actually paid within 14 calendar days of the official cancellation notice.",
+  /**
+   * Qualifying significant course change — replacement of the lead
+   * instructor only. Requests are accepted at any time while the course
+   * is ongoing; no approval-decision SLA is promised, only the
+   * 14-calendar-day processing of approved refunds.
+   */
+  instructorReplacement:
+    "If a qualifying significant lead-instructor replacement occurs, you may request a full refund of the course fee you actually paid by emailing devspark.codes@gmail.com at any time while the course is ongoing. New requests under this policy are not accepted after the course officially ends, subject to applicable legal rights. Approved refunds are processed within 14 calendar days after approval. Replacement of the lead instructor is the only qualifying change — ordinary schedule adjustments, tool changes and routine curriculum updates do not create this refund right, and nothing here limits any rights required by applicable law.",
+} as const;
+
 export const program = {
   index: "02",
   label: "Courses",
@@ -768,27 +806,24 @@ export const program = {
     ],
     published:
       "Assignments are released on Fridays in Weeks 1, 2, 3, 5, 6 and 7.",
-    deadline:
-      "Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT).",
-    late:
-      "No deadline extensions: a weekly assignment submitted after that deadline receives zero marks for that assignment.",
-    projectsDeadline:
-      "The midterm and final project submission deadlines are announced in advance through the official course schedule; the weekly no-extension rule does not apply to them.",
-    review:
-      "Score review: request a review of an assignment, midterm or final-project score within 3 calendar days after the result is communicated; DevSpark communicates the review decision within 5 calendar days of a valid request.",
+    deadline: policies.weeklyDeadline,
+    late: policies.weeklyLateRule,
+    projectsDeadline: policies.projectDeadlines,
+    review: `Score review: ${policies.scoreReview}`,
   },
   certificate: {
     title: "Certificate of completion",
     status: "Confirmed",
-    body: "Students who successfully complete the course requirements will receive a DevSpark Certificate of Completion. The digital issuance and verification workflow — unique credential IDs and QR codes — is being developed with the upcoming LMS, so certificates cannot be verified online at launch.",
+    body: `Students who successfully complete the requirements below receive a DevSpark Certificate of Completion, issued by DevSpark. ${policies.certificateVerification}`,
     requirements: [
       "Attend at least 20 of the 24 live sessions — the two free demos included — 80% attendance.",
       "Score at least 60 out of 100 on the 100-point assessment.",
       "Complete and submit all six assignments.",
       "Complete and submit the midterm project.",
       "Complete and submit the final project.",
+      "Submitted work must meaningfully meet the assignment and project requirements — an empty submission alone does not count as completed work.",
     ],
-    note: "Both minimums are required together: at least 80% attendance (counting both free demos in the 24 sessions) and at least 60 out of 100. Attendance problems are considered case by case, but a certificate is never guaranteed.",
+    note: "Both minimums are required together: at least 80% attendance (counting both free demos in the 24 sessions) and at least 60 out of 100. Attendance exceptions, if permitted, are considered case by case and never guarantee a certificate.",
   },
   awards: {
     title: "Top Three Student Awards",
@@ -799,12 +834,14 @@ export const program = {
       "Complete and submit all six assignments, the midterm project and the final project.",
       "Score at least 60 out of 100 — the certificate's minimum score.",
       "Place among the top three students under the 100-point assessment system.",
+      "Have all course fees settled.",
+      "Have no verified academic-integrity violation.",
     ],
     ranking:
       "Ranking uses the overall score out of 100. Ties are resolved by the higher final-project score, then the higher midterm score, then the higher combined assignment score. If all remain equal the students share a joint rank under standard competition ranking (for example 1, 1, 3), and every eligible student occupying competition rank 1, 2 or 3 receives the award — which can mean more than three recipients.",
     rankingNote:
       "Winners are announced only after the score-review window has closed and all valid review requests have been resolved; the seven-day refund countdown begins at that final verified winners announcement.",
-    note: "A student who enrolls after the free demos can still complete the course, but cannot meet the 24/24 attendance these awards require. Students' photos or personal profiles are never published without explicit consent.",
+    note: "Certificate and award eligibility are not the same: 20 of 24 sessions can earn a certificate, but these awards require all 24 — so a student who enrolls after the free demos can still complete the course and earn a certificate, yet cannot qualify for an award, and watching a recording does not restore that attendance. Students' photos or personal profiles are never published without explicit permission.",
   },
   pricing: {
     badge: "Introductory offer",
@@ -889,12 +926,11 @@ export const program = {
     {
       question: "Is there a certificate?",
       answer:
-        "Yes. A DevSpark Certificate of Completion requires both at least 20 of the 24 live sessions attended (80% attendance, counting the two free demos) and an overall score of at least 60 out of 100, with all six assignments, the midterm and the final project submitted. The digital verification workflow with unique IDs and QR codes is being developed with the upcoming LMS and is not available at launch.",
+        `Yes. A DevSpark Certificate of Completion requires both at least 20 of the 24 live sessions attended (80% attendance, counting the two free demos) and an overall score of at least 60 out of 100, with all six assignments, the midterm and the final project submitted. ${policies.certificateVerification}`,
     },
     {
       question: "What happens if I submit an assignment late?",
-      answer:
-        "There are no deadline extensions. Each of the six weekly assignments is due by Sunday at 11:59 PM Pakistan Standard Time (PKT), and a weekly assignment submitted after that deadline receives zero marks for that assignment. That rule applies to the six weekly assignments only; the midterm and final project deadlines are announced in advance through the official course schedule.",
+      answer: `${policies.weeklyDeadline} ${policies.weeklyLateRule} ${policies.projectDeadlines}`,
     },
     {
       question: "Can I enroll before or after the free demo sessions?",
@@ -913,8 +949,11 @@ export const program = {
     },
     {
       question: "Can I cancel and get a refund?",
-      answer:
-        "Cancel by emailing devspark.codes@gmail.com before 7:30 PM PKT on Friday, December 4, 2026 — the first paid session — and you receive a full refund of the fee you actually paid; the request counts from when it is received in that inbox, in Pakistan Standard Time. After that time, student-initiated cancellation is generally non-refundable, subject to applicable exceptions and legal requirements. Approved refunds are processed within 14 calendar days of approval. If DevSpark cancels the course, paid students receive a full refund of the fee actually paid within 14 calendar days of the cancellation notice, and replacement of the lead instructor lets an affected paid student request a 100% refund. Full terms are in the Help Center.",
+      answer: `${policies.studentCancellation} ${policies.courseCancellation} Full terms are in the Help Center.`,
+    },
+    {
+      question: "What if the lead instructor is replaced?",
+      answer: policies.instructorReplacement,
     },
   ],
 };
